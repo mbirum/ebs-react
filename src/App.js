@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { API } from 'aws-amplify';
-import Amplify from '@aws-amplify/core';
-import awsmobile from './aws-exports.js';
+//import Amplify from '@aws-amplify/core';
+//import awsmobile from './aws-exports.js';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 
 const initialFormState = { name: '', description: '' }
 
-Amplify.configure(awsmobile);
+//Amplify.configure(awsmobile);
 
 function App() {
   const [notes, setNotes] = useState([]);
