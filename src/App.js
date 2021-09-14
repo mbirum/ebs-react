@@ -6,7 +6,7 @@ import amplifyconfig from './amplify-config.js';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 
-const initialFormState = { name: '', description: '' }
+const initialFormState = { name: '', description: '', newAttribute: ''}
 
 Amplify.configure(amplifyconfig);
 
@@ -46,8 +46,13 @@ function App() {
       />
       <input
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
+        placeholder="Description"
         value={formData.description}
+      />
+      <input
+        onChange={e => setFormData({ ...formData, 'newAttribute': e.target.value})}
+        placeholder="Attribute"
+        value={formData.newAttribute}
       />
       <button onClick={createNote}>Create Note</button>
       <div style={{marginBottom: 30}}>
@@ -56,6 +61,7 @@ function App() {
             <div key={note.id || note.name}>
               <h2>{note.name}</h2>
               <p>{note.description}</p>
+              <p>{note.newAttribute}</p>
               <button onClick={() => deleteNote(note)}>Delete note</button>
             </div>
           ))

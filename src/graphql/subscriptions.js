@@ -34,3 +34,39 @@ export const onDeleteNote = /* GraphQL */ `
     }
   }
 `;
+export const onCreateSticker = /* GraphQL */ `
+  subscription OnCreateSticker {
+    onCreateSticker {
+      id
+      name
+      shape
+      color
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateSticker = /* GraphQL */ `
+  subscription OnUpdateSticker {
+    onUpdateSticker {
+      id
+      name
+      shape
+      color
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteSticker = /* GraphQL */ `
+  subscription OnDeleteSticker {
+    onDeleteSticker {
+      id
+      name
+      shape
+      color
+      createdAt
+      updatedAt
+    }
+  }
+`;

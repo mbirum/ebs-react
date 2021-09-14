@@ -3,3 +3,10 @@ type Note @model {
   name: String!
   description: String
 }
+
+type Sticker @model {
+  id: ID!
+  name: String!
+  shape: String
+  color: String
+}

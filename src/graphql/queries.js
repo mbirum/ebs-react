@@ -30,3 +30,34 @@ export const listNotes = /* GraphQL */ `
     }
   }
 `;
+export const getSticker = /* GraphQL */ `
+  query GetSticker($id: ID!) {
+    getSticker(id: $id) {
+      id
+      name
+      shape
+      color
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listStickers = /* GraphQL */ `
+  query ListStickers(
+    $filter: ModelStickerFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listStickers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        shape
+        color
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
