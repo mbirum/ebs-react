@@ -2,6 +2,7 @@ type Note @model {
   id: ID!
   name: String!
   description: String
+  newAttribute: String
 }
 
 type Sticker @model {
