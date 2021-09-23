@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { API } from 'aws-amplify';
 import Amplify from '@aws-amplify/core';
+import SiteHeader from './components/header/SiteHeader';
+import ParallaxCache from './components/parallax/ParallaxCache';
+import { Parallax } from 'react-scroll-parallax';
 import amplifyconfig from './amplify-config.js';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
@@ -38,23 +41,34 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My Notes App</h1>
-      <input
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
-        value={formData.name}
+
+      <SiteHeader/>
+
+      {/* <ParallaxCache/> */}
+
+      <Parallax className="custom-class" y={[-60, 0]} tagOuter="figure">
+        <img src="index-background.jpg"/>
+      </Parallax>
+      
+      <div id="test-block">
+
+      </div>
+
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      
+
+      {/* <h1>My Notes App</h1>
+
+      <FieldSet
+        formData={formData}
+        setFormData={setFormData}
       />
-      <input
-        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Description"
-        value={formData.description}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'newAttribute': e.target.value})}
-        placeholder="Attribute"
-        value={formData.newAttribute}
-      />
-      <button onClick={createNote}>Create Note</button>
+
+      <button id="createNoteButton" onClick={createNote}>Create Note</button>
+
       <div style={{marginBottom: 30}}>
         {
           notes.map(note => (
@@ -66,7 +80,8 @@ function App() {
             </div>
           ))
         }
-      </div>
+      </div> */}
+
     </div>
   );
 }
