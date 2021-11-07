@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const SiteNavigation = props => {
     return (
@@ -6,31 +7,31 @@ const SiteNavigation = props => {
             <button className="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
             <div className="primary-menu">
                 <ul id="primary-menu" className="menu nav-menu" aria-expanded="false">
-                    <li id="menu-item-1300" className="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-1300" aria-haspopup="true">
-                        <a href="https://erinbirum.studio/product-category/originals/">Originals</a>
+                    <li className="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children" aria-haspopup="true">
+                        <Link to="/shop" className="nav-link">Shop</Link>
                         <ul className="sub-menu">
                             <br/>
-                            <li id="menu-item-2672" className="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2672"><a href="https://erinbirum.studio/product-category/originals/">All</a></li>
-                            <li id="menu-item-2669" className="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2669"><a href="https://erinbirum.studio/product-category/originals/wildflowers/">Wildflowers</a></li>
-                            <li id="menu-item-2670" className="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2670"><a href="https://erinbirum.studio/product-category/originals/inspiration/">Inspiration</a></li>
-                            <li id="menu-item-2671" className="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2671"><a href="https://erinbirum.studio/product-category/originals/small-things/">Small Things</a></li>
+                            <li className="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><Link to="/shop">All Products</Link></li>
+                            <li className="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><Link to="/shop">Wildflowers</Link></li>
+                            <li className="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><Link to="/shop">Inspiration</Link></li>
+                            <li className="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><Link to="/shop">Small Things</Link></li>
                             <br/>
                         </ul>
                     </li>
-                    <li id="menu-item-1301" className="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1301">
-                        <a href="https://erinbirum.studio/product-category/prints/">Prints</a>
+                    <li className="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
+                        <Link to="/shop">Prints</Link>
                     </li>
-                    <li id="menu-item-1030" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1030">
-                        <a href="https://erinbirum.studio/contact/">Contact</a>
+                    <li className="menu-item menu-item-type-post_type menu-item-object-page">
+                        <Link to="shop">Contact</Link>
                     </li>
-                    <li id="menu-item-789" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-789">
-                        <a href="https://erinbirum.studio/about/">About</a>
+                    <li className="menu-item menu-item-type-post_type menu-item-object-page">
+                        <Link to="/shop">About</Link>
                     </li>
                     <li className="menu-item wpmenucartli wpmenucart-display-standard menu-item" id="wpmenucartli">
-                        <a id="nav-cart-link" className="wpmenucart-contents empty-wpmenucart-visible" href="https://erinbirum.studio/product-category/originals/" >
+                        <Link id="nav-cart-link" className="wpmenucart-contents empty-wpmenucart-visible" to="/shop">
                             <img id="nav-cart-img" src="cart.png" />
                             <span className="cartcontents">0</span>
-                        </a>
+                        </Link>
                     </li>
                     
                 </ul>

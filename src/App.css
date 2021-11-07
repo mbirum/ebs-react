@@ -1,11 +1,5 @@
-.App {
+.Homepage {
   position:relative;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .field {
@@ -17,7 +11,6 @@
 }
 
 body {
-	background-color: rgba(206,174,165,0.15);
 	overflow-x:hidden !important;
 	margin: 0;
 }
@@ -38,9 +31,19 @@ body {
 	transition: left 0.75s;
 }
 
-/* #carousel img {
-	background-color: lightblue;
-} */
+#home-button-section {
+	background-color: rgba(206,174,165,0.15);
+	margin:12px 0 12px 0;
+	padding: 45px 0 45px 0;
+}
+
+#button-section-content {
+	margin:auto;
+	min-width: 400px;
+	text-align: center;
+	width:fit-content;
+	
+}
 
 #button-section-header {
 	font-size:2em;
@@ -48,18 +51,16 @@ body {
 	text-transform:uppercase;
 	letter-spacing: .11em;
 	line-height: 2em;
-	margin-left: 3.5%;
+	margin-left: auto;
 	padding: 20px 0 20px 0;
 	font-weight: 300;
 }
 
 #home-shop-button {
-	width: 10%;
-	min-width: 50px;
-	margin:auto;
+	width: 35%;
+	min-width: 100px;
 	float:left;
-	margin-left: 11%;
-	margin-right: 3%;
+	margin-right: 20px;
 }
 
 #home-shop-button:hover {
@@ -83,9 +84,10 @@ body {
 }
 
 #site-footer {
+	margin-top:5%;
 	position:relative;
-	left: calc(89%);
-	top: -50px;
+	left: calc(46%);
+	top: -35px;
 	color: #616a74;
 	z-index: 1;
 }
@@ -99,7 +101,7 @@ body {
 	padding: 0px 40px;
 	position: relative;
 	right: 0;
-	text-shadow: 0 0 1px rgba(0,0,0,0.2);
+	/* text-shadow: 0 0 1px rgba(0,0,0,0.2); */
 	top: 0;
 	width: 100%;
 	z-index: 5;
@@ -107,11 +109,35 @@ body {
 	border-bottom: 0px !important;
 }
 
+.site-branding {
+	display:table-cell;
+	padding-left: 50px;
+	vertical-align: middle;
+}
 
+.site-branding img {
+	max-width: 300px;
+	max-height: 300px;
+}
 
+#site-navigation ul li {
+	display: inline-block;
+	letter-spacing: 0.1em;
+	margin-left: 30px;
+	padding: 6px 0 10px;
+	text-transform: uppercase;
+}
 
+:link:focus, :visited:focus {outline: none;}
 
-
+#homepage-image {
+	width: 100%;
+	/* max-height: 100vh; */
+	height:100vh;
+	min-height: 700px;
+	object-fit: cover;
+	object-position: 50% 50%;
+}
 
 
 /*
@@ -999,13 +1025,6 @@ footer.comment-footer:after,
  # Site Branding
  */
 
-.site-branding {
-	display: table-cell;
-	margin: 0;
-	vertical-align: middle;
-	width: 30%;
-}
-
 .site-title {
 	clear: none;
 	font-size: 3rem;
@@ -1015,38 +1034,6 @@ footer.comment-footer:after,
 	vertical-align: middle;
 }
 
-.site-title,
-.site-branding a,
-.site-branding a:hover,
-.site-branding a:focus,
-.site-branding a:active {
-	color: inherit;
-	text-decoration: none;
-}
-
-.site-branding .custom-logo-link {
-	line-height: 1;
-	padding-right: 10px;
-	position: relative;
-	vertical-align: middle;
-	width: auto;
-}
-
-.site-branding .custom-logo-link img {
-	height: auto;
-	max-height: 100px;
-	max-width: 310px;
-	width: auto;
-}
-
-.site-branding .site-description {
-	display: none;
-	font-size: 1.6rem;
-	font-weight: 300;
-	line-height: 1.62;
-	margin: 0;
-	padding: 0;
-}
 
 
 /*--------------------------------------------------------------
@@ -1108,13 +1095,7 @@ footer.comment-footer:after,
 	-webkit-font-smoothing: antialiased;
 }
 
-#site-navigation ul li {
-	display: inline-block;
-	letter-spacing: 0.1em;
-	margin-left: 1.5em;
-	padding: 6px 0 10px;
-	text-transform: uppercase;
-}
+
 
 #site-navigation ul ul {
 	left: -9999em;
@@ -3677,9 +3658,6 @@ object {
 		top: 0;
 	}
 
-	.site-branding {
-		width: 35%;
-	}
 
 	#site-navigation {
 		width: 65%;
@@ -4033,19 +4011,8 @@ object {
 		background-color: #292c2f;
 	}
 
-	.site-branding {
-		display: block;
-		float: none;
-		padding-bottom: 2rem;
-		width: 75%;
-	}
-
 	.is-singular:not(.home) .site-header > .site-branding {
 		display: block;
-	}
-
-	.site-branding .custom-logo-link img {
-		max-width: 250px;
 	}
 
  	/**
@@ -4616,22 +4583,6 @@ object {
 
 	/* Header */
 
-	.site-branding {
-		padding-bottom: 1.3rem;
-		width: 100%;
-	}
-
-	.site-title,
-	.site-branding .custom-logo-link {
-		display: block;
-		padding: 0;
-		text-align: center;
-	}
-
-	.site-branding .custom-logo-link img {
-		max-width: 80%;
-	}
-
 	.banner-custom-header .site-banner-header {
 		padding: 10px 0;
 	}
@@ -5061,10 +5012,7 @@ ul.products li.product .button {
 	display: none;
 }
 
-.site-branding .custom-logo-link img {
-	max-width: 325px;
-	max-height: 325px;
-}
+
 
 .parallax-background-image, .parallax-background-image-small {
 	height: 76vh;
@@ -5356,12 +5304,7 @@ div.wpforms-container-full .wpforms-form .wpforms-field-label-inline,div.wpforms
 }
 
 @media screen and (max-width: 960px) {
-	
-	.site-title, .site-branding .custom-logo-link {
-		display: block !important;
-		padding: 0 !important;
-		text-align: center !important;
-	}
+
 	
 	.about-me-wrapper>div.wp-block-media-text__content, .about-me-front-page-wrapper>div.wp-block-media-text__content {
 		padding-top:50px;
@@ -5376,13 +5319,8 @@ div.wpforms-container-full .wpforms-form .wpforms-field-label-inline,div.wpforms
 		background-color:white !important;
 	}
 	
-	.site-branding {
-		margin:0;
-		display:inline !important;
-		max-width:200px !important;
-	}
 	
-		.site-branding .custom-logo-link img {
+	.site-branding .custom-logo-link img {
 		max-width: 220px;
 		max-height: 220px;
 			margin:0;

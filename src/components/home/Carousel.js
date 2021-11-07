@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 function flushCSS() {
-    let offsetHeight = document.getElementById('imageSet').offsetHeight;
+    let element = document.getElementById('imageSet');
+    if (element) {
+        let offsetHeight = document.getElementById('imageSet').offsetHeight;
+    }
 }
 
 const Carousel = props => {
