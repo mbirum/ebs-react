@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/SiteHeader.css';
 import SiteBranding from './SiteBranding';
 import SiteNavigation from './SiteNavigation';
 

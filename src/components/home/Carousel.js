@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './css/Carousel.css';
 
 function flushCSS() {
     let element = document.getElementById('imageSet');

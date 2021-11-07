@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/SiteFooter.css';
 
 const SiteFooter = props => {
     return (

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../../App.css';
+import './css/Homepage.css';
 import { API } from 'aws-amplify';
-import SiteFooter from '../footer/SiteFooter';
 import { listNotes } from '../../graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from '../../graphql/mutations';
 import Carousel from './Carousel'

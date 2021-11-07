@@ -1,0 +1,37 @@
+#home-button-section {
+	background-color: rgba(206,174,165,0.15);
+	margin:12px 0 12px 0;
+	padding: 45px 0 45px 0;
+}
+
+#button-section-content {
+	margin:auto;
+	min-width: 400px;
+	text-align: center;
+	width:fit-content;
+	
+}
+
+#button-section-header {
+	font-size:2em;
+	color: rgba(0,0,0,0.8);
+	text-transform:uppercase;
+	letter-spacing: .11em;
+	line-height: 2em;
+	margin-left: auto;
+	padding: 20px 0 20px 0;
+	font-weight: 300;
+}
+
+#home-shop-button {
+	width: 35%;
+	min-width: 100px;
+	float:left;
+	margin-right: 20px;
+}
+
+#home-shop-button:hover {
+	background-color: black;
+	color: white;
+	cursor: pointer;
+}
