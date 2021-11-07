@@ -3,11 +3,12 @@ import './App.css';
 import { API } from 'aws-amplify';
 import Amplify from '@aws-amplify/core';
 import SiteHeader from './components/header/SiteHeader';
-import ParallaxCache from './components/parallax/ParallaxCache';
+import SiteFooter from './components/footer/SiteFooter';
 import { Parallax } from 'react-scroll-parallax';
 import amplifyconfig from './amplify-config.js';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
+import Carousel from './components/body/Carousel'
 
 const initialFormState = { name: '', description: '', newAttribute: ''}
 
@@ -43,44 +44,15 @@ function App() {
     <div className="App">
 
       <SiteHeader/>
-
-      {/* <ParallaxCache/> */}
-
-      <Parallax className="custom-class" y={[-60, 0]} tagOuter="figure">
-        <img src="index-background.jpg"/>
-      </Parallax>
       
-      <div id="test-block">
+      <Carousel/>
 
+      <div id="home-button-section">
+        <div id="home-shop-button" className="ebs-button">Shop</div>
+        <div id="button-section-header">Orginal Artwork</div>
       </div>
 
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      
-
-      {/* <h1>My Notes App</h1>
-
-      <FieldSet
-        formData={formData}
-        setFormData={setFormData}
-      />
-
-      <button id="createNoteButton" onClick={createNote}>Create Note</button>
-
-      <div style={{marginBottom: 30}}>
-        {
-          notes.map(note => (
-            <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
-              <p>{note.description}</p>
-              <p>{note.newAttribute}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
-            </div>
-          ))
-        }
-      </div> */}
+      <SiteFooter/>
 
     </div>
   );

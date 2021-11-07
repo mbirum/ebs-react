@@ -3,9 +3,7 @@ import App from './App';
 
 function AppWrapper() {
   return (
-    <ParallaxProvider>
       <App />
-    </ParallaxProvider>
   );
 }
 
