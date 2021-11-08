@@ -1,13 +1,12 @@
-type Note @model {
+type Product @model {
   id: ID!
   name: String!
   description: String
-  newAttribute: String
-}
-
-type Sticker @model {
-  id: ID!
-  name: String!
-  shape: String
-  color: String
+  price: String!
+  quantity: Int!
+  width: Int
+  height: Int
+  image: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }

@@ -1,5 +1,6 @@
 #home-button-section {
-	background-color: rgba(206,174,165,0.15);
+	/* background-color: rgba(206,174,165,0.20); */
+	background-color: #dbdddd;
 	margin:12px 0 12px 0;
 	padding: 45px 0 45px 0;
 }

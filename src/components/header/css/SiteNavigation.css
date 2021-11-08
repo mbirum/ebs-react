@@ -1,0 +1,95 @@
+#site-navigation {
+	display: table-cell;
+	font-size: 12px;
+	text-align: right;
+	vertical-align: middle;
+	font-weight:100;
+	width: 70%;
+    text-shadow: none;
+    color: rgb(10,10,10);
+}
+
+.nav-item {
+	display: inline-block;
+	letter-spacing: 0.1em;
+	margin-left: 30px;
+	padding: 6px 0 10px;
+	text-transform: uppercase;
+    list-style: none;
+    position: relative;
+}
+
+.nav-sub-item {
+    display:block;
+	font-size: 1.2rem;
+	letter-spacing: 0;
+	margin-left: 0;
+	text-align: left;
+	text-transform: none;
+}
+
+.nav-sub-item:hover {
+    background-color: rgb(20,20,20);
+    color: white;
+}
+
+#site-navigation a {
+	color: rgb(100,100,100);
+	display: inline-block;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+#site-navigation a:hover {
+	opacity: 0.7;
+}
+
+#site-navigation a:hover,
+#site-navigation a:focus {
+    text-decoration: none;
+}
+
+#site-navigation ul ul {
+	left: -9999em;
+	margin-top: 10px;
+	position: absolute;
+	width: 220px;
+	z-index: 10;
+}
+
+#site-navigation li.nav-item-has-children > a:after {
+	content: "\25BC";
+	display: inline-block;
+	font-family: "Genericons";
+	font-size: 8px;
+	font-style: normal;
+	font-variant: normal;
+	line-height: 1;
+	margin-left: 5px;
+	text-align: center;
+	text-decoration: inherit;
+	text-transform: none;
+	vertical-align: middle;
+	-moz-transition: color .1s ease-in 0;
+	-webkit-transition: color .1s ease-in 0;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+#site-navigation ul ul a {
+	display: block;
+	padding: 1.3rem 30px;
+	text-shadow: none;
+}
+
+#site-navigation ul li:hover > ul{
+	left: 50%;
+	margin-left: -110px;
+}
+
+#site-navigation ul ul li:hover > ul,
+#site-navigation ul ul li.focus > ul {
+	left: auto;
+	margin: 0;
+	right: 100%;
+}

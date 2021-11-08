@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './css/Carousel.css';
+import { API } from 'aws-amplify';
+import { listProducts } from '../../graphql/queries';
+
+
+var maxImages = 6;
+var imagesPerWindow = 3;
+var moveIncrement = window.innerWidth / imagesPerWindow;
 
 function flushCSS() {
     let element = document.getElementById('imageSet');
@@ -8,51 +15,51 @@ function flushCSS() {
     }
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function resizeCarousel() {
+    moveIncrement = window.innerWidth / imagesPerWindow;
+}
+
 const Carousel = props => {
-    
-    var imagesPerWindow = 3;
-    var moveIncrement = window.innerWidth / imagesPerWindow;
     var waitTime = 4000;
     var transitionTime = '0.75';
     var TRANSITION_OFF = `left 0s`;
     var TRANSITION_ON = `left ${transitionTime}s`;
-    var extraImageHeight = 35;
 
-    var imageUrls = [
-        'img1-blue.jpg',
-        'img2-black.jpg',
-        'img3-trippy.jpg',
-        'img4-lavender.jpg',
-        'img5-pattern.jpg',
-        'img6-nft.jpg'
-    ];
-
-    var imageElements = [];
-    var imageStyle = {
-        width:window.innerWidth / imagesPerWindow, 
-        height:'50rem', 
-        objectFit: 'cover', 
-        objectPosition: '50% 50%',
-        padding: '0 7px 9px 7px'
-    };
-    for (var i = 0; i < imageUrls.length; i++) {
-        imageElements.push(<img src={imageUrls[i]} key={i} style={imageStyle}/>);
-    };
-
-    const [imageSet, setImageSet] = useState(imageElements);
+    const [sidelineSet, setSidelineSet] = useState([]);
+    const [imageSet, setImageSet] = useState([]);
     const [leftCoordinate, setLeftCoordinate] = useState(0);
     const [transitionValue, setTransitionValue] = useState(TRANSITION_ON);
-  
-    useEffect(() => {
-        let interval = null;
 
-        interval = setInterval(() => {
+    function randomizeSet(imageSet) {
+        var randomSet = [];
+        for (var i = 0; i < maxImages; i++) {
+            var randomIndex = getRandomInt(imageSet.length);
+            randomSet.push(imageSet[randomIndex]);
+            imageSet.splice(randomIndex, 1);
+        }
+        return randomSet;
+    }
+
+
+
+    function startCarousel(sidelineSet, activeSet) {
+        var interval = setInterval(() => {
+            // Slide carousel to the left smoothly
             setLeftCoordinate(leftCoordinate => leftCoordinate - moveIncrement);
 
+            // In 1 second's time...
             setTimeout(() => {
-                imageSet.push(imageSet[0]);
-                imageSet.splice(0, 1);
+                // take first photo and move it to the end
+                sidelineSet.push(activeSet.shift());
+                // setSidelineSet(sidelineSet);
+                activeSet.push(sidelineSet.shift());
+                setImageSet(activeSet);
 
+                // immediately move the carousel leftCoordinate back to 0
                 setTransitionValue(TRANSITION_OFF);
                 flushCSS();
 
@@ -60,12 +67,43 @@ const Carousel = props => {
                 flushCSS();
 
                 setTransitionValue(TRANSITION_ON);
+
             }, 1000);
         }, waitTime);
+    }
 
-        return () => clearInterval(interval);
+    async function fetchProductImages() {
+        var imageElements = [];
+        var imageStyle = {
+            width:`calc(100vw / ${imagesPerWindow})`, 
+            height:'50rem', 
+            objectFit: 'cover', 
+            objectPosition: '50% 50%',
+            padding: '0 7px 9px 7px'
+        };
+        const apiData = await API.graphql({ query: listProducts, authMode: 'API_KEY' });
+        var items = apiData.data.listProducts.items;
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            if (item.image != 'undefined' && item.image != "") {
+                imageElements.push(<img src={item.image} key={i} style={imageStyle}/>);
+            }
+        }
 
-    }, [imageSet, leftCoordinate, transitionValue]);
+        var sidelineSet = randomizeSet(imageElements);
+        setSidelineSet(sidelineSet);
+        var activeSet = sidelineSet.splice(0, (imagesPerWindow + 1));
+        console.log(activeSet.length);
+        setImageSet(activeSet);
+
+        startCarousel(sidelineSet, activeSet);
+
+        window.addEventListener("resize", resizeCarousel);
+    }
+  
+    useEffect(() => {
+        fetchProductImages();
+    }, []);
 
     return (
         <div>

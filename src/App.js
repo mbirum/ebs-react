@@ -7,6 +7,7 @@ import Store from './components/shop/Store';
 import Homepage from './components/home/Homepage';
 import SiteHeader from './components/header/SiteHeader';
 import SiteFooter from './components/footer/SiteFooter';
+import ScrollToTop from './components/utility/ScrollToTop';
 
 Amplify.configure(amplifyconfig);
 
@@ -16,10 +17,12 @@ function App() {
 
       <SiteHeader/>
 
-      <Routes>
-        <Route path='/shop' element={<Store/>} />
-        <Route exact path='/' element={<Homepage/>} />
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path='/shop' element={<Store/>} />
+          <Route exact path='/' element={<Homepage/>} />
+        </Routes>
+      </ScrollToTop>
 
       <SiteFooter/>
 

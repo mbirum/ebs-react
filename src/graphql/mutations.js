@@ -1,91 +1,58 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createNote = /* GraphQL */ `
-  mutation CreateNote(
-    $input: CreateNoteInput!
-    $condition: ModelNoteConditionInput
+export const createProduct = /* GraphQL */ `
+  mutation CreateProduct(
+    $input: CreateProductInput!
+    $condition: ModelProductConditionInput
   ) {
-    createNote(input: $input, condition: $condition) {
+    createProduct(input: $input, condition: $condition) {
       id
       name
       description
-      newAttribute
+      price
+      quantity
+      width
+      height
+      image
       createdAt
       updatedAt
     }
   }
 `;
-export const updateNote = /* GraphQL */ `
-  mutation UpdateNote(
-    $input: UpdateNoteInput!
-    $condition: ModelNoteConditionInput
+export const updateProduct = /* GraphQL */ `
+  mutation UpdateProduct(
+    $input: UpdateProductInput!
+    $condition: ModelProductConditionInput
   ) {
-    updateNote(input: $input, condition: $condition) {
+    updateProduct(input: $input, condition: $condition) {
       id
       name
       description
-      newAttribute
+      price
+      quantity
+      width
+      height
+      image
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteNote = /* GraphQL */ `
-  mutation DeleteNote(
-    $input: DeleteNoteInput!
-    $condition: ModelNoteConditionInput
+export const deleteProduct = /* GraphQL */ `
+  mutation DeleteProduct(
+    $input: DeleteProductInput!
+    $condition: ModelProductConditionInput
   ) {
-    deleteNote(input: $input, condition: $condition) {
+    deleteProduct(input: $input, condition: $condition) {
       id
       name
       description
-      newAttribute
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createSticker = /* GraphQL */ `
-  mutation CreateSticker(
-    $input: CreateStickerInput!
-    $condition: ModelStickerConditionInput
-  ) {
-    createSticker(input: $input, condition: $condition) {
-      id
-      name
-      shape
-      color
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateSticker = /* GraphQL */ `
-  mutation UpdateSticker(
-    $input: UpdateStickerInput!
-    $condition: ModelStickerConditionInput
-  ) {
-    updateSticker(input: $input, condition: $condition) {
-      id
-      name
-      shape
-      color
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteSticker = /* GraphQL */ `
-  mutation DeleteSticker(
-    $input: DeleteStickerInput!
-    $condition: ModelStickerConditionInput
-  ) {
-    deleteSticker(input: $input, condition: $condition) {
-      id
-      name
-      shape
-      color
+      price
+      quantity
+      width
+      height
+      image
       createdAt
       updatedAt
     }
