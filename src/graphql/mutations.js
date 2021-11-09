@@ -15,6 +15,7 @@ export const createProduct = /* GraphQL */ `
       width
       height
       image
+      categories
       createdAt
       updatedAt
     }
@@ -34,6 +35,7 @@ export const updateProduct = /* GraphQL */ `
       width
       height
       image
+      categories
       createdAt
       updatedAt
     }
@@ -53,6 +55,7 @@ export const deleteProduct = /* GraphQL */ `
       width
       height
       image
+      categories
       createdAt
       updatedAt
     }

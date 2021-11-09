@@ -1,27 +1,31 @@
 .site-header {
+	position:sticky;
 	background-color: rgba(255,255,255,1);
 	color: #000;
 	display: table;
 	left: 0;
-	min-height: 130px;
-	padding: 0px 40px;
+	min-height: 105px;
+	padding: 0px 40px 0px 30px;
 	position: relative;
-	right: 0;
+	/* right: 0; */
 	top: 0;
 	width: 100%;
 	z-index: 5;
-	padding-top:10px !important;
 	border-bottom: 0px !important;
 }
 
 .site-branding {
 	display:table-cell;
-	padding-left: 50px;
 	vertical-align: middle;
 }
 
 .site-branding img {
-	max-width: 300px;
-	max-height: 300px;
+	max-width: 260px;
+	max-height: 260px;
 }
 
+.sticky-header {
+	position: fixed;
+	top:0;
+	left:0;
+}

@@ -8,14 +8,26 @@ import Homepage from './components/home/Homepage';
 import SiteHeader from './components/header/SiteHeader';
 import SiteFooter from './components/footer/SiteFooter';
 import ScrollToTop from './components/utility/ScrollToTop';
+import ScrollListener from './components/utility/ScrollListener';
 
 Amplify.configure(amplifyconfig);
 
 function App() {
+
   return (
     <BrowserRouter>
 
       <SiteHeader/>
+
+      <ScrollListener 
+        elementId='masthead'
+        className='sticky-header'
+      />
+
+      <ScrollListener 
+        elementId='root'
+        className='sticky-root'
+      />
 
       <ScrollToTop>
         <Routes>

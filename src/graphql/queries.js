@@ -12,6 +12,7 @@ export const getProduct = /* GraphQL */ `
       width
       height
       image
+      categories
       createdAt
       updatedAt
     }
@@ -33,6 +34,7 @@ export const listProducts = /* GraphQL */ `
         width
         height
         image
+        categories
         createdAt
         updatedAt
       }

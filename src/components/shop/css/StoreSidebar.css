@@ -1,0 +1,31 @@
+#storeSidebar {
+    position:sticky;
+    left: 0;
+    top:0px;
+    min-width: 100px;
+    min-height: 100vh;
+    float:left;
+    height:100%;
+    width: 20%;
+    padding-top: 150px;
+    padding-left: 25px;
+    /* background-color: lightgray; */
+}
+
+.sticky-store-sidebar {
+    top: 105px !important;
+}
+
+.sidebar-header {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 100;
+}
+
+.sidebar-item {
+    margin-left: 10px;
+    width: 100%;
+    padding: 15px 0 15px 0;
+    font-size: 12px;
+    font-weight: 200;
+}

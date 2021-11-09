@@ -81,7 +81,7 @@ const Carousel = props => {
             objectPosition: '50% 50%',
             padding: '0 7px 9px 7px'
         };
-        const apiData = await API.graphql({ query: listProducts, authMode: 'API_KEY' });
+        const apiData = await API.graphql({ query: listProducts });
         var items = apiData.data.listProducts.items;
         for (var i = 0; i < items.length; i++) {
             var item = items[i];

@@ -1,6 +1,4 @@
 {
-    "identityPoolName": "ebsreact266adf2e_identitypool_266adf2e",
-    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "ebsrea266adf2e",
     "userPoolName": "ebsreact266adf2e_userpool_266adf2e",
     "autoVerifiedAttributes": [
@@ -36,7 +34,7 @@
     "userpoolClientSetAttributes": false,
     "sharedId": "266adf2e",
     "resourceName": "ebsreact266adf2e",
-    "authSelections": "identityPoolAndUserPool",
+    "authSelections": "userPoolOnly",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -49,7 +47,7 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
+    "useDefault": "manual",
     "triggers": "{}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
@@ -59,5 +57,10 @@
     },
     "breakCircularDependency": true,
     "permissions": [],
-    "dependsOn": []
+    "dependsOn": [],
+    "userPoolGroups": false,
+    "adminQueries": true,
+    "hostedUI": false,
+    "adminQueryGroup": "ebsadmins",
+    "authProviders": []
 }

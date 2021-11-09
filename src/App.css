@@ -9,6 +9,9 @@ body {
 
 :link:focus, :visited:focus {outline: none;}
 
+.sticky-root {
+	margin-top: 105px;
+}
 
 
 /*
@@ -324,17 +327,7 @@ a:focus {
 
 /* Headers */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	color: #1a1c1e;
-	font-family: "Noto Serif", Georgia, serif;
-	font-weight: 700;
-	line-height: 1.38;
-}
+
 
 h1 + h2,
 h1 + h3,

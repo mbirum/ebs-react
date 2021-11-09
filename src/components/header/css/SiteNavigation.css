@@ -9,6 +9,10 @@
     color: rgb(10,10,10);
 }
 
+#site-navigation ul {
+	margin-bottom: 0 !important;
+}
+
 .nav-item {
 	display: inline-block;
 	letter-spacing: 0.1em;
