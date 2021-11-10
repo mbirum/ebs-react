@@ -25,7 +25,7 @@ const StoreSidebar = props => {
 
   return (
     <div id="storeSidebar">
-        <h3 className="sidebar-header">Categories</h3>
+        <h4 className="sidebar-header">Categories</h4>
         <hr/>
         {uniqueCategories}
     </div>

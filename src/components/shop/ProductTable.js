@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductRow from './ProductRow';
+import './css/ProductTable.css';
 
 const ProductTable = props => {
 

@@ -1,0 +1,9 @@
+#site-branding {
+	display:table-cell;
+	vertical-align: middle;
+}
+
+#site-branding img {
+	max-width: 260px;
+	max-height: 260px;
+}

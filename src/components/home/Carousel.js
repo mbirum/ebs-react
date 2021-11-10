@@ -4,7 +4,7 @@ import { API } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
 
 
-var maxImages = 6;
+var maxImages = 9;
 var imagesPerWindow = 3;
 var moveIncrement = window.innerWidth / imagesPerWindow;
 
