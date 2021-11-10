@@ -1,5 +1,5 @@
 #storeSidebar {
-    position:sticky;
+    position:fixed;
     left: 0;
     top:0px;
     min-width: 100px;
@@ -7,8 +7,8 @@
     float:left;
     height:100%;
     width: 20%;
-    padding-top: 110px;
-    padding-left: 28px;
+    padding-top: 130px;
+    padding-left: 30px;
     /* background-color: lightgray; */
 }
 
@@ -25,13 +25,40 @@
 
 .sidebar-item {
     width: 100%;
-    padding: 15px 0 15px 15px;
+    padding: 15px 0 15px 5px;
+    margin-left: 10px;
     font-size: 12px;
     font-weight: 200;
+    transition: background-color 0.2s;
 }
 
 .sidebar-item:hover {
-    /* background-color: rgba(210,210,210); */
-	/* transition: background-color 0.2s; */
+    background-color: rgba(240,240,240);
 	cursor:pointer;
+}
+
+.sidebar-category-clicked {
+    
+}
+
+.sidebar-category-clicked:before {
+    content: "\25CE";
+    display: inline-block;
+    position:relative;
+    left: -25px;
+    margin-right: -12px;
+    font-family: "Genericons";
+    font-size: 12px;
+    font-weight: bolder !important;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-align: center;
+    text-decoration: inherit;
+    text-transform: none;
+    vertical-align: middle;
+    -moz-transition: color .1s ease-in 0;
+    -webkit-transition: color .1s ease-in 0;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }

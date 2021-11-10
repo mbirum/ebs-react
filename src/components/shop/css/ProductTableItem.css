@@ -1,7 +1,7 @@
 
 .ProductTableItem {
     width:calc(90% / 3);
-    padding: 5px 15px 5px 15px;
+    padding: 5px 10px 5px 10px;
     text-align: center;
 }
 
@@ -9,7 +9,7 @@
     display:table-cell;
     padding: 25px 25px 25px 25px;
     width: 100%;
-    height: 37rem;
+    height: 25vw;
     object-fit: cover;
     object-position: 50% 50%;
 }

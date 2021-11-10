@@ -4,24 +4,26 @@ import './css/StoreSidebar.css';
 const StoreSidebar = props => {
   const [uniqueCategories, setUniqueCategories] = useState([]);
 
-  useEffect(() => {
-    var categoryStrings = [];
-    var categories = [];
-    for (var i = 0; i < props.products.length; i++) {
-      var productCategories = props.products[i].categories;
-      if (productCategories && productCategories.length > 0) {
-        productCategories.split(',').forEach(function(pc) {
-          if (!categoryStrings.includes(pc)) {
-            categoryStrings.push(pc);
-            categories.push(<div className="sidebar-item">{pc}</div>);
-          }
-        });
-      }
+  function onCategoryClick(e) {
+    var category = e.target.innerHTML;
+    
+    var elements = document.getElementsByClassName('sidebar-category');
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].classList.remove('sidebar-category-clicked');
+    };
+    e.target.classList.add('sidebar-category-clicked');
+    props.onUpdate(category);
+  }
 
-      
+  useEffect(() => {
+    var categories = [];
+    categories.push(<div key={i} className="sidebar-item sidebar-category" onClick={onCategoryClick}>All</div>);
+    for (var i = 0; i < props.categoryStrings.length; i++) {
+      var cat = props.categoryStrings[i];
+      categories.push(<div key={i} className="sidebar-item sidebar-category" onClick={onCategoryClick}>{cat}</div>);
     }
     setUniqueCategories(categories);
-  }, [props.products]);
+  }, [props.categoryStrings]);
 
   return (
     <div id="storeSidebar">

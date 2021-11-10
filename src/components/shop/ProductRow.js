@@ -13,6 +13,9 @@ const ProductRow = props => {
       />
     );
   };
+  while (rowItems.length < 3) {
+    rowItems.push(<td></td>);
+  }
   return (
     <tr>
       {rowItems}

@@ -32,8 +32,6 @@
 }
 
 #site-navigation ul ul li:hover {
-    /* background-color: rgba(210,210,210);
-	transition: background-color 0.2s; */
 	cursor:pointer;
 }
 
