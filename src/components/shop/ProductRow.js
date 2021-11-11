@@ -14,7 +14,7 @@ const ProductRow = props => {
     );
   };
   while (rowItems.length < 3) {
-    rowItems.push(<td></td>);
+    rowItems.push(<td className="ProductTableItem"></td>);
   }
   return (
     <tr>

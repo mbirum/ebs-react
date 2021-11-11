@@ -3,16 +3,29 @@ import './css/StoreSidebar.css';
 
 const StoreSidebar = props => {
   const [uniqueCategories, setUniqueCategories] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState('All');
 
   function onCategoryClick(e) {
+    clickCategoryItem(e.target);
     var category = e.target.innerHTML;
-    
+    props.onUpdate(category);
+  }
+
+  function clickCategoryItem(target) {
     var elements = document.getElementsByClassName('sidebar-category');
     for (var i = 0; i < elements.length; i++) {
       elements[i].classList.remove('sidebar-category-clicked');
     };
-    e.target.classList.add('sidebar-category-clicked');
-    props.onUpdate(category);
+    target.classList.add('sidebar-category-clicked');
+  }
+
+  function evaluateClickedCategoryItems() {
+    var elements = document.getElementsByClassName('sidebar-category');
+    for (var i = 0; i < elements.length; i++) {
+      if (elements[i].innerHTML == props.currentCategory) {
+        clickCategoryItem(elements[i]);
+      }
+    };
   }
 
   useEffect(() => {
@@ -23,7 +36,12 @@ const StoreSidebar = props => {
       categories.push(<div key={i} className="sidebar-item sidebar-category" onClick={onCategoryClick}>{cat}</div>);
     }
     setUniqueCategories(categories);
+
   }, [props.categoryStrings]);
+
+  useEffect(() => {
+    evaluateClickedCategoryItems();
+  }, [uniqueCategories, props.currentCategory]);
 
   return (
     <div id="storeSidebar">

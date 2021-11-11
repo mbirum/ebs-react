@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './css/Store.css';
 import ProductTable from './ProductTable';
 import { API } from 'aws-amplify';
@@ -7,11 +7,19 @@ import { listProducts } from '../../graphql/queries';
 import StoreBreadcrumb from './StoreBreadcrumb';
 import StoreSidebar from './StoreSidebar';
 
-function Store() {
+const Store = props => {
+  const location = useLocation();
+  const { initialCategory } = location.state;
+
   const [allProducts, setAllProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [categoryStrings, setCategoryStrings] = useState([]);
-  const [currentCategory, setCurrentCategory] = useState('all');
+  const [currentCategory, setCurrentCategory] = useState('All');
+
+  function fetchInitialCategory() {
+    // alert(initialCategory);
+    
+  }
 
   function getCategoryStrings(items) {
     var categoryStrings = [];
@@ -57,13 +65,30 @@ function Store() {
     
   }, [currentCategory]);
 
+  useEffect(() => {
+    setCurrentCategory(initialCategory);
+  }, [initialCategory]);
+
+
   async function fetchProducts() {
     const apiData = await API.graphql({ query: listProducts });
     const items = apiData.data.listProducts.items;
-    setProducts(items);
+
     setAllProducts(items);
     getCategoryStrings(items);
+
+    if (initialCategory == null || initialCategory.length == 0 || initialCategory == 'All') {
+      setProducts(items);
+      setCurrentCategory('All');
+    }
+    else {
+      var newProductSet = filterProductsByCategory(items, initialCategory);
+      setProducts(newProductSet);
+      setCurrentCategory(initialCategory);
+    }
+
   }
+
 
   return (
     <div id="store">
@@ -73,6 +98,7 @@ function Store() {
       <StoreSidebar
         categoryStrings={categoryStrings}
         onUpdate={setCurrentCategory}
+        currentCategory={currentCategory}
       />
 
       <ProductTable items={products}/>

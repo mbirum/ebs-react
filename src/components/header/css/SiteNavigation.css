@@ -31,7 +31,15 @@
 	text-shadow: none;
 }
 
-#site-navigation ul ul li:hover {
+.nav-item-link {
+	transition: opacity 0.3s;
+}
+
+.nav-item-link:hover {
+	opacity: 0.6;
+}
+
+.sub-menu:hover {
 	cursor:pointer;
 }
 

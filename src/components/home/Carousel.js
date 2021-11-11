@@ -93,7 +93,6 @@ const Carousel = props => {
         var sidelineSet = randomizeSet(imageElements);
         setSidelineSet(sidelineSet);
         var activeSet = sidelineSet.splice(0, (imagesPerWindow + 1));
-        console.log(activeSet.length);
         setImageSet(activeSet);
 
         startCarousel(sidelineSet, activeSet);
