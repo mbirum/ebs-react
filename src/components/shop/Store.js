@@ -93,7 +93,9 @@ const Store = props => {
   return (
     <div id="store">
       
-      <StoreBreadcrumb/>
+      <StoreBreadcrumb 
+        currentCategory={currentCategory}
+      />
 
       <StoreSidebar
         categoryStrings={categoryStrings}
