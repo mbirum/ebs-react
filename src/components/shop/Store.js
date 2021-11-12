@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Routes, Route, Outlet } from 'react-router-dom';
 import './css/Store.css';
 import ProductTable from './ProductTable';
 import { API } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
 import StoreBreadcrumb from './StoreBreadcrumb';
 import StoreSidebar from './StoreSidebar';
+import ProductPage from './ProductPage';
 
 const Store = props => {
   const location = useLocation();
@@ -92,7 +93,7 @@ const Store = props => {
 
   return (
     <div id="store">
-      
+
       <StoreBreadcrumb 
         currentCategory={currentCategory}
       />
@@ -104,6 +105,10 @@ const Store = props => {
       />
 
       <ProductTable items={products}/>
+
+      {/* <Routes>
+        <Route path='/shop/Winter-Greens' element={<ProductPage id="2" />} />
+      </Routes> */}
 
     </div>
   );
