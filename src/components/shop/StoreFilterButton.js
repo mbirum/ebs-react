@@ -41,7 +41,7 @@ const StoreFilterButton = props => {
 
     return (
     <div id="storeFilterButton" className="ebs-button" onClick={toggleStoreFilter}>
-        <span id="storeFilterButtonContent">Filter</span>
+        <span id="storeFilterButtonContent">Categories</span>
     </div>
     );
 

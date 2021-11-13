@@ -6,7 +6,7 @@ const StoreBreadcrumb = props => {
 
   return (
     <div id="storeBreadcrumb">
-        / <span className="inactive-breadcrumb">shop</span> / <span className="active-breadcrumb">{props.currentCategory}</span> <StoreFilterButton />
+        / <span className="inactive-breadcrumb">shop</span> / <span className="active-breadcrumb">{props.currentCategory}</span> 
     </div>
   );
 

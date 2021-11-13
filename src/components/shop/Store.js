@@ -97,13 +97,13 @@ const Store = props => {
         currentCategory={currentCategory}
       />
 
+      <StoreFilterButton />
+
       <StoreSidebar
         categoryStrings={categoryStrings}
         onUpdate={setCurrentCategory}
         currentCategory={currentCategory}
       />
-
-      {/* <StoreFilterButton /> */}
 
       <ProductTable items={products}/>
 

@@ -6,7 +6,17 @@ const StoreSidebar = props => {
   const [uniqueCategories, setUniqueCategories] = useState([]);
   const [currentCategory, setCurrentCategory] = useState('All');
 
+  function hideSidebarIfFilterButton() {
+    var filterButton = document.getElementById('storeFilterButton');
+    if (filterButton.classList.contains('filter-button-clicked')) {
+      var sidebar = document.getElementById('storeSidebar');
+      sidebar.classList.remove('force-block-display');
+      filterButton.classList.remove('filter-button-clicked');
+    }
+  }
+
   function onCategoryClick(e) {
+    hideSidebarIfFilterButton();
     clickCategoryItem(e.target);
     var category = e.target.innerHTML;
     props.onUpdate(category);
@@ -48,7 +58,9 @@ const StoreSidebar = props => {
     <div id="storeSidebar">
         <h4 className="sidebar-header">Categories</h4>
         <hr/>
-        {uniqueCategories}
+        <div id="sidebarItemWrapper">
+          {uniqueCategories}
+        </div>
     </div>
   );
 }

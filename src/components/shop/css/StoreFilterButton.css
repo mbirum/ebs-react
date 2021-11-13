@@ -1,10 +1,13 @@
 #storeFilterButton {
     display: none;
-    float:right;
+    /* float:right; */
     position:relative;
-    top: -12px;
-    left: -30px;
-    margin-left:-95px;
+    top: 5px;
+    /* left: -30px; */
+    /* margin-left:-95px; */
+    width:30%;
+    min-width:135px;
+    margin: auto;
     background-color: white;
     text-align: center;
     font-weight: 100;
@@ -14,6 +17,7 @@
     line-height: normal !important;
     padding: 10px 20px;
     user-select: none;
+    z-index: 999;
 }
 
 #storeFilterButtonContent::before {
@@ -23,10 +27,10 @@
     content: '\2637';
 }
 
-#storeFilterButton:hover,
 .filter-button-clicked {
 	background-color: black !important;
 	color: white;
+    float: right;
 }
 
 #storeFilterButton:hover {

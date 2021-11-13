@@ -31,10 +31,6 @@
 	text-shadow: none;
 }
 
-.nav-sub-item:hover {
-	background-image: linear-gradient(to right, white, rgba(237,213,209,.2) , white);
-}
-
 .nav-item-link {
 	transition: opacity 0.3s;
 }

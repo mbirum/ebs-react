@@ -10,6 +10,7 @@
     padding-top: 130px;
     padding-left: 30px;
     background-color: white;
+    /* z-index: 900; */
     /* background-color: lightgray; */
 }
 
@@ -34,8 +35,8 @@
     transition: background-image 0.3s ease-in-out;
 }
 
-.sidebar-item:hover {
-    background-image: linear-gradient(to right, white, rgba(237,213,209,.2) , white);
+#sidebarItemWrapper:hover {
+    /* background-image: linear-gradient(to right, white, rgba(237,213,209,.2) , white); */
 	cursor:pointer;
 }
 
