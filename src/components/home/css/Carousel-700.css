@@ -1,3 +1,9 @@
 @media screen and (max-width: 700px) {
+    .carousel-mobile {
+        display:block;
+    }
 
+    .carousel-large {
+        display:none;
+    }
 }

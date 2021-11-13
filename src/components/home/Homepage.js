@@ -12,7 +12,15 @@ function Homepage() {
 
       <ShopButtonSection/>
 
-      <Carousel/>
+      <Carousel
+        imagesPerWindow={3}
+        carouselClass='carousel-large'
+      />
+
+      <Carousel
+        imagesPerWindow={1}
+        carouselClass='carousel-mobile'
+      />
 
     </div>
   );

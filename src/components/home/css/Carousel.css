@@ -14,3 +14,7 @@
 	transition: left 0.75s;
 	
 }
+
+.carousel-mobile {
+	display:none;
+}

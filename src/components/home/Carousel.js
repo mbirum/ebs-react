@@ -1,31 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import './css/Carousel.css';
 import { API } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
+import './css/Carousel.css';
+import './css/Carousel-700.css';
 
-
-var maxImages = 9;
-var imagesPerWindow = 3;
-var moveIncrement = window.innerWidth / imagesPerWindow;
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-
-function resizeCarousel() {
-    moveIncrement = window.innerWidth / imagesPerWindow;
-}
 
 const Carousel = props => {
     var waitTime = 4000;
     var transitionTime = '0.75';
     var TRANSITION_OFF = `left 0s`;
     var TRANSITION_ON = `left ${transitionTime}s`;
+    var maxImages = 9;
+    var moveIncrement = window.innerWidth / props.imagesPerWindow;
 
     const [imageSet, setImageSet] = useState([]);
     const [leftCoordinate, setLeftCoordinate] = useState(0);
     const [transitionValue, setTransitionValue] = useState(TRANSITION_ON);
     const [offsetHeight, setOffsetHeight] = useState(0);
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    
+    function resizeCarousel() {
+        moveIncrement = window.innerWidth / props.imagesPerWindow;
+    }    
 
     function flushCSS() {
         let element = document.getElementById('imageSet');
@@ -77,7 +76,7 @@ const Carousel = props => {
     async function fetchProductImages() {
         var imageElements = [];
         var imageStyle = {
-            width:`calc(100vw / ${imagesPerWindow})`, 
+            width:`calc(100vw / ${props.imagesPerWindow})`, 
             height:'50rem', 
             objectFit: 'cover', 
             objectPosition: '50% 50%',
@@ -93,7 +92,7 @@ const Carousel = props => {
         }
 
         var sidelineSet = randomizeSet(imageElements);
-        var activeSet = sidelineSet.splice(0, (imagesPerWindow + 1));
+        var activeSet = sidelineSet.splice(0, (props.imagesPerWindow + 1));
         setImageSet(activeSet);
 
         var carouselInterval = startCarousel(sidelineSet, activeSet);
@@ -113,7 +112,7 @@ const Carousel = props => {
     return (
         <div>
             <span hidden>{offsetHeight}</span>
-            <div id="carousel" style={{marginBottom: '2%', minHeight: '50rem'}}>
+            <div id="carousel" className={props.carouselClass} style={{marginBottom: '2%', minHeight: '50rem'}}>
                 <div id="imageSet" style={{left: leftCoordinate, transition: transitionValue}}>
                     {imageSet}
                 </div>
