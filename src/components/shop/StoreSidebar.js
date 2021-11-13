@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './css/StoreSidebar.css';
+import './css/StoreSidebar-700.css';
 
 const StoreSidebar = props => {
   const [uniqueCategories, setUniqueCategories] = useState([]);

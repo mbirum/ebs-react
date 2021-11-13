@@ -31,6 +31,10 @@
 	text-shadow: none;
 }
 
+.nav-sub-item:hover {
+	background-image: linear-gradient(to right, white, rgba(237,213,209,.2) , white);
+}
+
 .nav-item-link {
 	transition: opacity 0.3s;
 }
@@ -53,8 +57,9 @@
 	left: -9999em;
 	margin-top: 10px;
 	position: absolute;
-	width: 220px;
+	width: 290px;
 	z-index: 10;
+	padding-left: 0;
 }
 
 #site-navigation li.nav-item-has-children > a:after {

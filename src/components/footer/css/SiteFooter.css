@@ -1,8 +1,12 @@
 #site-footer {
-	margin-top:5%;
+	/* margin: auto; */
+	width:100%;
+	margin-top:10%;
 	position:relative;
-	left: calc(46%);
+	/* left: calc(46%); */
 	top: -35px;
+	display: block;
+	text-align: center;
 	color: #616a74;
 	z-index: 1;
 }

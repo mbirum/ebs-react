@@ -19,12 +19,13 @@ html {
 }
 
 body {
-	overflow-x:hidden !important;
+	
 	margin: 0;
 }
 
 #root {
-	overflow-x: hidden;
+	overflow-x: hidden !important;
+	position: relative;
 }
 
 .sticky-root {

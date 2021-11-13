@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Routes, Route, Outlet } from 'react-router-dom';
 import './css/Store.css';
+import './css/Store-700.css';
 import ProductTable from './ProductTable';
 import { API } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';

@@ -11,12 +11,12 @@ const SiteNavigation = props => {
                     <li className="nav-item nav-item-has-children" aria-haspopup="true">
                         <Link to="/shop" state={{ initialCategory: "All" }} className="nav-item-link">Shop</Link>
                         <ul className="sub-menu">
-                            <li className="nav-sub-item"><Link to="/shop" state={{ initialCategory: "All" }}>All Products</Link></li>
-                            <li className="nav-sub-item"><Link to="/shop" state={{ initialCategory: "Prints" }}>Prints</Link></li>
-                            <li className="nav-sub-item"><Link to="/shop" state={{ initialCategory: "Ornaments" }}>Ornaments</Link></li>
-                            <li className="nav-sub-item"><Link to="/shop" state={{ initialCategory: "Wildflowers" }}>Wildflowers</Link></li>
-                            <li className="nav-sub-item"><Link to="/shop" state={{ initialCategory: "Inspiration" }}>Inspiration</Link></li>
-                            <li className="nav-sub-item"><Link to="/shop" state={{ initialCategory: "Small Things" }}>Small Things</Link></li>
+                        <Link to="/shop" state={{ initialCategory: "All" }}><li className="nav-sub-item">All Products</li></Link>
+                        <Link to="/shop" state={{ initialCategory: "Prints" }}><li className="nav-sub-item">Prints</li></Link>
+                        <Link to="/shop" state={{ initialCategory: "Ornaments" }}><li className="nav-sub-item">Ornaments</li></Link>
+                        <Link to="/shop" state={{ initialCategory: "Wildflowers" }}><li className="nav-sub-item">Wildflowers</li></Link>
+                        <Link to="/shop" state={{ initialCategory: "Inspiration" }}><li className="nav-sub-item">Inspiration</li></Link>
+                        <Link to="/shop" state={{ initialCategory: "Small Things" }}><li className="nav-sub-item">Small Things</li></Link>
                         </ul>
                     </li>
                     <li className="nav-item menu-item-type-post_type menu-item-object-page">
