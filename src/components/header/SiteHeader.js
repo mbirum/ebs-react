@@ -5,7 +5,7 @@ import SiteNavigation from './SiteNavigation';
 
 const SiteHeader = props => {
     return (
-        <header id="masthead" className="site-header" role="banner">
+        <header id="siteHeader" className="site-header" role="banner">
             <SiteBranding/>
             <SiteNavigation/>
         </header>

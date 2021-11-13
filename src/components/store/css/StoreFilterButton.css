@@ -31,6 +31,8 @@
 	background-color: black !important;
 	color: white;
     float: right !important;
+    position:relative !important;
+    top:125px !important;
 }
 
 #storeFilterButton:hover {

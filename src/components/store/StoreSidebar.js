@@ -10,9 +10,12 @@ const StoreSidebar = props => {
     if (filterButton.classList.contains('filter-button-clicked')) {
       var sidebar = document.getElementById('storeSidebar');
       var body = document.getElementsByTagName('body')[0];
+      var siteHeader = document.getElementById('siteHeader');
+
       sidebar.classList.remove('force-block-display');
       filterButton.classList.remove('filter-button-clicked');
       body.classList.remove('prevent-scroll');
+      siteHeader.classList.remove('force-hidden-display');
     }
   }
 

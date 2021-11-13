@@ -23,6 +23,7 @@ body {
 
 .prevent-scroll {
 	overflow-y: hidden !important;
+	position:relative;
 }
 
 #root {
@@ -82,6 +83,10 @@ img {
 
 .force-block-display {
 	display: block !important;
+}
+
+.force-hidden-display {
+	display: none !important;
 }
 
 .ebs-header {

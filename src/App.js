@@ -21,7 +21,7 @@ function App() {
       <SiteHeader/>
 
       <ScrollListener 
-        elementId='masthead'
+        elementId='siteHeader'
         className='sticky-header'
       />
 

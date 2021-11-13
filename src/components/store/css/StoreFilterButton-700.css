@@ -2,5 +2,6 @@
     #storeFilterButton {
         display: block;
         float:left;
+        /* position:relative; */
     }
 }
