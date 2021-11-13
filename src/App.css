@@ -77,6 +77,8 @@ img {
 	display: none;
 }
 
-
+.force-block-display {
+	display: block !important;
+}
 
 

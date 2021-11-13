@@ -8,6 +8,7 @@ import { listProducts } from '../../graphql/queries';
 import StoreBreadcrumb from './StoreBreadcrumb';
 import StoreSidebar from './StoreSidebar';
 import ProductPage from './ProductPage';
+import StoreFilterButton from './StoreFilterButton';
 
 const Store = props => {
   const location = useLocation();
@@ -18,10 +19,7 @@ const Store = props => {
   const [categoryStrings, setCategoryStrings] = useState([]);
   const [currentCategory, setCurrentCategory] = useState('All');
 
-  function fetchInitialCategory() {
-    // alert(initialCategory);
-    
-  }
+
 
   function getCategoryStrings(items) {
     var categoryStrings = [];
@@ -104,6 +102,8 @@ const Store = props => {
         onUpdate={setCurrentCategory}
         currentCategory={currentCategory}
       />
+
+      {/* <StoreFilterButton /> */}
 
       <ProductTable items={products}/>
 

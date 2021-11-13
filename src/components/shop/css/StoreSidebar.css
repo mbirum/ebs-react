@@ -9,6 +9,7 @@
     width: 20%;
     padding-top: 130px;
     padding-left: 30px;
+    background-color: white;
     /* background-color: lightgray; */
 }
 
@@ -24,9 +25,9 @@
 }
 
 .sidebar-item {
-    width: 100%;
+    width: 98%;
     padding: 15px 0 15px 5px;
-    margin-left: 10px;
+    margin-left: 2%;
     font-size: 12px;
     font-weight: 200;
     -webkit-transition: background-image 0.3s ease-in-out;
