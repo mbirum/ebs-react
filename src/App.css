@@ -23,13 +23,12 @@ body {
 
 .prevent-scroll {
 	overflow-y: hidden !important;
-	position:relative;
+	position:relative !important;
 }
 
 #root {
 	overflow-x: hidden !important;
-	overflow-y: hidden !important;
-	position: relative;
+	position: relative !important;
 }
 
 .sticky-root {

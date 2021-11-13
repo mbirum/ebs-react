@@ -80,7 +80,7 @@ const Store = props => {
     setAllProducts(items);
     getCategoryStrings(items);
 
-    if (initialCategory === null || initialCategory.length === 0 || initialCategory === 'All') {
+    if (initialCategory === null || initialCategory === undefined || initialCategory.length === 0 || initialCategory === 'All') {
       setProducts(items);
       setCurrentCategory('All');
     }

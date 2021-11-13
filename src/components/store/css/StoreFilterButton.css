@@ -1,10 +1,8 @@
 #storeFilterButton {
     display: none;
     /* float:right; */
-    position:relative;
-    top: 5px;
-    /* left: -30px; */
-    /* margin-left:-95px; */
+    position:absolute;
+    top: 115px;
     width:30%;
     min-width:135px;
     margin: auto;
@@ -18,6 +16,7 @@
     padding: 10px 20px;
     user-select: none;
     z-index: 999;
+    border: 1px solid black;
 }
 
 #storeFilterButtonContent::before {
@@ -32,7 +31,7 @@
 	color: white;
     float: right !important;
     position:relative !important;
-    top:125px !important;
+    top:115px !important;
 }
 
 #storeFilterButton:hover {
