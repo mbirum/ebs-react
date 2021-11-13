@@ -1,0 +1,15 @@
+@media screen and (max-width: 700px) {
+    .product-page-column {
+        display: block;
+        width: 100%;
+        clear:both;
+        text-align: center;
+        margin:auto;
+    }
+
+    .product-page-image {
+        width: 75%;
+        margin:auto;
+        float:none;
+    }
+}

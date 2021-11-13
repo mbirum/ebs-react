@@ -81,4 +81,14 @@ img {
 	display: block !important;
 }
 
+.ebs-header {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 100;
+    font-size: 1.3em;
+}
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}

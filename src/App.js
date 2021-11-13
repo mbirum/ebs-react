@@ -3,13 +3,13 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Amplify from '@aws-amplify/core';
 import amplifyconfig from './amplify-config.js';
-import Store from './components/shop/Store';
+import Store from './components/store/Store';
 import Homepage from './components/home/Homepage';
 import SiteHeader from './components/header/SiteHeader';
 import SiteFooter from './components/footer/SiteFooter';
 import ScrollToTop from './components/utility/ScrollToTop';
 import ScrollListener from './components/utility/ScrollListener';
-import ProductPage from './components/shop/ProductPage';
+import ProductPage from './components/store/ProductPage';
 
 Amplify.configure(amplifyconfig);
 

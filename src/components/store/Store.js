@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import './css/Store.css';
 import './css/Store-700.css';
 import ProductTable from './ProductTable';
@@ -92,13 +92,19 @@ const Store = props => {
 
   }
 
+  function returnToShop() {
+    setCurrentCategory('All');
+  }
+
 
   return (
     
     <div id="store">
 
       <StoreBreadcrumb 
-        inactiveCrumbs={['shop']}
+        inactiveCrumbs={[
+          <span onClick={returnToShop}>shop</span>, 
+        ]}
         activeCrumb={currentCategory}
       />
 

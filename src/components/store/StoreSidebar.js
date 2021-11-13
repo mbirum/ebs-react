@@ -61,7 +61,7 @@ const StoreSidebar = props => {
 
   return (
     <div id="storeSidebar">
-        <h4 className="sidebar-header">Categories</h4>
+        <h4 className="ebs-header">Categories</h4>
         <hr/>
         <div id="sidebarItemWrapper">
           {uniqueCategories}

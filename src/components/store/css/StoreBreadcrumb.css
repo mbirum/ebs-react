@@ -19,15 +19,23 @@
 }
 
 .inactive-breadcrumb::before {
-    content: '/ ';
+    content: '/ \00a0';
     color:black;
 }
 
 .inactive-breadcrumb::after {
-    content: ' /';
+    content: ' \00a0';
     color:black;
 }
 
 .active-breadcrumb::before {
-    content: ' ';
+    content: '/ \00a0';
+}
+
+.crumb:hover {
+    color: black;
+}
+
+.inactive-breadcrumb:hover {
+    cursor: pointer;
 }
