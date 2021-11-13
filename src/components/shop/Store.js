@@ -10,7 +10,7 @@ import ProductPage from './ProductPage';
 
 const Store = props => {
   const location = useLocation();
-  const { initialCategory } = location.state;
+  const { initialCategory } = (location.state) ? location.state : 'All';
 
   const [allProducts, setAllProducts] = useState([]);
   const [products, setProducts] = useState([]);
