@@ -7,7 +7,7 @@ const ScrollListener = (props) => {
     const controller = new AbortController();
     window.addEventListener('scroll', () => {
 
-      if (window.scrollY >= yThreshold && window.location.pathname == '/') {
+      if (window.scrollY >= yThreshold && window.location.pathname === '/') {
         document.getElementById(props.elementId).classList.add(props.className);
       }
       else if (window.scrollY <= 1) {
@@ -16,7 +16,7 @@ const ScrollListener = (props) => {
     }, { signal: controller.signal });
 
     return () => controller.abort();
-  }, []);
+  }, [props.className, props.elementId]);
 
   return (
     <></>

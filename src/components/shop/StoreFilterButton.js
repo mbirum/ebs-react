@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './css/StoreFilterButton.css';
 import './css/StoreFilterButton-700.css';
 

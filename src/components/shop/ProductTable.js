@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ProductRow from './ProductRow';
 import './css/ProductTable.css';
 import './css/ProductTable-700.css';
@@ -10,11 +10,8 @@ const ProductTable = props => {
   var currentRowItems = [];
   for (var i = 0; i < props.items.length; i++) {
     currentRowItems.push(props.items[i]);
-    if (currentRowItems.length == productsPerRow) {
-      var newRowItems = [];
-      currentRowItems.forEach((rowItem)=> {
-        newRowItems.push(rowItem);
-      });
+    if (currentRowItems.length === productsPerRow) {
+      var newRowItems = currentRowItems.slice();
       tableRows.push(
         <ProductRow
           key={i}
@@ -35,7 +32,9 @@ const ProductTable = props => {
 
   return (
     <table className="ProductTable">
-      {tableRows}
+      <tbody>
+        {tableRows}
+      </tbody>
     </table>
   );
 }

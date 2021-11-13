@@ -4,7 +4,6 @@ import './css/StoreSidebar-700.css';
 
 const StoreSidebar = props => {
   const [uniqueCategories, setUniqueCategories] = useState([]);
-  const [currentCategory, setCurrentCategory] = useState('All');
 
   function hideSidebarIfFilterButton() {
     var filterButton = document.getElementById('storeFilterButton');
@@ -33,7 +32,7 @@ const StoreSidebar = props => {
   function evaluateClickedCategoryItems() {
     var elements = document.getElementsByClassName('sidebar-category');
     for (var i = 0; i < elements.length; i++) {
-      if (elements[i].innerHTML == props.currentCategory) {
+      if (elements[i].innerHTML === props.currentCategory) {
         clickCategoryItem(elements[i]);
       }
     };
@@ -41,17 +40,23 @@ const StoreSidebar = props => {
 
   useEffect(() => {
     var categories = [];
-    categories.push(<div key={i} className="sidebar-item sidebar-category" onClick={onCategoryClick}>All</div>);
+    var keyIndex = 0;
+    categories.push(<div key={keyIndex} className="sidebar-item sidebar-category" onClick={onCategoryClick}>All</div>);
+    keyIndex = keyIndex + 1;
     for (var i = 0; i < props.categoryStrings.length; i++) {
       var cat = props.categoryStrings[i];
-      categories.push(<div key={i} className="sidebar-item sidebar-category" onClick={onCategoryClick}>{cat}</div>);
+      categories.push(<div key={keyIndex} className="sidebar-item sidebar-category" onClick={onCategoryClick}>{cat}</div>);
+      keyIndex = keyIndex + 1;
     }
     setUniqueCategories(categories);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.categoryStrings]);
 
   useEffect(() => {
     evaluateClickedCategoryItems();
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uniqueCategories, props.currentCategory]);
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ProductTableItem from './ProductTableItem';
 import './css/ProductRow.css';
 
@@ -13,8 +13,10 @@ const ProductRow = props => {
       />
     );
   };
+  var tempIndex = props.items.length;
   while (rowItems.length < 3) {
-    rowItems.push(<td className="ProductTableItem"></td>);
+    rowItems.push(<td key={tempIndex} className="ProductTableItem"></td>);
+    tempIndex = tempIndex + 1;
   }
   return (
     <tr>

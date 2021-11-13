@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Routes, Route, Outlet } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './css/Store.css';
 import './css/Store-700.css';
 import ProductTable from './ProductTable';
@@ -7,7 +7,6 @@ import { API } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
 import StoreBreadcrumb from './StoreBreadcrumb';
 import StoreSidebar from './StoreSidebar';
-import ProductPage from './ProductPage';
 import StoreFilterButton from './StoreFilterButton';
 
 const Store = props => {
@@ -23,14 +22,12 @@ const Store = props => {
 
   function getCategoryStrings(items) {
     var categoryStrings = [];
-    var k = 0;
     for (var i = 0; i < items.length; i++) {
       var productCategories = items[i].categories;
       if (productCategories && productCategories.length > 0) {
         productCategories.split(',').forEach(function(pc) {
           if (!categoryStrings.includes(pc)) {
             categoryStrings.push(pc);
-            k = k + 1;
           }
         });
       } 
@@ -43,6 +40,7 @@ const Store = props => {
     products.forEach(function(product) {
       if (product.categories != null && product.categories.length > 0) {
         if (product.categories.includes(category)) {
+          product.currentCategory = category;
           productsByCategory.push(product);
         }
       }
@@ -52,10 +50,12 @@ const Store = props => {
 
   useEffect(() => {
     fetchProducts();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    if (currentCategory == 'All') {
+    if (currentCategory === 'All') {
       setProducts(allProducts);
     }
     else {
@@ -63,10 +63,13 @@ const Store = props => {
       setProducts(newProductSet);
     }
     
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCategory]);
 
   useEffect(() => {
     setCurrentCategory(initialCategory);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialCategory]);
 
 
@@ -77,7 +80,7 @@ const Store = props => {
     setAllProducts(items);
     getCategoryStrings(items);
 
-    if (initialCategory == null || initialCategory.length == 0 || initialCategory == 'All') {
+    if (initialCategory === null || initialCategory.length === 0 || initialCategory === 'All') {
       setProducts(items);
       setCurrentCategory('All');
     }
@@ -91,10 +94,12 @@ const Store = props => {
 
 
   return (
+    
     <div id="store">
 
       <StoreBreadcrumb 
-        currentCategory={currentCategory}
+        inactiveCrumbs={['shop']}
+        activeCrumb={currentCategory}
       />
 
       <StoreFilterButton />
@@ -107,11 +112,9 @@ const Store = props => {
 
       <ProductTable items={products}/>
 
-      {/* <Routes>
-        <Route path='/shop/Winter-Greens' element={<ProductPage id="2" />} />
-      </Routes> */}
 
     </div>
+    
   );
 }
 

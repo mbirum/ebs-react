@@ -17,3 +17,17 @@
 .inactive-breadcrumb {
     color: grey;
 }
+
+.inactive-breadcrumb::before {
+    content: '/ ';
+    color:black;
+}
+
+.inactive-breadcrumb::after {
+    content: ' /';
+    color:black;
+}
+
+.active-breadcrumb::before {
+    content: ' ';
+}

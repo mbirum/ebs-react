@@ -8,13 +8,6 @@ var maxImages = 9;
 var imagesPerWindow = 3;
 var moveIncrement = window.innerWidth / imagesPerWindow;
 
-function flushCSS() {
-    let element = document.getElementById('imageSet');
-    if (element) {
-        let offsetHeight = document.getElementById('imageSet').offsetHeight;
-    }
-}
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
@@ -29,10 +22,18 @@ const Carousel = props => {
     var TRANSITION_OFF = `left 0s`;
     var TRANSITION_ON = `left ${transitionTime}s`;
 
-    const [sidelineSet, setSidelineSet] = useState([]);
     const [imageSet, setImageSet] = useState([]);
     const [leftCoordinate, setLeftCoordinate] = useState(0);
     const [transitionValue, setTransitionValue] = useState(TRANSITION_ON);
+    const [offsetHeight, setOffsetHeight] = useState(0);
+
+    function flushCSS() {
+        let element = document.getElementById('imageSet');
+        if (element) {
+            let offsetHeight = document.getElementById('imageSet').offsetHeight;
+            setOffsetHeight(offsetHeight);
+        }
+    }
 
     function randomizeSet(imageSet) {
         var randomSet = [];
@@ -53,9 +54,9 @@ const Carousel = props => {
 
             // In 1 second's time...
             setTimeout(() => {
+
                 // take first photo and move it to the end
                 sidelineSet.push(activeSet.shift());
-                // setSidelineSet(sidelineSet);
                 activeSet.push(sidelineSet.shift());
                 setImageSet(activeSet);
 
@@ -70,6 +71,7 @@ const Carousel = props => {
 
             }, 1000);
         }, waitTime);
+        return interval;
     }
 
     async function fetchProductImages() {
@@ -85,27 +87,32 @@ const Carousel = props => {
         var items = apiData.data.listProducts.items;
         for (var i = 0; i < items.length; i++) {
             var item = items[i];
-            if (item.image != 'undefined' && item.image != "") {
-                imageElements.push(<img src={item.image} key={i} style={imageStyle}/>);
+            if (item.image !== 'undefined' && item.image !== "") {
+                imageElements.push(<img alt="Erin Birum Studio" src={item.image} key={i} style={imageStyle}/>);
             }
         }
 
         var sidelineSet = randomizeSet(imageElements);
-        setSidelineSet(sidelineSet);
         var activeSet = sidelineSet.splice(0, (imagesPerWindow + 1));
         setImageSet(activeSet);
 
-        startCarousel(sidelineSet, activeSet);
+        var carouselInterval = startCarousel(sidelineSet, activeSet);
 
         window.addEventListener("resize", resizeCarousel);
+
+        return carouselInterval;
     }
   
     useEffect(() => {
-        fetchProductImages();
+        fetchProductImages().then((interval) => {
+            return () => clearInterval(interval);
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <div>
+            <span hidden>{offsetHeight}</span>
             <div id="carousel" style={{marginBottom: '2%', minHeight: '50rem'}}>
                 <div id="imageSet" style={{left: leftCoordinate, transition: transitionValue}}>
                     {imageSet}

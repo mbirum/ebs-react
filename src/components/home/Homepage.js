@@ -8,7 +8,7 @@ function Homepage() {
   return (
     <div id="homepage">
       
-      <img id="homepage-image" src="homepage.png" />
+      <img alt="Homepage" id="homepage-image" src="homepage.png" />
 
       <ShopButtonSection/>
 

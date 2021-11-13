@@ -9,6 +9,7 @@ import SiteHeader from './components/header/SiteHeader';
 import SiteFooter from './components/footer/SiteFooter';
 import ScrollToTop from './components/utility/ScrollToTop';
 import ScrollListener from './components/utility/ScrollListener';
+import ProductPage from './components/shop/ProductPage';
 
 Amplify.configure(amplifyconfig);
 
@@ -31,8 +32,10 @@ function App() {
 
       <ScrollToTop>
         <Routes>
-          <Route path='/shop' element={<Store/>} />
           <Route exact path='/' element={<Homepage/>} />
+          <Route path='/shop' element={<Store/>} />
+          <Route path='/shop/:product' element={<ProductPage />} />
+          
         </Routes>
       </ScrollToTop>
 
