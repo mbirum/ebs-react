@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './css/StoreBreadcrumb.css';
+import './css/StoreBreadcrumb-700.css';
 
 const StoreBreadcrumb = props => {
   const [crumbs, setCrumbs] = useState([]);

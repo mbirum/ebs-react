@@ -9,8 +9,10 @@ const StoreSidebar = props => {
     var filterButton = document.getElementById('storeFilterButton');
     if (filterButton.classList.contains('filter-button-clicked')) {
       var sidebar = document.getElementById('storeSidebar');
+      var body = document.getElementsByTagName('body')[0];
       sidebar.classList.remove('force-block-display');
       filterButton.classList.remove('filter-button-clicked');
+      body.classList.remove('prevent-scroll');
     }
   }
 
@@ -61,7 +63,7 @@ const StoreSidebar = props => {
 
   return (
     <div id="storeSidebar">
-        <h4 className="ebs-header">Categories</h4>
+        <h4 className="ebs-header sidebar-header">Categories</h4>
         <hr/>
         <div id="sidebarItemWrapper">
           {uniqueCategories}
