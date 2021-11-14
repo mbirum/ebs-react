@@ -1,7 +1,8 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
 import './css/SiteBranding.css';
 import './css/SiteBranding-700.css';
+import React from 'react';
+import {Link} from 'react-router-dom';
+
 
 const SiteBranding = props => {
     return (

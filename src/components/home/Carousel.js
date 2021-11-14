@@ -1,8 +1,8 @@
+import './css/Carousel.css';
+import './css/Carousel-700.css';
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
-import './css/Carousel.css';
-import './css/Carousel-700.css';
 
 
 const Carousel = props => {

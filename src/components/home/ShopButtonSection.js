@@ -1,6 +1,8 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
 import './css/ShopButtonSection.css';
+import './css/ShopButtonSection-700.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const ShopButtonSection = props => {
     return (

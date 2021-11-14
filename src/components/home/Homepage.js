@@ -1,5 +1,6 @@
-import React from 'react';
 import './css/Homepage.css';
+import './css/Homepage-700.css';
+import React from 'react';
 import Carousel from './Carousel'
 import ShopButtonSection from './ShopButtonSection';
 

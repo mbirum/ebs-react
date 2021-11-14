@@ -1,0 +1,77 @@
+@media screen and (max-width: 700px) {
+    #menuToggleWrapper {
+        display:block;
+        place-items:center;
+        position:absolute;
+        top:10px;
+        right:0;
+        border: 0;
+        line-height: normal !important;
+        font-size:14px;
+        font-weight: 100 !important;
+        margin: 20px 22px;
+        z-index: 9999;
+        text-align: center;
+    }
+    
+    #menuToggle:hover {
+        cursor:pointer;
+    }
+    
+    .menu-toggle-clicked {
+        position:fixed !important;
+    }
+    
+    #menuToggleWrapper label {
+        display:flex;
+        flex-direction:column;
+        width:30px;
+        cursor:pointer;
+    }
+    
+    #menuToggleWrapper label span {
+        background: black;
+        border-radius:10px;
+        height:1px;
+        margin: 3px 0;
+        transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+    
+    #menuToggleWrapper span:nth-of-type(1) {
+        width:50%;
+    }
+    
+    #menuToggleWrapper span:nth-of-type(2) {
+        width:90%;
+    }
+    
+    
+    #menuToggleWrapper span:nth-of-type(3) {
+        width:70%;
+    }
+    
+    
+    #menuToggleWrapper input[type="checkbox"] {
+        display:none;
+    }
+    
+    
+    #menuToggleWrapper input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+        transform-origin:bottom;
+        transform:rotatez(45deg) translate(3px,1px);
+    }
+    
+    
+    #menuToggleWrapper input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+        transform-origin:top;
+        transform:rotatez(-45deg);
+    }
+    
+    
+    #menuToggleWrapper input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+        transform-origin:bottom;
+        width:50%;
+        transform: translate(10px,-2.5px) rotatez(45deg);
+    }
+    
+}

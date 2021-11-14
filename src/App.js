@@ -1,5 +1,6 @@
-import React from 'react';
 import './App.css';
+import './App-700.css';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Amplify from '@aws-amplify/core';
 import amplifyconfig from './amplify-config.js';

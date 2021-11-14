@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import './css/ProductTableItem.css';
 import './css/ProductTableItem-700.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const ProductTableItem = props => {
 

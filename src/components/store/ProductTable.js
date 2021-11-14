@@ -1,7 +1,8 @@
-import React from 'react';
-import ProductRow from './ProductRow';
 import './css/ProductTable.css';
 import './css/ProductTable-700.css';
+import React from 'react';
+import ProductRow from './ProductRow';
+
 
 const ProductTable = props => {
 

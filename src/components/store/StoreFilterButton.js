@@ -1,6 +1,7 @@
-import React from 'react';
 import './css/StoreFilterButton.css';
 import './css/StoreFilterButton-700.css';
+import React from 'react';
+
 
 const StoreFilterButton = props => {
 

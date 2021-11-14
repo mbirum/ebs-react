@@ -2,7 +2,7 @@
     display: none;
     /* float:right; */
     position:relative;
-    top: -100px;
+    top: -92px;
     width:30%;
     min-width:135px;
     margin: auto;
@@ -17,7 +17,7 @@
     user-select: none;
     z-index: 4 !important;
     border: 1px solid black;
-    transition: background,color 0.75s;
+    transition: background,color 0.5s;
 }
 
 #storeFilterButtonContent::before {
@@ -30,10 +30,10 @@
 .filter-button-clicked {
 	background-color: black !important;
 	color: white;
-    float: right !important;
+    /* float: right !important; */
     position:fixed !important;
     top:115px !important;
-    right:0;
+    right:20px;
 }
 
 #storeFilterButton:hover {

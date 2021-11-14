@@ -1,5 +1,6 @@
-import React from 'react';
 import './css/SiteFooter.css';
+import './css/SiteFooter-700.css';
+import React from 'react';
 
 const SiteFooter = props => {
     return (
