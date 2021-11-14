@@ -1,8 +1,8 @@
 #storeFilterButton {
     display: none;
     /* float:right; */
-    position:absolute;
-    top: 115px;
+    position:relative;
+    top: -115px;
     width:30%;
     min-width:135px;
     margin: auto;
@@ -15,7 +15,7 @@
     line-height: normal !important;
     padding: 10px 20px;
     user-select: none;
-    z-index: 999;
+    z-index: 4 !important;
     border: 1px solid black;
 }
 
@@ -31,7 +31,7 @@
 	color: white;
     float: right !important;
     position:fixed !important;
-    top:115px !important;
+    top:90px !important;
     right:0;
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import './css/SiteNavigation.css';
 import {Link} from 'react-router-dom';
+import './css/SiteNavigation.css';
+import './css/SiteNavigation-700.css';
 
 const SiteNavigation = props => {
     return (

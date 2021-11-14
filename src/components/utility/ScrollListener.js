@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-var yThreshold = 300;
+var yThreshold = 500;
 
 const ScrollListener = (props) => {
   useEffect(() => {

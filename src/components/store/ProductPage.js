@@ -8,6 +8,12 @@ const ProductPage = props => {
     const location = useLocation();
     const { id, name, image, price, description, width, height, quantity, currentCategory } = location.state;
     var productCategory = (currentCategory != null) ? currentCategory : 'All';
+    var defaultQuantity = (quantity >= 1) ? 1 : 0;
+    var isOutOfStock = (quantity < 1);
+
+    function onBuyClick() {
+        alert('hello');
+    }
 
     return (
         <div className="product-page">
@@ -27,8 +33,8 @@ const ProductPage = props => {
                                 <h4 className="product-header ebs-header">{name}</h4>
                                 <span className="product-description-line product-price">${price}</span>
                                 <div className="product-description-line product-buy-section">
-                                    <input className="product-quantity-dropdown" type="number" name="quantity" value="1" min="1" max={quantity} />
-                                    <div className="product-buy-button ebs-button">Add to cart</div>
+                                    <input className="product-quantity-dropdown" type="number" name="quantity" defaultValue={defaultQuantity} min="0" max={quantity} />
+                                    <button className="product-buy-button ebs-button" disabled={isOutOfStock} onClick={onBuyClick}>Add to cart</button>
                                 </div>
                                 <span className="product-description-line product-size">{width} x {height} inches</span>
                                 <span className="product-description-line product-description">{description}</span>

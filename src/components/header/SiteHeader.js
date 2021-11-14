@@ -1,7 +1,8 @@
 import React from 'react';
-import './css/SiteHeader.css';
 import SiteBranding from './SiteBranding';
 import SiteNavigation from './SiteNavigation';
+import './css/SiteHeader.css';
+import './css/SiteHeader-700.css';
 
 const SiteHeader = props => {
     return (
