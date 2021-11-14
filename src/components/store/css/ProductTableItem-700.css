@@ -15,4 +15,9 @@
         margin: auto;
         padding: 10px 10px;
     }
+
+    .product-table-out-of-stock::before {
+        top:3px;
+        left:-31px;
+    }
 }

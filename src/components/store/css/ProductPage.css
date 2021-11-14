@@ -88,3 +88,19 @@
     opacity: 0.9;
     cursor:pointer;
 }
+
+.product-stock {
+    position:relative;
+    top: 10px;
+    left: 14px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.out-of-stock {
+    color: darkred;
+}
+
+.in-stock {
+    color: darkgreen;
+}
