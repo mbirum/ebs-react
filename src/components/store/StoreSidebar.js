@@ -12,7 +12,7 @@ const StoreSidebar = props => {
       var body = document.getElementsByTagName('body')[0];
       var siteHeader = document.getElementById('siteHeader');
 
-      sidebar.classList.remove('force-block-display');
+      sidebar.classList.remove('sidebar-enabled');
       filterButton.classList.remove('filter-button-clicked');
       body.classList.remove('prevent-scroll');
       siteHeader.classList.remove('force-hidden-display');

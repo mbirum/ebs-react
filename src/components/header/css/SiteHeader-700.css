@@ -1,6 +1,11 @@
 @media screen and (max-width: 700px) {
     #siteHeader {
-        text-align: center;
+        /* text-align: center; */
         min-height: 85px;
+        padding: 0px 20px 0px 20px;
+    }
+
+    .sticky-header {
+        min-height: 85px !important;
     }
 }

@@ -1,4 +1,4 @@
-#site-navigation {
+#siteNavigation {
 	display: table-cell;
 	font-size: 12px;
 	text-align: right;
@@ -44,12 +44,12 @@
 }
 
 
-#site-navigation a:hover,
-#site-navigation a:focus {
+#siteNavigation a:hover,
+#siteNavigation a:focus {
     text-decoration: none;
 }
 
-#site-navigation ul ul {
+#siteNavigation ul ul {
 	left: -9999em;
 	margin-top: 10px;
 	position: absolute;
@@ -58,7 +58,7 @@
 	padding-left: 0;
 }
 
-#site-navigation li.nav-item-has-children > a:after {
+#siteNavigation li.nav-item-has-children > a:after {
 	content: "\25BC";
 	display: inline-block;
 	font-family: "Genericons";
@@ -77,17 +77,17 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-#site-navigation ul ul a {
+#siteNavigation ul ul a {
 	
 }
 
-#site-navigation ul li:hover > ul{
+#siteNavigation ul li:hover > ul{
 	left: 50%;
 	margin-left: -110px;
 }
 
-#site-navigation ul ul li:hover > ul,
-#site-navigation ul ul li.focus > ul {
+#siteNavigation ul ul li:hover > ul,
+#siteNavigation ul ul li.focus > ul {
 	left: auto;
 	margin: 0;
 	right: 100%;
