@@ -24,10 +24,11 @@
 }
 
 #home-shop-button {
-	width: 35%;
-	min-width: 100px;
-	float:left;
-	margin-right: 20px;
+	margin:auto;
+	width: 50%;
+	min-width: 150px;
+	/* float:left; */
+	/* margin-right: 20px; */
 }
 
 #home-shop-button:hover {

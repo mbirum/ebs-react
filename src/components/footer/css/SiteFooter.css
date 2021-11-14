@@ -1,8 +1,9 @@
 #site-footer {
 	width:100%;
-	margin-top:10%;
+	margin-top:100px;
+	margin-bottom: 30px;
 	position:relative;
-	top: -35px;
+	bottom: 0px;
 	display: block;
 	text-align: center;
 	color: #616a74;

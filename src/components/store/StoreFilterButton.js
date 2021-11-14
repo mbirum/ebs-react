@@ -32,7 +32,7 @@ const StoreFilterButton = props => {
         setTimeout(() => {
             getSiteHeader().classList.add(FORCE_HIDDEN_DISPLAY);
             getFilterButton().classList.add(FILTER_BUTTON_CLICKED);
-        }, 200);
+        }, 150);
     }
 
     function toggleSidebarOff() {
