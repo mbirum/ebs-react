@@ -3,6 +3,7 @@
         /* text-align: center; */
         min-height: 75px;
         padding: 0px 0px 0px 10px;
+        transition: opacity 0.2s;
     }
 
     .sticky-header {

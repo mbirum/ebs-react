@@ -13,4 +13,24 @@
         float:none;
     }
 
+    /* Stock */
+    .product-stock {
+        display:block;
+        position:relative;
+        top: 0px;
+        left: 0px;
+        font-size: 12px; 
+        font-weight: 500;
+        opacity: 0.75;
+        margin-bottom:15px;
+        letter-spacing: 0.1em;
+    }
+
+    .out-of-stock {
+        color: darkred;
+    }
+
+    .in-stock {
+        color: darkgreen;
+    }
 }

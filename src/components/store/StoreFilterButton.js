@@ -7,7 +7,7 @@ const StoreFilterButton = props => {
 
     var FILTER_BUTTON_CLICKED = 'filter-button-clicked';
     var SIDEBAR_ENABLED = 'sidebar-enabled';
-    var FORCE_HIDDEN_DISPLAY = 'force-hidden-display';
+    var FORCE_TRANSPARENT_DISPLAY = 'force-transparent-display';
     var PREVENT_SCROLL = 'prevent-scroll';
 
     function getBody() {
@@ -29,14 +29,14 @@ const StoreFilterButton = props => {
     function toggleSidebarOn() {
         getSidebar().classList.add(SIDEBAR_ENABLED);
         getBody().classList.add(PREVENT_SCROLL);
-        setTimeout(() => {
-            getSiteHeader().classList.add(FORCE_HIDDEN_DISPLAY);
+        // setTimeout(() => {
+            getSiteHeader().classList.add(FORCE_TRANSPARENT_DISPLAY);
             getFilterButton().classList.add(FILTER_BUTTON_CLICKED);
-        }, 150);
+        // }, 150);
     }
 
     function toggleSidebarOff() {
-        getSiteHeader().classList.remove(FORCE_HIDDEN_DISPLAY);
+        getSiteHeader().classList.remove(FORCE_TRANSPARENT_DISPLAY);
         getFilterButton().classList.remove(FILTER_BUTTON_CLICKED);
         getSidebar().classList.remove(SIDEBAR_ENABLED);
         getBody().classList.remove(PREVENT_SCROLL);

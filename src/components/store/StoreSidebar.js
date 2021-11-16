@@ -16,7 +16,7 @@ const StoreSidebar = props => {
       sidebar.classList.remove('sidebar-enabled');
       filterButton.classList.remove('filter-button-clicked');
       body.classList.remove('prevent-scroll');
-      siteHeader.classList.remove('force-hidden-display');
+      siteHeader.classList.remove('force-transparent-display');
     }
   }
 

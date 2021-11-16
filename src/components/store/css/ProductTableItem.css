@@ -20,8 +20,8 @@
     letter-spacing: 0.1em;
     background-color: rgb(235,235,235);
     opacity: 0.9;
-    color: rgb(80,80,80);
-    padding: 3% 6%;
+    color: rgb(110,110,110);
+    padding: 3% 5%;
     vertical-align: middle;
     position:relative;
     float:right;
@@ -29,6 +29,6 @@
     left:-29px;
     z-index: 999;
     margin-bottom: -11%;
-    font-size:1em;
+    font-size:1.1em;
 }
 

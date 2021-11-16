@@ -5,7 +5,7 @@
         width:100vw;
         padding-top: 130px;
         opacity: 0;
-        transition: opacity 0.1s;
+        transition: opacity 0.2s;
     }
 
     .sidebar-header {
@@ -15,5 +15,9 @@
     .sidebar-enabled {
         left:0 !important;
         opacity: 1 !important;
+    }
+
+    #sidebarItemWrapper {
+        padding-top:20px;
     }
 }
