@@ -1,0 +1,25 @@
+.shipping-info-header {
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top:35px;
+}
+
+.shipping-info-header-text {
+    margin-left: 25px;
+    font-size: 12px;
+}
+
+.expandable-caret {
+    float:right;
+    margin-top:-12px;
+    font-size: 2em;
+    opacity: 0.8;
+}
+
+.shipping-info-content {
+    padding: 17px 20px;
+    font-size: 12px;
+}

@@ -3,11 +3,12 @@ import './css/ProductPage-700.css';
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import StoreBreadcrumb from './StoreBreadcrumb';
+import ShippingAndTerms from './ShippingAndTerms';
 
 
 const ProductPage = props => {
     const location = useLocation();
-    const { id, name, image, price, description, width, height, quantity, currentCategory } = location.state;
+    const { id, name, image, price, description, width, height, quantity, currentCategory } = (location.state) ? location.state : {};
     var productCategory = (currentCategory != null) ? currentCategory : 'All';
     var defaultQuantity = (quantity >= 1) ? 1 : 0;
     var isOutOfStock = (quantity < 1);
@@ -42,7 +43,7 @@ const ProductPage = props => {
                                     <span className={"product-stock " + stockClass}>{stockMessage}</span>
                                     <button className="product-buy-button ebs-button" disabled={isOutOfStock} onClick={onBuyClick}>Add to cart</button>
                                 </div>
-                                
+                                <ShippingAndTerms />
                                 
                             </td>
                         </tr>
