@@ -1,3 +1,8 @@
+.shipping-info-wrapper {
+    /* background-color: blue; */
+    min-height:150px;
+}
+
 .shipping-info-header {
     border-top: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
@@ -5,6 +10,7 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-top:35px;
+    background-color: white;
 }
 
 .shipping-info-header-text {
@@ -12,14 +18,35 @@
     font-size: 12px;
 }
 
-.expandable-caret {
+.expandable-caret::after {
+    content:'\2304';
     float:right;
     margin-top:-12px;
     font-size: 2em;
     opacity: 0.8;
 }
 
+.expandable-caret-active::after {
+    content:'\2303';
+}
+
 .shipping-info-content {
     padding: 17px 20px;
     font-size: 12px;
+    position: relative;
+    /* display: none; */
+    top:-57px;
+    opacity: 0;
+    transition: top 0.3s ease-out, opacity 0.05s;
+    z-index: -1;
+}
+
+.shipping-info-header:hover {
+    cursor:pointer;
+}
+
+.shipping-info-content-active {
+    top:0px !important;
+    display: block;
+    opacity: 1;
 }
