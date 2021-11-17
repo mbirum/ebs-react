@@ -23,7 +23,11 @@
     font-size: 12px;
     font-weight: 200;
     -webkit-transition: background-image 0.3s ease-in-out;
-    transition: background-image 0.3s ease-in-out;
+    transition: background-image,opacity 0.2s ease-in-out;
+}
+
+.sidebar-item:hover {
+    opacity: 0.7;
 }
 
 #sidebarItemWrapper:hover {
@@ -34,7 +38,7 @@
     
 }
 
-.sidebar-category-clicked:before {
+/* .sidebar-category-clicked:before {
     content: "\25CE";
     display: inline-block;
     position:relative;
@@ -54,4 +58,4 @@
     -webkit-transition: color .1s ease-in 0;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-}
+} */
