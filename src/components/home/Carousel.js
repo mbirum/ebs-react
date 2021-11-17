@@ -80,7 +80,7 @@ const Carousel = props => {
             height:'50rem', 
             objectFit: 'cover', 
             objectPosition: '50% 50%',
-            padding: '0 7px 9px 7px'
+            padding: `0 ${props.xPadding}px 9px ${props.xPadding}px`
         };
         const apiData = await API.graphql({ query: listProducts });
         var items = apiData.data.listProducts.items;

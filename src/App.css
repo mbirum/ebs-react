@@ -27,7 +27,6 @@ body {
 }
 
 #root {
-	overflow-x: hidden !important;
 	position: relative !important;
 }
 
@@ -73,7 +72,7 @@ img {
 	transition: background,color 0.75s;
 	text-transform:uppercase;
 	letter-spacing: .15em;
-	z-index:999;
+	/* z-index:999; */
 }
 
 .menu-toggle {

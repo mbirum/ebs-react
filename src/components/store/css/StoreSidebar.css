@@ -10,8 +10,6 @@
     padding-top: 130px;
     padding-left: 30px;
     background-color: white;
-    /* z-index: 900; */
-    /* background-color: lightgray; */
 }
 
 .sticky-store-sidebar {
@@ -29,7 +27,6 @@
 }
 
 #sidebarItemWrapper:hover {
-    /* background-image: linear-gradient(to right, white, rgba(237,213,209,.2) , white); */
 	cursor:pointer;
 }
 

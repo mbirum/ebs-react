@@ -101,14 +101,14 @@ const Store = props => {
     
     <div id="store">
 
+      <StoreFilterButton />
+
       <StoreBreadcrumb 
         inactiveCrumbs={[
           <span onClick={returnToShop}>shop</span>, 
         ]}
         activeCrumb={currentCategory}
       />
-
-      <StoreFilterButton />
 
       <StoreSidebar
         categoryStrings={categoryStrings}

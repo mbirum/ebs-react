@@ -15,11 +15,13 @@ function Homepage() {
 
       <Carousel
         imagesPerWindow={3}
+        xPadding={7}
         carouselClass='carousel-large'
       />
 
       <Carousel
         imagesPerWindow={1}
+        xPadding={25}
         carouselClass='carousel-mobile'
       />
 

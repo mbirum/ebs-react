@@ -1,11 +1,17 @@
-#storeFilterButton {
-    display: none;
-    position:absolute;
-    top:115px;
-    left:85px;
-    width:28%;
-    min-width:140px;
-    /* max-width:10%; */
+#storeFilterSection {
+    display:none;
+    background-color: white;
+    width:100%;
+    padding:20px 0;
+    position: sticky !important;
+    top:0 !important;
+    z-index: 1;
+}
+
+/* #storeFilterButton { */
+.store-filter-element {
+    width:50%;
+    min-width:130px;
     margin: auto;
     background-color: white;
     text-align: center;
@@ -14,9 +20,9 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     line-height: normal !important;
-    padding: 10px 20px;
+    padding: 10px 10px;
     user-select: none;
-    z-index: 4 !important;
+    /* z-index: 4 !important; */
     border: 1px solid black;
     transition: background,color 0.5s;
 }
@@ -31,13 +37,17 @@
 .filter-button-clicked {
 	background-color: black !important;
 	color: white;
-    position:fixed !important;
-    top:115px !important;
-    left:85px !important;
-    /* top:115px !important; */
-    /* right:20px; */
 }
 
 #storeFilterButton:hover {
     cursor: pointer;
+}
+
+.filter-section-column {
+    width:50%;
+    text-align: center;
+}
+
+#storeFilterTable {
+    width:100%;
 }

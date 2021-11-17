@@ -1,5 +1,6 @@
 @media screen and (max-width: 700px) {
-    #storeFilterButton {
+    #storeFilterSection {
         display: block;
     }
+
 }

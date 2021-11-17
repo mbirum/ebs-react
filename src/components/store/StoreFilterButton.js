@@ -29,10 +29,8 @@ const StoreFilterButton = props => {
     function toggleSidebarOn() {
         getSidebar().classList.add(SIDEBAR_ENABLED);
         getBody().classList.add(PREVENT_SCROLL);
-        // setTimeout(() => {
-            getSiteHeader().classList.add(FORCE_TRANSPARENT_DISPLAY);
-            getFilterButton().classList.add(FILTER_BUTTON_CLICKED);
-        // }, 150);
+        getSiteHeader().classList.add(FORCE_TRANSPARENT_DISPLAY);
+        getFilterButton().classList.add(FILTER_BUTTON_CLICKED);
     }
 
     function toggleSidebarOff() {
@@ -53,13 +51,31 @@ const StoreFilterButton = props => {
         else {
             toggleSidebarOn();
         }
-        
+    }
+
+    function updateStoreSort() {
+
     }
 
     return (
-    <div id="storeFilterButton" className="ebs-button" onClick={toggleStoreFilter}>
-        <span id="storeFilterButtonContent">Categories</span>
-    </div>
+        <div id="storeFilterSection">
+            <table id="storeFilterTable">
+                <tbody>
+                    <tr>
+                        <td id="filterButtonColumn" className="filter-section-column">
+                            <div id="storeFilterButton" className="ebs-button store-filter-element" onClick={toggleStoreFilter}>
+                                <span id="storeFilterButtonContent">Categories</span>
+                            </div>
+                        </td>
+                        <td id="storeSortColumn" className="filter-section-column">
+                            <div id="storeSortDropdown" className="store-filter-element" onClick={updateStoreSort}>
+                                <span>Most Recent</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     );
 
 }
