@@ -1,11 +1,10 @@
 import './css/SiteNavigation.css';
 import './css/SiteNavigation-700.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MenuToggle from './MenuToggle';
 
 const SiteNavigation = props => {
-    const [cartSize, setCartSize] = useState(0);
     
     var FORCE_BLOCK_DISPLAY = 'force-block-display';
     var MENU_TOGGLE_CLICKED = 'menu-toggle-clicked';
@@ -101,9 +100,6 @@ const SiteNavigation = props => {
         }
     }
 
-    // useEffect(() => {
-    //     setCartSize(props.cartSize);
-    // }, [props.cartSize]);
 
     return (
         <>
@@ -131,13 +127,18 @@ const SiteNavigation = props => {
                             <Link to="/shop" className="nav-item-link">About</Link>
                         </li>
                         <li id="cartLink" className="nav-item menu-item" onClick={toggleCart} >
-                            <img alt="Cart" id="nav-cart-img" src="../cart.png"/>
-                            <span className="cartcontents">{props.cartSize}</span>
+                            <img alt="Cart" id="navCartImage" src="../cart.png"/>
+                            <span className="cart-contents">{props.cartSize}</span>
                         </li>
                         
                     </ul>
                 </div>
             </nav>
+
+            <div id="cartLink700" className="nav-item menu-item" onClick={toggleCart} >
+                <img alt="Cart" id="navCartImage700" src="../cart.png"/>
+                <span className="cart-contents">{props.cartSize}</span>
+            </div>
         </>
     );
 };

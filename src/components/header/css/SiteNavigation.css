@@ -54,7 +54,6 @@
 	margin-top: 10px;
 	position: absolute;
 	width: 290px;
-	/* z-index: 10; */
 	padding-left: 0;
 }
 
@@ -77,9 +76,6 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-#siteNavigation ul ul a {
-	
-}
 
 #siteNavigation ul li:hover > ul{
 	left: 50%;
@@ -93,12 +89,18 @@
 	right: 100%;
 }
 
-#nav-cart-img {
+#navCartImage,
+#navCartImage700 {
 	width:20px;
 	margin-right:5px;
 	margin-bottom: -3px;
 }
 
-#cartLink:hover {
+#cartLink:hover,
+#cartLink700:hover {
 	cursor: pointer;
+}
+
+#cartLink700 {
+	display:none;
 }

@@ -11,6 +11,7 @@ const MenuToggle = props => {
                 <span className="menu-toggle-span"></span>
                 <span className="menu-toggle-span"></span>
             </label>
+            
         </div>
     );
 };

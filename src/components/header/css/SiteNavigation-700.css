@@ -11,7 +11,7 @@
         text-shadow: none;
         color: rgb(10,10,10);
         background-color:white;
-        padding-top:5%;
+        padding-top:10%;
         transition: opacity 0.3s;
         
         opacity: 0;
@@ -104,8 +104,24 @@
         right: unset;
     }
     
-    #nav-cart-img {
-        width:20px;
+    #cartLink700 {
+        display:block !important;
+        position:absolute;
+        /* top:10px; */
+        right:0;
+        line-height: normal !important;
+        font-size:12px;
+        font-weight: 100 !important;
+        margin: 21px 27px;
+        text-align: center;
+    }
+
+    #cartLink {
+        display:none !important;
+    }
+
+    #navCartImage700 {
+        width:17px;
         margin-right:5px;
         margin-bottom: -3px;
     }
