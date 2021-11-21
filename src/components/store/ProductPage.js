@@ -1,6 +1,6 @@
 import './css/ProductPage.css';
 import './css/ProductPage-700.css';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import StoreBreadcrumb from './StoreBreadcrumb';
 import ShippingAndTerms from './ShippingAndTerms';
@@ -9,8 +9,9 @@ import ShippingAndTerms from './ShippingAndTerms';
 const ProductPage = props => {
     const location = useLocation();
     const { id, name, image, price, description, width, height, quantity, currentCategory } = (location.state) ? location.state : {};
-    var productCategory = (currentCategory != null) ? currentCategory : 'All';
     var defaultQuantity = (quantity >= 1) ? 1 : 0;
+    const [selectedQuantity, setSelectedQuantity] = useState(defaultQuantity);
+    var productCategory = (currentCategory != null) ? currentCategory : 'All';
     var isOutOfStock = (quantity < 1);
     var stockMessage = (isOutOfStock) ? 'Sold out' : 'Available';
     var stockClass = (isOutOfStock) ? 'out-of-stock' : 'in-stock';
@@ -29,7 +30,14 @@ const ProductPage = props => {
         }
     }
 
+    function onQuantityChange() {
+        var quantity = document.getElementsByClassName('product-quantity-dropdown')[0].value;
+        // alert(quantity);
+        setSelectedQuantity(quantity);
+    }
+
     useEffect(registerBuyButtonMousedown);
+
 
     return (
         <div className="product-page">
@@ -51,9 +59,9 @@ const ProductPage = props => {
                                 <span className="product-description-line product-size">{width} x {height} inches</span>
                                 <span className="product-description-line product-description">{description}</span>
                                 <div className="product-description-line product-buy-section">
-                                    <input disabled={isOutOfStock} className="product-quantity-dropdown" type="number" name="quantity" defaultValue={defaultQuantity} min="0" max={quantity} />
+                                    <input onChange={onQuantityChange} disabled={isOutOfStock} className="product-quantity-dropdown" type="number" name="quantity" defaultValue={defaultQuantity} min="0" max={quantity} />
                                     <span className={"product-stock " + stockClass}>{stockMessage}</span>
-                                    <button className="product-buy-button ebs-button" disabled={isOutOfStock} onClick={() => props.addToCart(id)}>Add to cart</button>
+                                    <button className="product-buy-button ebs-button" disabled={isOutOfStock} onClick={() => props.addToCart(id, selectedQuantity)}>Add to cart</button>
                                 </div>
                                 <ShippingAndTerms />
                                 

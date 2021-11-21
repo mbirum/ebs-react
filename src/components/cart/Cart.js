@@ -1,7 +1,9 @@
 import './css/Cart.css';
 import './css/Cart-700.css';
 import React, { useState, useEffect } from 'react';
+import { API } from 'aws-amplify';
 import PanelCloser from '../utility/PanelCloser';
+import { getProduct } from '../../graphql/queries';
 
 const Cart = props => {
     const [items, setItems] = useState([]);
@@ -24,21 +26,42 @@ const Cart = props => {
 
     useEffect(registerMouseDownListener);
 
-    useEffect(() => {
+    async function fetchProducts(products) {
         var cartItems = [];
-        var itemObjects = (props.items) ? props.items : [];
-        for (var i = 0; i < itemObjects.length; i++) {
-            cartItems.push(<div key={i} className='cart-item'>{itemObjects[i]}</div>);
+        for (var i = 0; i < products.length; i++) {
+            const apiData = await API.graphql({ query: getProduct, variables: {id : products[i].id} });
+            const item = apiData.data.getProduct;
+            cartItems.push(
+                <tr key={i} className='cart-item'>
+                    <td className='cart-item-column cart-img-column'>
+                        <img className='cart-item-img' src={item.image}/>
+                    </td>
+                    <td className='cart-item-column cart-text-column'>
+                        <h3 className='cart-text-header'>{item.name}</h3>
+                        <input className="cart-quantity-dropdown" type="number" name="quantity" defaultValue={products[i].quantity} min="0" max={item.quantity} />
+                        <span className='cart-item-price'>${item.price}</span>
+                    </td>
+                </tr>
+            );
         }
+        
         setItems(cartItems);
+    }
+
+    useEffect(() => {
+        fetchProducts(props.items);
     }, [props.items]);
 
 
     return (
         <div id="cart">
             <PanelCloser onClick={closeCart}/>
-            <p>This is your shopping cart!</p><br/>
-            {items}
+            <div id="cartHeader">Cart</div>
+            <table id="cartTable">
+                <tbody>
+                    {items}
+                </tbody>
+            </table>
         </div>
     );
 };

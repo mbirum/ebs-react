@@ -18,9 +18,9 @@ Amplify.configure(amplifyconfig);
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  function addToCart(item) {
+  function addToCart(id, quantity) {
     let newItems = cartItems.map(ci => (ci));
-    newItems.push(item);
+    newItems.push({id, quantity});
     setCartItems(newItems);
   }
 
