@@ -1,6 +1,6 @@
 import './css/ProductPage.css';
 import './css/ProductPage-700.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import StoreBreadcrumb from './StoreBreadcrumb';
 import ShippingAndTerms from './ShippingAndTerms';
@@ -15,6 +15,21 @@ const ProductPage = props => {
     var stockMessage = (isOutOfStock) ? 'Sold out' : 'Available';
     var stockClass = (isOutOfStock) ? 'out-of-stock' : 'in-stock';
 
+    function registerBuyButtonMousedown() {
+        var elements = document.getElementsByClassName('product-buy-button');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('mousedown', (e) => {
+                e.target.classList.add('buy-button-clicked');
+            });
+            elements[i].addEventListener('mouseup', (e) => {
+                setTimeout(() => {
+                    e.target.classList.remove('buy-button-clicked');
+                }, 100);
+            });
+        }
+    }
+
+    useEffect(registerBuyButtonMousedown);
 
     return (
         <div className="product-page">
