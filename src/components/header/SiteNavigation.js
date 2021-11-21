@@ -1,16 +1,18 @@
 import './css/SiteNavigation.css';
 import './css/SiteNavigation-700.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MenuToggle from './MenuToggle';
 
 const SiteNavigation = props => {
-
+    const [cartSize, setCartSize] = useState(0);
+    
     var FORCE_BLOCK_DISPLAY = 'force-block-display';
     var MENU_TOGGLE_CLICKED = 'menu-toggle-clicked';
     var MENU_TOGGLE_SPAN_CLICKED = 'menu-toggle-span-clicked';
     var SITE_NAVIGATION_ENABLED = 'site-navigation-enabled';
     var PREVENT_SCROLL = 'prevent-scroll';
+    var CART_ACTIVE = 'cart-active';
 
     function getBody() {
         return document.getElementsByTagName("body")[0];
@@ -30,6 +32,22 @@ const SiteNavigation = props => {
 
     function getSiteNavigation() {
         return document.getElementById("siteNavigation");
+    }
+
+    function getCart() {
+        return document.getElementById("cart");
+    }
+
+    function isCartActive() {
+        return getCart().classList.contains(CART_ACTIVE);
+    }
+
+    function toggleCartOn() {
+        getCart().classList.add(CART_ACTIVE);
+    }
+
+    function toggleCartOff() {
+        getCart().classList.remove(CART_ACTIVE);
     }
 
     function isNavigationOn() {
@@ -74,6 +92,19 @@ const SiteNavigation = props => {
         }
     }
 
+    function toggleCart() {
+        if (isCartActive()) {
+            toggleCartOff();
+        }
+        else {
+            toggleCartOn();
+        }
+    }
+
+    // useEffect(() => {
+    //     setCartSize(props.cartSize);
+    // }, [props.cartSize]);
+
     return (
         <>
 
@@ -99,11 +130,9 @@ const SiteNavigation = props => {
                         <li className="nav-item menu-item-type-post_type menu-item-object-page">
                             <Link to="/shop" className="nav-item-link">About</Link>
                         </li>
-                        <li className="nav-item wpmenucartli wpmenucart-display-standard menu-item" id="wpmenucartli">
-                            <Link id="nav-cart-link" className="wpmenucart-contents empty-wpmenucart-visible" to="/shop">
-                                <img alt="Cart" id="nav-cart-img" src="../cart.png" />
-                                <span className="cartcontents">0</span>
-                            </Link>
+                        <li id="cartLink" className="nav-item menu-item" onClick={toggleCart} >
+                            <img alt="Cart" id="nav-cart-img" src="../cart.png"/>
+                            <span className="cartcontents">{props.cartSize}</span>
                         </li>
                         
                     </ul>

@@ -1,6 +1,7 @@
 import './css/StoreSidebar.css';
 import './css/StoreSidebar-700.css';
 import React, { useState, useEffect } from 'react';
+import PanelCloser from '../utility/PanelCloser';
 
 
 const StoreSidebar = props => {
@@ -67,6 +68,7 @@ const StoreSidebar = props => {
 
   return (
     <div id="storeSidebar">
+        <PanelCloser onClick={hideSidebarIfFilterButton} />
         <h4 className="ebs-header sidebar-header">Categories</h4>
         <hr/>
         <div id="sidebarItemWrapper">

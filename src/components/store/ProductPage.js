@@ -15,9 +15,6 @@ const ProductPage = props => {
     var stockMessage = (isOutOfStock) ? 'Sold out' : 'Available';
     var stockClass = (isOutOfStock) ? 'out-of-stock' : 'in-stock';
 
-    function onBuyClick() {
-        alert('hello');
-    }
 
     return (
         <div className="product-page">
@@ -41,7 +38,7 @@ const ProductPage = props => {
                                 <div className="product-description-line product-buy-section">
                                     <input disabled={isOutOfStock} className="product-quantity-dropdown" type="number" name="quantity" defaultValue={defaultQuantity} min="0" max={quantity} />
                                     <span className={"product-stock " + stockClass}>{stockMessage}</span>
-                                    <button className="product-buy-button ebs-button" disabled={isOutOfStock} onClick={onBuyClick}>Add to cart</button>
+                                    <button className="product-buy-button ebs-button" disabled={isOutOfStock} onClick={() => props.addToCart(id)}>Add to cart</button>
                                 </div>
                                 <ShippingAndTerms />
                                 

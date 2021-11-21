@@ -59,3 +59,7 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 } */
+
+#storeSidebar .panel-closer-wrapper {
+    display:none;
+}

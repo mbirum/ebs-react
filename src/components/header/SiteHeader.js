@@ -8,7 +8,7 @@ const SiteHeader = props => {
     return (
         <header id="siteHeader" className="site-header" role="banner">
             <SiteBranding/>
-            <SiteNavigation/>
+            <SiteNavigation cartSize={props.cartSize}/>
         </header>
     );
 };

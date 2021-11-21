@@ -98,3 +98,7 @@
 	margin-right:5px;
 	margin-bottom: -3px;
 }
+
+#cartLink:hover {
+	cursor: pointer;
+}

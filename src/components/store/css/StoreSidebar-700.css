@@ -1,12 +1,16 @@
 @media screen and (max-width: 700px) {
     #storeSidebar {
-        /* display:none; */
         left:-9999px;
         width:100vw;
-        padding-top: 130px;
+        padding-top: 30px;
+        padding-right: 28px;
         opacity: 0;
         transition: opacity 0.2s;
         z-index: 1;
+    }
+
+    #storeSidebar hr {
+        margin-top: 80px;
     }
 
     .sidebar-header {
@@ -20,5 +24,9 @@
 
     #sidebarItemWrapper {
         padding-top:20px;
+    }
+
+    #storeSidebar .panel-closer-wrapper {
+        display:flex !important;
     }
 }
