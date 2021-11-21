@@ -4,6 +4,13 @@
 }
 
 #site-branding img {
+	margin-top:8px;
 	max-width: 260px;
 	max-height: 260px;
+	/* max-width: 260px;
+	max-height: 49px;
+	object-fit: cover;
+	height: 49px;
+	width: 220px;
+    object-position: 60% 50%; */
 }
