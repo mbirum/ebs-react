@@ -37,9 +37,9 @@ const Cart = props => {
                         <img className='cart-item-img' src={item.image}/>
                     </td>
                     <td className='cart-item-column cart-text-column'>
-                        <h3 className='cart-text-header'>{item.name}</h3>
-                        <input className="cart-quantity-dropdown" type="number" name="quantity" defaultValue={products[i].quantity} min="0" max={item.quantity} />
+                        <h3 className='cart-text-header'>{item.name}asdfasdfasfasfasdfasdf</h3>
                         <span className='cart-item-price'>${item.price}</span>
+                        <input className="cart-quantity-dropdown" type="number" name="quantity" defaultValue={products[i].quantity} min="0" max={item.quantity} />
                     </td>
                 </tr>
             );
@@ -56,7 +56,9 @@ const Cart = props => {
     return (
         <div id="cart">
             <PanelCloser onClick={closeCart}/>
-            <div id="cartHeader">Cart</div>
+            <div id="cartHeader">Shopping cart</div>
+            <br/>
+            <hr/>
             <table id="cartTable">
                 <tbody>
                     {items}
