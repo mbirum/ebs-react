@@ -18,7 +18,7 @@
 
 .sidebar-item {
     width: 98%;
-    padding: 15px 0 15px 5px;
+    padding: 15px 0 15px 15px;
     margin-left: 2%;
     font-size: 12px;
     font-weight: 200;
@@ -27,7 +27,7 @@
 }
 
 .sidebar-item:hover {
-    opacity: 0.7;
+    /* opacity: 0.7; */
 }
 
 #sidebarItemWrapper:hover {
@@ -35,7 +35,7 @@
 }
 
 .sidebar-category-clicked {
-    
+    box-shadow: -1px -1px 5px rgb(190,190,190);
 }
 
 /* .sidebar-category-clicked:before {
