@@ -26,39 +26,13 @@
     transition: background-image,opacity 0.2s ease-in-out;
 }
 
-.sidebar-item:hover {
-    /* opacity: 0.7; */
-}
-
 #sidebarItemWrapper:hover {
 	cursor:pointer;
 }
 
 .sidebar-category-clicked {
-    box-shadow: -1px -1px 5px rgb(190,190,190);
+    box-shadow: -1px -1px 3px rgb(210,210,210);
 }
-
-/* .sidebar-category-clicked:before {
-    content: "\25CE";
-    display: inline-block;
-    position:relative;
-    left: -20px;
-    margin-right: -9px;
-    font-family: "Genericons";
-    font-size: 9px;
-    font-weight: bolder !important;
-    font-style: normal;
-    font-variant: normal;
-    line-height: 1;
-    text-align: center;
-    text-decoration: inherit;
-    text-transform: none;
-    vertical-align: middle;
-    -moz-transition: color .1s ease-in 0;
-    -webkit-transition: color .1s ease-in 0;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-} */
 
 #storeSidebar .panel-closer-wrapper {
     display:none;

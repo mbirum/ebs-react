@@ -32,8 +32,16 @@ const ProductPage = props => {
 
     function onQuantityChange() {
         var quantity = document.getElementsByClassName('product-quantity-dropdown')[0].value;
-        // alert(quantity);
         setSelectedQuantity(quantity);
+    }
+
+    function addToCart(id, quantity) {
+        if (quantity > 0) {
+            props.addToCart(id, quantity);
+            setTimeout(() => {
+                document.getElementById('cart').classList.add('cart-active');
+            }, 400);
+        }
     }
 
     useEffect(registerBuyButtonMousedown);
@@ -59,9 +67,9 @@ const ProductPage = props => {
                                 <span className="product-description-line product-size">{width} x {height} inches</span>
                                 <span className="product-description-line product-description">{description}</span>
                                 <div className="product-description-line product-buy-section">
-                                    <input onChange={onQuantityChange} disabled={isOutOfStock} className="product-quantity-dropdown" type="number" name="quantity" defaultValue={defaultQuantity} min="0" max={quantity} />
+                                    <input onChange={onQuantityChange} disabled={isOutOfStock} className="product-quantity-dropdown" type="number" name="quantity" defaultValue={defaultQuantity} min="1" max={quantity} />
                                     <span className={"product-stock " + stockClass}>{stockMessage}</span>
-                                    <button className="product-buy-button ebs-button" disabled={isOutOfStock} onClick={() => props.addToCart(id, selectedQuantity)}>Add to cart</button>
+                                    <button className="product-buy-button ebs-button" disabled={isOutOfStock} onClick={() => addToCart(id, selectedQuantity)}>Add to cart</button>
                                 </div>
                                 <ShippingAndTerms />
                                 

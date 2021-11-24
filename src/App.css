@@ -112,3 +112,7 @@ button:disabled {
 .force-max-opacity {
 	opacity: 1 !important;
 }
+
+.input[type="number"] {
+	background-color:black;
+}

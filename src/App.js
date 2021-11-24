@@ -19,17 +19,56 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   function addToCart(id, quantity) {
-    let newItems = cartItems.map(ci => (ci));
-    newItems.push({id, quantity});
+    let newItems = [];
+    let found = false;
+    for (var i = 0; i < cartItems.length; i++) {
+      if (cartItems[i].id === id) {
+        newItems.push({id, quantity: parseInt(cartItems[i].quantity) + parseInt(quantity)});
+        found = true;
+      }
+      else {
+        newItems.push(cartItems[i]);
+      }
+    }
+    if (!found) {
+      newItems.push({id, quantity});
+    }
+
     setCartItems(newItems);
+  }
+
+  function updateCartItemQuantity(id, quantity) {
+    let newItems = [];
+    for (var i = 0; i < cartItems.length; i++) {
+      if (cartItems[i].id === id) {
+        newItems.push({id, quantity});
+      }
+      else {
+        newItems.push(cartItems[i]);
+      }
+    }
+    setCartItems(newItems);
+  }
+
+  function removeFromCart(id) {
+    let newItems = cartItems.filter(ci => (ci.id !== id));
+    setCartItems(newItems);
+  }
+
+  function getCartSize() {
+    var size = 0;
+    for (var i = 0; i < cartItems.length; i++) {
+      size = size + parseInt(cartItems[i].quantity);
+    }
+    return size;
   }
 
   return (
     <BrowserRouter>
 
-      <SiteHeader cartSize={cartItems.length}/>
+      <SiteHeader cartSize={getCartSize()}/>
 
-      <Cart items={cartItems}/>
+      <Cart items={cartItems} removeFromCart={removeFromCart} updateCartItemQuantity={updateCartItemQuantity}/>
 
       <ScrollListener 
         elementId='siteHeader'
