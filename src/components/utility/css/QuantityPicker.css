@@ -1,0 +1,43 @@
+
+.product-quantity-picker {
+    font-size: 14px;
+    font-weight: 200;
+    user-select: none;
+    margin-top:10px;
+    margin-bottom: 45px;
+}
+
+.quantity-picker-minus,
+.quantity-picker-plus,
+.quantity-picker-value {
+    float:left;
+    margin-right:10px;
+}
+
+.quantity-picker-minus,
+.quantity-picker-plus {
+    background-color: rgba(235,235,235,1);
+    padding: 4px 5px;
+    min-width:25px;
+    max-width: 30px;
+    text-align: center;
+    line-height: 17px;
+}
+
+.quantity-picker-value:hover {
+    cursor:default;
+}
+
+.product-quantity-picker:not(.quantity-disabled) .quantity-picker-minus:hover,
+.product-quantity-picker:not(.quantity-disabled) .quantity-picker-plus:hover {
+    cursor:pointer;
+}
+
+.quantity-picker-value {
+    line-height: 25px;
+}
+
+.quantity-disabled {
+    cursor:not-allowed !important;
+    opacity: 0.6;
+}

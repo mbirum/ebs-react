@@ -1,0 +1,16 @@
+@media screen and (max-width: 700px) {
+    #productPageQuantity {
+        text-align: center;
+        min-width:98px;
+        width:31%;
+        max-width: 98px;
+        margin:auto;
+        display:block;
+        margin-bottom: 55px;
+    }
+
+    .quantity-picker-minus {
+        margin-left: 10px;
+    }
+
+}

@@ -22,8 +22,8 @@
     margin-left: 2%;
     font-size: 12px;
     font-weight: 200;
-    -webkit-transition: background-image 0.3s ease-in-out;
-    transition: background-image,opacity 0.2s ease-in-out;
+    -webkit-transition: box-shadow 0.1s ease-in-out;
+    transition: box-shadow 0.1s ease-in-out;
 }
 
 #sidebarItemWrapper:hover {
@@ -31,7 +31,8 @@
 }
 
 .sidebar-category-clicked {
-    box-shadow: -1px -1px 3px rgb(210,210,210);
+    box-shadow: -2px 0px 2px rgb(230,230,230);
+    font-weight: 400 !important;
 }
 
 #storeSidebar .panel-closer-wrapper {

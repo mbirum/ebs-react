@@ -33,7 +33,7 @@
 }
 
 .product-description {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
 .product-description-line {
@@ -58,17 +58,6 @@
     width: 100%;
 }
 
-.product-quantity-dropdown {
-    line-height: 35px;
-    min-width: 70px;
-    max-width: 70px;
-    margin-bottom: 15px;
-}
-
-.product-quantity-column {
-    width: 20%;
-}
-
 .product-button-column {
     width: 80%;
 }
@@ -91,9 +80,8 @@
 
 /* Stock */
 .product-stock {
-    position:relative;
-    top: 12px;
-    left: 9px;
+    display: block;
+    margin-bottom:5px;
     font-size: 12px; 
     font-weight: 500;
     opacity: 0.75;

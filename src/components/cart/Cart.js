@@ -3,19 +3,20 @@ import './css/Cart-700.css';
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import PanelCloser from '../utility/PanelCloser';
+import QuantityPicker from '../utility/QuantityPicker';
 import { getProduct } from '../../graphql/queries';
 
 const Cart = props => {
     const [items, setItems] = useState([]);
 
-    function onItemQuantityChange(e) {
-        var itemTr = e.target.closest('tr');
+    function onItemQuantityChange(oldValue, newValue, picker) {
+        var itemTr = picker.closest('tr');
         var productId = itemTr.getAttribute('productid');
-        if (e.target.value === '0') {    
+        if (newValue === 0) {    
             props.removeFromCart(productId);
         }
         else {
-            props.updateCartItemQuantity(productId, parseInt(e.target.value));
+            props.updateCartItemQuantity(productId, parseInt(newValue));
         }
     }
 
@@ -50,8 +51,7 @@ const Cart = props => {
                     <td className='cart-item-column cart-text-column'>
                         <h3 className='cart-text-header'>{item.name}</h3>
                         <span className='cart-item-price'>${item.price}</span>
-                        <input onChange={onItemQuantityChange} className="cart-quantity-dropdown" type="number" name="quantity" defaultValue={products[i].quantity} value={products[i].quantity}  min="0" max={item.quantity} />
-                        
+                        <QuantityPicker id="cartItemQuantity" onChange={onItemQuantityChange} disabled={false} defaultValue={products[i].quantity} min={0} max={item.quantity} />
                     </td>
                     
                 </tr>

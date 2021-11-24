@@ -3,6 +3,7 @@ import './css/ProductPage-700.css';
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import StoreBreadcrumb from './StoreBreadcrumb';
+import QuantityPicker from '../utility/QuantityPicker';
 import ShippingAndTerms from './ShippingAndTerms';
 
 
@@ -30,9 +31,8 @@ const ProductPage = props => {
         }
     }
 
-    function onQuantityChange() {
-        var quantity = document.getElementsByClassName('product-quantity-dropdown')[0].value;
-        setSelectedQuantity(quantity);
+    function onQuantityChange(oldValue, newValue) {
+        setSelectedQuantity(newValue);
     }
 
     function addToCart(id, quantity) {
@@ -66,9 +66,9 @@ const ProductPage = props => {
                                 <span className="product-description-line product-price">${price}</span>
                                 <span className="product-description-line product-size">{width} x {height} inches</span>
                                 <span className="product-description-line product-description">{description}</span>
+                                <span className={"product-stock " + stockClass}>{stockMessage}</span>
+                                <QuantityPicker id="productPageQuantity" onChange={onQuantityChange} disabled={isOutOfStock} className="product-quantity-picker" defaultValue={defaultQuantity} min={1} max={quantity} />
                                 <div className="product-description-line product-buy-section">
-                                    <input onChange={onQuantityChange} disabled={isOutOfStock} className="product-quantity-dropdown" type="number" name="quantity" defaultValue={defaultQuantity} min="1" max={quantity} />
-                                    <span className={"product-stock " + stockClass}>{stockMessage}</span>
                                     <button className="product-buy-button ebs-button" disabled={isOutOfStock} onClick={() => addToCart(id, selectedQuantity)}>Add to cart</button>
                                 </div>
                                 <ShippingAndTerms />
