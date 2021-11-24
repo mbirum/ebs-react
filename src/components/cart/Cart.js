@@ -14,8 +14,10 @@ const Cart = props => {
     function onItemQuantityChange(oldValue, newValue, picker) {
         var itemTr = picker.closest('tr');
         var productId = itemTr.getAttribute('productid');
-        if (newValue === 0) {    
-            props.removeFromCart(productId);
+        if (newValue === 0) {
+            setTimeout(() => {
+                props.removeFromCart(productId);
+            }, 300);
         }
         else {
             props.updateCartItemQuantity(productId, parseInt(newValue));

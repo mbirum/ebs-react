@@ -38,9 +38,6 @@ const ProductPage = props => {
     function addToCart(id, quantity) {
         if (quantity > 0) {
             props.addToCart(id, quantity);
-            setTimeout(() => {
-                document.getElementById('cart').classList.add('cart-active');
-            }, 400);
         }
     }
 
@@ -71,6 +68,7 @@ const ProductPage = props => {
                                 <div className="product-description-line product-buy-section">
                                     <button className="product-buy-button ebs-button" disabled={isOutOfStock} onClick={() => addToCart(id, selectedQuantity)}>Add to cart</button>
                                 </div>
+                                <div className="cart-add-error-message"></div>
                                 <ShippingAndTerms />
                                 
                             </td>

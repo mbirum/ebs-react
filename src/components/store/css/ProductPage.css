@@ -54,10 +54,6 @@
     margin-bottom: 20px;
 }
 
-.product-buy-section-table {
-    width: 100%;
-}
-
 .product-button-column {
     width: 80%;
 }
@@ -98,4 +94,14 @@
 .buy-button-clicked {
     background-color: white;
     color: black;
+}
+
+.cart-add-error-message {
+    font-size: 13px;
+    font-weight: 200;
+    margin-top:10px;
+    text-align: center;
+    color:darkred;
+    min-height:20px;
+    max-height:20px;
 }

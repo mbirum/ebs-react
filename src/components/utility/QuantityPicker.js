@@ -1,6 +1,6 @@
 import './css/QuantityPicker.css';
 import './css/QuantityPicker-700.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const QuantityPicker = props => {
     const [value, setValue] = useState(props.defaultValue);
@@ -28,6 +28,10 @@ const QuantityPicker = props => {
             onChange(oldValue, newValue, picker);
         }
     }
+
+    useEffect(() => {
+        setValue(props.defaultValue);
+    }, [props.defaultValue]);
 
     return (
         <div id={props.id} className={"product-quantity-picker " + disabledClassName}>
