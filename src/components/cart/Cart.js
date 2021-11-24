@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import PanelCloser from '../utility/PanelCloser';
 import QuantityPicker from '../utility/QuantityPicker';
+import CartCheckout from './CartCheckout';
 import { getProduct } from '../../graphql/queries';
 
 const Cart = props => {
     const [items, setItems] = useState([]);
+    const [subtotal, setSubtotal] = useState(0.00);
 
     function onItemQuantityChange(oldValue, newValue, picker) {
         var itemTr = picker.closest('tr');
@@ -40,9 +42,11 @@ const Cart = props => {
 
     async function fetchProducts(products) {
         var cartItems = [];
+        let sum = 0;
         for (var i = 0; i < products.length; i++) {
             const apiData = await API.graphql({ query: getProduct, variables: {id : products[i].id} });
             const item = apiData.data.getProduct;
+            sum = sum + (parseInt(products[i].quantity) * parseFloat(item.price));
             cartItems.push(
                 <tr productid={item.id} key={i} className='cart-item'>
                     <td className='cart-item-column cart-img-column'>
@@ -59,6 +63,7 @@ const Cart = props => {
         }
         
         setItems(cartItems);
+        setSubtotal(sum);
     }
 
     useEffect(() => {
@@ -77,6 +82,9 @@ const Cart = props => {
                     {items}
                 </tbody>
             </table>
+
+            <CartCheckout subtotal={subtotal}/>
+
         </div>
     );
 };
