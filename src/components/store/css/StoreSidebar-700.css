@@ -9,12 +9,8 @@
         z-index: 1;
     }
 
-    #storeSidebar hr {
-        margin-top: 80px;
-    }
-
     .sidebar-header {
-        display:none;
+        margin-top: 80px;
     }
 
     .sidebar-enabled {

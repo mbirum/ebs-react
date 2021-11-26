@@ -1,0 +1,35 @@
+#checkoutInfo {
+    padding: 10px 25px;
+}
+
+#checkoutShippingHeader {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+#checkoutInfo form input {
+    font-size:13px;
+    padding-top:13px;
+    padding-bottom:13px;
+    margin:0 5px;
+    transition: padding 0.2s;
+}
+
+#checkoutInfo form label {
+    margin: 0 9px;
+    position:relative;
+    top:15px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.form-input-entered {
+    padding-top:21px !important;
+    padding-bottom:5px !important;
+}
+
+.form-label-entered {
+    opacity: 1 !important;
+}

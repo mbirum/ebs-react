@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import PanelCloser from '../utility/PanelCloser';
 import QuantityPicker from '../utility/QuantityPicker';
-import CartCheckout from './CartCheckout';
+import CartCheckoutSection from './CartCheckoutSection';
 import { getProduct } from '../../graphql/queries';
 
 const Cart = props => {
@@ -52,7 +52,7 @@ const Cart = props => {
             cartItems.push(
                 <tr productid={item.id} key={i} className='cart-item'>
                     <td className='cart-item-column cart-img-column'>
-                        <img className='cart-item-img' src={item.image}/>
+                        <img alt={item.name} className='cart-item-img' src={item.image}/>
                     </td>
                     <td className='cart-item-column cart-text-column'>
                         <h3 className='cart-text-header'>{item.name}</h3>
@@ -70,6 +70,8 @@ const Cart = props => {
 
     useEffect(() => {
         fetchProducts(props.items);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.items]);
 
 
@@ -85,7 +87,7 @@ const Cart = props => {
                 </tbody>
             </table>
 
-            <CartCheckout subtotal={subtotal}/>
+            <CartCheckoutSection subtotal={subtotal}/>
 
         </div>
     );

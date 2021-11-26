@@ -27,3 +27,10 @@
     transition: opacity 0.3s;
 }
 
+#cartCheckoutButton:hover {
+    cursor:pointer;
+}
+
+#cart.cart-permanent #cartCheckout #cartCheckoutButton {
+    display: none;
+}

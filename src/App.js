@@ -14,6 +14,7 @@ import ScrollToTop from './components/utility/ScrollToTop';
 import ScrollListener from './components/utility/ScrollListener';
 import ProductPage from './components/store/ProductPage';
 import Cart from './components/cart/Cart';
+import CheckoutPage from './components/checkout/CheckoutPage';
 
 Amplify.configure(amplifyconfig);
 
@@ -66,7 +67,6 @@ function App() {
   }
 
   async function updateCartItemQuantity(id, quantity) {
-    let maxQuantity = await getItemQuantity(id);
     let newItems = [];
     for (var i = 0; i < cartItems.length; i++) {
       if (cartItems[i].id === id) {
@@ -114,6 +114,7 @@ function App() {
           <Route exact path='/' element={<Homepage/>} />
           <Route path='/shop' element={<Store />} />
           <Route path='/shop/:product' element={<ProductPage addToCart={addToCart}/>} />
+          <Route path='/checkout' element={<CheckoutPage items={cartItems} />} />
         </Routes>
       </ScrollToTop>
 
