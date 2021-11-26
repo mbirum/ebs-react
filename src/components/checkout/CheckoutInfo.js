@@ -6,21 +6,12 @@ const CheckoutInfo = props => {
 
     useEffect(() => {
         document.getElementById('cart').classList.add('cart-permanent');
-        return () => {document.getElementById('cart').classList.remove('cart-permanent')};
+        document.getElementById('site-footer').classList.add('checkout-footer');
+        return () => {
+            document.getElementById('cart').classList.remove('cart-permanent');
+            document.getElementById('site-footer').classList.remove('checkout-footer');
+        };
     });
-
-    function isEmailActive() {
-        return document.getElementById('emailInput').classList.contains('form-input-entered');
-    }
-    
-    function testOnClick() {
-        if (isEmailActive()) {
-            document.getElementById('emailInput').classList.remove('form-input-entered');
-        }
-        else {
-            document.getElementById('emailInput').classList.add('form-input-entered');
-        }
-    }
 
     function getLabelForInput(input) {
         var name = input.getAttribute('name');
@@ -58,37 +49,55 @@ const CheckoutInfo = props => {
 
     return (
         <div id="checkoutInfo">
-            <button onClick={testOnClick}>Test CSS </button>
             <form>
+                <h2 className="checkout-form-header">Contact Information</h2>
                 <label className="checkout-form-label" htmlFor="email">Email</label> <br/>
-                <input onChange={onInputChange} name="email" type="text" placeholder="Email" /> <br/>
+                <input className="form-length-full" onChange={onInputChange} name="email" type="text" placeholder="Email" /> <br/>
+                
+                <br/><br/><br/>
+                <h2 className="checkout-form-header">Shipping Address</h2>
 
-                <label className="checkout-form-label" htmlFor="firstName">First Name</label> <br/>
-                <input onChange={onInputChange} name="firstName" type="text" placeholder="First Name" /> <br/>
+                <table className="form-length-full" style={{padding:0, borderSpacing:0}}>
+                    <tbody>
+                        <tr style={{width:100+'%'}}>
+                            <td style={{width:50+'%', paddingRight:5 + 'px'}}>
+                                <label className="checkout-form-label" htmlFor="firstName">First Name</label> <br/>
+                                <input className="form-length-full" onChange={onInputChange} name="firstName" type="text" placeholder="First Name" /> <br/>
+                            </td>
+                            <td style={{width:50+'%', paddingLeft:5 + 'px'}}>
+                                <label className="checkout-form-label" htmlFor="lastName">Last Name</label> <br/>
+                                <input className="form-length-full" onChange={onInputChange} name="lastName" type="text" placeholder="Last Name" /> <br/>    
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <label className="checkout-form-label" htmlFor="lastName">Last Name</label> <br/>
-                <input onChange={onInputChange} name="lastName" type="text" placeholder="Last Name" /> <br/>
-                <br/>
-                <h2 id="checkoutShippingHeader">Shipping Address</h2>
-
-                <label className="checkout-form-label" htmlFor="addressLine1">Address</label> <br/>
-                <input onChange={onInputChange} name="addressLine1" type="text" placeholder="Address" /> <br/>
+                <label className="checkout-form-label" htmlFor="address1">Address</label> <br/>
+                <input className="form-length-full" onChange={onInputChange} name="address1" type="text" placeholder="Address" /> <br/>
 
                 <label className="checkout-form-label" htmlFor="addressLine2">Apartment, suite, etc. (optional)</label> <br/>
-                <input onChange={onInputChange} name="addressLine2" type="text" placeholder="Apartment, suite, etc. (optional)" /> <br/>
+                <input className="form-length-full" onChange={onInputChange} name="addressLine2" type="text" placeholder="Apartment, suite, etc. (optional)" /> <br/>
 
-                <label className="checkout-form-label" htmlFor="city">City</label> <br/>
-                <input onChange={onInputChange} name="city" type="text" placeholder="City" /> <br/>
-                <br/>
+                <table className="form-length-full" style={{padding:0, borderSpacing:0}}>
+                    <tbody>
+                        <tr style={{width:100+'%'}}>
+                            <td style={{width:33+'%', paddingRight:5 + 'px'}}>
+                                <label className="checkout-form-label" htmlFor="city">City</label> <br/>
+                                <input className="form-length-full" onChange={onInputChange} name="city" type="text" placeholder="City" />
+                            </td>
+                            <td style={{width:34+'%', padding:'0 5px'}}>
+                                <label className="checkout-form-label" htmlFor="state">State</label> <br/>
+                                <input className="form-length-full" onChange={onInputChange} name="state" type="text" placeholder="State" /> 
+                            </td>
+                            <td style={{width:33+'%', paddingLeft:5 + 'px'}}>
+                                <label className="checkout-form-label" htmlFor="zipcode">ZIP Code</label> <br/>
+                                <input className="form-length-full" onChange={onInputChange} name="zipcode" type="text" placeholder="ZIP code" /> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <label className="checkout-form-label" htmlFor="country">Country</label> <br/>
-                <input onChange={onInputChange} name="country" type="text" placeholder="Country" /> 
 
-                <label className="checkout-form-label" htmlFor="state">State</label> <br/>
-                <input onChange={onInputChange} name="state" type="text" placeholder="State" /> 
-
-                <label className="checkout-form-label" htmlFor="zipcode">ZIP Code</label> <br/>
-                <input onChange={onInputChange} name="zipcode" type="text" placeholder="ZIP code" /> 
             </form>
         </div>
     );

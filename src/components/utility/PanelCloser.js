@@ -1,6 +1,6 @@
 import './css/PanelCloser.css';
 import './css/PanelCloser-700.css';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const PanelCloser = props => {
 

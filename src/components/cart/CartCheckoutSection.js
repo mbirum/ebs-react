@@ -11,6 +11,7 @@ const CartCheckoutSection = props => {
             navigate("/checkout", { replace: true });
             setTimeout(() => {
                 document.getElementById('cart').classList.remove('cart-active');
+
             }, 200);
         }
     }
