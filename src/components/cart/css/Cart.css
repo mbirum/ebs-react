@@ -35,6 +35,10 @@
     margin-top: 90px !important;
 }
 
+.cart-permanent .panel-closer-wrapper {
+    display:none !important;
+}
+
 .cart-item-img {
     margin-bottom: 25px;
     max-width: 95px;

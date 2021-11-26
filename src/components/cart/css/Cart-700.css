@@ -2,4 +2,32 @@
     #cart {
         width: 90%;
     }
+    
+    #cart.cart-permanent {
+        width: 100%;
+        position: relative;
+        height:75%;
+        max-height:75vh;
+        top:0px;
+        right:-999px;
+        background-color: white;
+        box-shadow: 0px 0px 200px black;
+        z-index: 1 !important;
+        transition: right 0.3s;
+        padding: 15px 25px;
+        overflow-y: scroll !important;
+    }
+
+    .cart-permanent {
+        box-shadow: 0px 0px 1px black !important;
+        z-index: 10 !important;
+    }
+
+    .cart-permanent #cartHeader {
+        display:none;
+    }
+
+    .cart-permanent .cart-header-hr {
+        display: none;
+    }
 }

@@ -97,8 +97,12 @@ const CheckoutInfo = props => {
                     </tbody>
                 </table>
 
-
             </form>
+
+            <div id="continueButtonWrapper">
+                <div id="continueToPaymentButton" className="ebs-button">Continue To Payment</div>
+            </div>
+            
         </div>
     );
 };

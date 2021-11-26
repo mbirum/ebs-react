@@ -80,7 +80,7 @@ const Cart = props => {
             <PanelCloser onClick={closeCart}/>
             <div id="cartHeader">Shopping cart</div>
             <br/>
-            <hr/>
+            <hr className="cart-header-hr"/>
             <table id="cartTable">
                 <tbody>
                     {items}
