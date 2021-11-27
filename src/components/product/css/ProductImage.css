@@ -16,7 +16,7 @@
     height: 8vw;
     object-fit: cover;
     object-position: 50% 50%;
-    padding:10px 6px;
+    padding:10px 7px;
     opacity: 0.25;
     transition: opacity 0.2s;
 }

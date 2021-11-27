@@ -20,4 +20,13 @@
         top:3px;
         left:-31px;
     }
+
+    .product-table-item-name {
+        margin-top:2px;
+    }
+    
+    .product-table-item-price {
+        margin-top:5px;
+        margin-bottom:13px;
+    }
 }

@@ -42,7 +42,7 @@ function App() {
             `You can't add more of this item to your cart`;
           setTimeout(() => {
             document.getElementsByClassName("cart-add-error-message")[0].innerHTML = '';
-          }, 5000);
+          }, 10000);
         }
         else {
           newItems.push({id, quantity: parseInt(cartItems[i].quantity) + parseInt(quantity)});
