@@ -1,9 +1,20 @@
 @media screen and (max-width: 700px) {
     .tile-header {
-        font-size:11px;
+        font-size:12px;
     }
 
     .homepage-tile-image {
-        width: 75%;
+        width: 65%;
+    }
+
+    .homepage-tile-column {
+        display: block;
+        clear:both;
+        padding:25px 0;
+    }
+
+    #homepageTilesHeader {
+        margin-top:50px;
+        margin-bottom:20px;
     }
 }

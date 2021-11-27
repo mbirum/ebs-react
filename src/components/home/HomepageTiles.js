@@ -7,6 +7,7 @@ function HomepageTiles() {
 
   return (
     <div id="homepageTiles">
+        <h2 id="homepageTilesHeader">By Category</h2>
         <table id="homepageTileTable">
             <tbody>
                 <tr>
@@ -16,6 +17,12 @@ function HomepageTiles() {
                             <p className="tile-header">Original Artwork</p>
                         </Link>
 
+                    </td>
+                    <td className="homepage-tile-column">
+                        <Link to="/shop" state={{ initialCategory: "Ornaments" }} >
+                            <img className="homepage-tile-image" src="ornaments-tile.png" />
+                            <p className="tile-header">Ornaments</p>
+                        </Link>
                     </td>
                     <td className="homepage-tile-column">
                         <img className="homepage-tile-image" src="prints-tile.png" />
