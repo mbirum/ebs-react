@@ -113,7 +113,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Homepage/>} />
           <Route path='/shop' element={<Store />} />
-          <Route path='/shop/:product' element={<ProductPage addToCart={addToCart}/>} />
+          <Route path='/shop/:slug' element={<ProductPage addToCart={addToCart}/>} />
           <Route path='/checkout' element={<CheckoutPage items={cartItems} />} />
         </Routes>
       </ScrollToTop>

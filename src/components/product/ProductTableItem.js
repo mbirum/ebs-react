@@ -11,7 +11,7 @@ const ProductTableItem = props => {
 
   return (
       <td className="ProductTableItem">
-        <Link to={'/shop/' + props.name} state={{...props}}>
+        <Link to={'/shop/' + props.slug} state={{...props}}>
           <div className={"product-table-img-wrapper " + stockClass}>
             <img src={props.image} alt={props.name} className={"product-table-image " + stockClass} />
           </div>

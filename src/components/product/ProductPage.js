@@ -1,17 +1,29 @@
 import './css/ProductPage.css';
 import './css/ProductPage-700.css';
 import React, { useState, useEffect } from 'react';
+import { API } from 'aws-amplify';
 import { useLocation, Link } from 'react-router-dom';
 import StoreBreadcrumb from '../store/StoreBreadcrumb';
 import QuantityPicker from '../utility/QuantityPicker';
 import ShippingAndTerms from './ShippingAndTerms';
 import ProductImage from './ProductImage';
+import { listProducts } from '../../graphql/queries';
 
 
 const ProductPage = props => {
     const location = useLocation();
-    const { id, name, image, additionalImages, price, description, width, height, quantity, currentCategory } = (location.state) ? location.state : {};
-    var defaultQuantity = (quantity >= 1) ? 1 : 0;
+    const [id, setId] = useState((location.state) ? location.state.id : '');
+    const [name, setName] = useState((location.state) ? location.state.name : '');
+    const [image, setImage] = useState((location.state) ? location.state.image : '');
+    const [additionalImages, setAdditionalImages] = useState((location.state) ? location.state.additionalImages : '');
+    const [price, setPrice] = useState((location.state) ? location.state.price : '');
+    const [description, setDescription] = useState((location.state) ? location.state.description : '');
+    const [width, setWidth] = useState((location.state) ? location.state.width : 0);
+    const [height, setHeight] = useState((location.state) ? location.state.height : 0);
+    const [quantity, setQuantity] = useState((location.state) ? location.state.quantity : 0);
+    const [currentCategory, setCurrentCategory] = useState((location.state) ? location.state.currentCategory : '');
+
+    const [defaultQuantity, setDefaultQuantity] = useState((quantity >= 1) ? 1: 0);
     const [selectedQuantity, setSelectedQuantity] = useState(defaultQuantity);
     var productCategory = (currentCategory != null) ? currentCategory : 'All';
     var isOutOfStock = (quantity < 1);
@@ -44,6 +56,31 @@ const ProductPage = props => {
 
     useEffect(registerBuyButtonMousedown);
 
+    async function loadProduct() {
+        let slug = location.pathname.replace('/shop/', '');
+        const apiData = await API.graphql({ query: listProducts, filter: {slug: {eq: slug}} });
+        const newProduct = apiData.data.listProducts.items[0];
+        if (newProduct) {
+            setId(newProduct.id);
+            setName(newProduct.name);
+            setImage(newProduct.image);
+            setAdditionalImages(newProduct.additionalImages);
+            setPrice(newProduct.price);
+            setDescription(newProduct.description);
+            setWidth(newProduct.width);
+            setHeight(newProduct.height);
+            setQuantity(newProduct.quantity);
+            setDefaultQuantity((newProduct.quantity >= 1) ? 1: 0);
+            setSelectedQuantity((newProduct.quantity >= 1) ? 1: 0);
+            setCurrentCategory('All');
+        }
+    }
+
+    useEffect(() => {
+        if (name === '') {
+            loadProduct();
+        }
+    });
 
     return (
         <div className="product-page">

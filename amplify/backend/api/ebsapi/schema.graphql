@@ -2,6 +2,7 @@ type Product @model {
   id: ID!
   name: String!
   description: String
+  slug: String!
   price: String!
   quantity: Int!
   width: Int

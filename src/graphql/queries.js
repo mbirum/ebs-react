@@ -7,6 +7,7 @@ export const getProduct = /* GraphQL */ `
       id
       name
       description
+      slug
       price
       quantity
       width
@@ -30,6 +31,7 @@ export const listProducts = /* GraphQL */ `
         id
         name
         description
+        slug
         price
         quantity
         width

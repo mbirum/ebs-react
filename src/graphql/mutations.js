@@ -10,6 +10,7 @@ export const createProduct = /* GraphQL */ `
       id
       name
       description
+      slug
       price
       quantity
       width
@@ -31,6 +32,7 @@ export const updateProduct = /* GraphQL */ `
       id
       name
       description
+      slug
       price
       quantity
       width
@@ -52,6 +54,7 @@ export const deleteProduct = /* GraphQL */ `
       id
       name
       description
+      slug
       price
       quantity
       width
