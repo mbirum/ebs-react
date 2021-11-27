@@ -18,6 +18,11 @@
 .homepage-tile-column {
 	text-align: center;
 	vertical-align: bottom;
+	width:33%;
+}
+
+.homepage-tile-column:nth-of-type(1) .homepage-tile-image {
+	width:70%;
 }
 
 .tile-header {
