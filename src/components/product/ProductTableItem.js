@@ -15,10 +15,12 @@ const ProductTableItem = props => {
           <div className={"product-table-img-wrapper " + stockClass}>
             <img src={props.image} alt={props.name} className={"product-table-image " + stockClass} />
           </div>
-          <p>
-            {props.name} <br/>
-            {props.price}
-          </p>
+          <div className="product-table-item-name">
+            {props.name}
+          </div>
+          <div className="product-table-item-price">
+            ${props.price}
+          </div>
         </Link>
       </td>
   );
