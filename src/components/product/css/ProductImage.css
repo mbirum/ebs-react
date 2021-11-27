@@ -1,5 +1,5 @@
 .product-page-image {
-    width: calc(100%);
+    width: 100%;
     min-width:40vw;
     max-width:40vw;
     float:right;

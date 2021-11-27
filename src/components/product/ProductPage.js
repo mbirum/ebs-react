@@ -58,7 +58,12 @@ const ProductPage = props => {
 
     async function loadProduct() {
         let slug = location.pathname.replace('/shop/', '');
-        const apiData = await API.graphql({ query: listProducts, filter: {slug: {eq: slug}} });
+        let filter = {
+            slug: {
+                eq: slug
+            }
+        };
+        const apiData = await API.graphql({ query: listProducts, variables: { filter: filter }});
         const newProduct = apiData.data.listProducts.items[0];
         if (newProduct) {
             setId(newProduct.id);
