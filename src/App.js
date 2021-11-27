@@ -12,7 +12,7 @@ import SiteHeader from './components/header/SiteHeader';
 import SiteFooter from './components/footer/SiteFooter';
 import ScrollToTop from './components/utility/ScrollToTop';
 import ScrollListener from './components/utility/ScrollListener';
-import ProductPage from './components/store/ProductPage';
+import ProductPage from './components/product/ProductPage';
 import Cart from './components/cart/Cart';
 import CheckoutPage from './components/checkout/CheckoutPage';
 

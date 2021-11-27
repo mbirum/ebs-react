@@ -6,12 +6,6 @@
     padding: 3% 8% 0 8%;
 
 }
-.product-page-image {
-    width: 100%;
-    float:right;
-    text-align: center;
-    margin-right:auto;
-}
 
 .product-page-column {
     width:50%;
@@ -33,7 +27,7 @@
 }
 
 .product-description {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .product-description-line {

@@ -1,0 +1,26 @@
+.product-page-image {
+    width: calc(100%);
+    min-width:40vw;
+    max-width:40vw;
+    float:right;
+    text-align: center;
+    margin-right:auto;
+    height:40vw;
+    min-height:420px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.product-additional-image {
+    width: calc(100% / 6);
+    height: 8vw;
+    object-fit: cover;
+    object-position: 50% 50%;
+    padding:10px 2px;
+    opacity: 0.3;
+    transition: opacity 0.2s;
+}
+
+.additional-image-focused {
+    opacity: 1 !important;
+}

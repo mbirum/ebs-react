@@ -2,7 +2,7 @@ import './css/Store.css';
 import './css/Store-700.css';
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import ProductTable from './ProductTable';
+import ProductTable from '../product/ProductTable';
 import { API } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
 import StoreBreadcrumb from './StoreBreadcrumb';

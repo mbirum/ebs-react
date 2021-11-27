@@ -12,6 +12,7 @@ export const onCreateProduct = /* GraphQL */ `
       width
       height
       image
+      additionalImages
       categories
       createdAt
       updatedAt
@@ -29,6 +30,7 @@ export const onUpdateProduct = /* GraphQL */ `
       width
       height
       image
+      additionalImages
       categories
       createdAt
       updatedAt
@@ -46,6 +48,7 @@ export const onDeleteProduct = /* GraphQL */ `
       width
       height
       image
+      additionalImages
       categories
       createdAt
       updatedAt

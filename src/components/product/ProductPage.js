@@ -2,14 +2,15 @@ import './css/ProductPage.css';
 import './css/ProductPage-700.css';
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import StoreBreadcrumb from './StoreBreadcrumb';
+import StoreBreadcrumb from '../store/StoreBreadcrumb';
 import QuantityPicker from '../utility/QuantityPicker';
 import ShippingAndTerms from './ShippingAndTerms';
+import ProductImage from './ProductImage';
 
 
 const ProductPage = props => {
     const location = useLocation();
-    const { id, name, image, price, description, width, height, quantity, currentCategory } = (location.state) ? location.state : {};
+    const { id, name, image, additionalImages, price, description, width, height, quantity, currentCategory } = (location.state) ? location.state : {};
     var defaultQuantity = (quantity >= 1) ? 1 : 0;
     const [selectedQuantity, setSelectedQuantity] = useState(defaultQuantity);
     var productCategory = (currentCategory != null) ? currentCategory : 'All';
@@ -57,7 +58,13 @@ const ProductPage = props => {
                 <table className="product-page-table">
                     <tbody>
                         <tr>
-                            <td className="product-page-column image-column"><img alt={name} className="product-page-image" src={image} /></td>
+                            <td className="product-page-column image-column">
+                                <ProductImage
+                                    alt={name}
+                                    image={image}
+                                    additionalImages={additionalImages}
+                                />
+                            </td>
                             <td className="product-page-column description-column">
                                 <h4 className="product-header ebs-header">{name}</h4>
                                 <span className="product-description-line product-price">${price}</span>

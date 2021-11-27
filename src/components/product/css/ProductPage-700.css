@@ -1,16 +1,13 @@
 @media screen and (max-width: 700px) {
+    .product-page-table {
+        width: 100%;
+    }
     .product-page-column {
         display: block;
         width: 100%;
         clear:both;
         text-align: center;
         margin:auto;
-    }
-
-    .product-page-image {
-        width: 75%;
-        margin:auto;
-        float:none;
     }
 
     /* Stock */
@@ -24,6 +21,10 @@
         opacity: 0.75;
         margin-bottom:15px;
         letter-spacing: 0.1em;
+    }
+
+    .product-description {
+        margin-bottom: 60px !important;
     }
 
     .out-of-stock {
