@@ -1,0 +1,27 @@
+#homepageTiles {
+	padding: 10% 7%;
+}
+
+.homepage-tile-image {
+	width: 55%;
+	opacity: 1;
+	transition: opacity,width 0.2s;
+}
+
+.homepage-tile-image:hover {
+	cursor:pointer;
+	opacity: 0.85;
+	/* width:56%; */
+}
+
+.homepage-tile-column {
+	text-align: center;
+	vertical-align: bottom;
+}
+
+.tile-header {
+	font-size:14px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: 200;
+}

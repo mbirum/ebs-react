@@ -3,6 +3,7 @@ import './css/Homepage-700.css';
 import React from 'react';
 import Carousel from './Carousel'
 import ShopButtonSection from './ShopButtonSection';
+import HomepageTiles from './HomepageTiles';
 
 function Homepage() {
 
@@ -24,6 +25,8 @@ function Homepage() {
         xPadding={25}
         carouselClass='carousel-mobile'
       />
+
+      <HomepageTiles />
 
     </div>
   );
