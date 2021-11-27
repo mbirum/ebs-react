@@ -34,12 +34,13 @@
 
 .product-table-item-name {
     font-size: 14px;
-    font-weight: 400;
-    margin-top:-12px;
+    font-weight: 300;
+    margin-top:-13px;
 }
 
 .product-table-item-price {
     font-size: 12px;
     font-weight: 200;
     margin-top:5px;
+    margin-bottom:25px;
 }

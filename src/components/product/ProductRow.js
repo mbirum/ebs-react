@@ -21,7 +21,7 @@ const ProductRow = props => {
     tempIndex = tempIndex + 1;
   }
   return (
-    <tr>
+    <tr className="product-table-row">
       {rowItems}
     </tr>
   );
