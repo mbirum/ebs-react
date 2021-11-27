@@ -2,4 +2,8 @@
     .tile-header {
         font-size:11px;
     }
+
+    .homepage-tile-image {
+        width: 75%;
+    }
 }

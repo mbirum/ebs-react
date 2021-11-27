@@ -3,7 +3,7 @@
 }
 
 .homepage-tile-image {
-	width: 55%;
+	width: 60%;
 	opacity: 1;
 	transition: opacity,width 0.2s;
 }
