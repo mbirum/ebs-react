@@ -3,8 +3,6 @@ import './App-700.css';
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Amplify from '@aws-amplify/core';
-import { API } from 'aws-amplify';
-import { getProduct } from './graphql/queries';
 import amplifyconfig from './amplify-config.js';
 import Store from './components/store/Store';
 import Homepage from './components/home/Homepage';
@@ -15,6 +13,7 @@ import ScrollListener from './components/utility/ScrollListener';
 import ProductPage from './components/product/ProductPage';
 import Cart from './components/cart/Cart';
 import CheckoutPage from './components/checkout/CheckoutPage';
+import { getProductByID } from './utils/APIWrapper';
 
 Amplify.configure(amplifyconfig);
 
@@ -22,8 +21,7 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   async function getItemQuantity(id) {
-    const apiData = await API.graphql({ query: getProduct, variables: {id} });
-    const item = apiData.data.getProduct;
+    let item = await getProductByID(id);
     return item.quantity;
   }
 

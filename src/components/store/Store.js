@@ -3,11 +3,10 @@ import './css/Store-700.css';
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ProductTable from '../product/ProductTable';
-import { API } from 'aws-amplify';
-import { listProducts } from '../../graphql/queries';
 import StoreBreadcrumb from './StoreBreadcrumb';
 import StoreSidebar from './StoreSidebar';
 import StoreFilterButton from './StoreFilterButton';
+import { getAllProducts } from '../../utils/APIWrapper';
 
 const Store = props => {
   const location = useLocation();
@@ -17,7 +16,6 @@ const Store = props => {
   const [products, setProducts] = useState([]);
   const [categoryStrings, setCategoryStrings] = useState([]);
   const [currentCategory, setCurrentCategory] = useState('All');
-
 
 
   function getCategoryStrings(items) {
@@ -74,8 +72,7 @@ const Store = props => {
 
 
   async function fetchProducts() {
-    const apiData = await API.graphql({ query: listProducts });
-    const items = apiData.data.listProducts.items;
+    let items = await getAllProducts();
 
     setAllProducts(items);
     getCategoryStrings(items);

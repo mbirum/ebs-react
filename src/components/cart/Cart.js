@@ -1,11 +1,10 @@
 import './css/Cart.css';
 import './css/Cart-700.css';
 import React, { useState, useEffect } from 'react';
-import { API } from 'aws-amplify';
 import PanelCloser from '../utility/PanelCloser';
 import QuantityPicker from '../utility/QuantityPicker';
 import CartCheckoutSection from './CartCheckoutSection';
-import { getProduct } from '../../graphql/queries';
+import { getProductByID } from '../../utils/APIWrapper';
 
 const Cart = props => {
     const [items, setItems] = useState([]);
@@ -46,8 +45,7 @@ const Cart = props => {
         var cartItems = [];
         let sum = 0;
         for (var i = 0; i < products.length; i++) {
-            const apiData = await API.graphql({ query: getProduct, variables: {id : products[i].id} });
-            const item = apiData.data.getProduct;
+            let item = await getProductByID(products[i].id);
             sum = sum + (parseInt(products[i].quantity) * parseFloat(item.price));
             cartItems.push(
                 <tr productid={item.id} key={i} className='cart-item'>

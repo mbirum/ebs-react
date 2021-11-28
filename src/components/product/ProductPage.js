@@ -1,13 +1,12 @@
 import './css/ProductPage.css';
 import './css/ProductPage-700.css';
 import React, { useState, useEffect } from 'react';
-import { API } from 'aws-amplify';
 import { useLocation, Link } from 'react-router-dom';
 import StoreBreadcrumb from '../store/StoreBreadcrumb';
 import QuantityPicker from '../utility/QuantityPicker';
 import ShippingAndTerms from './ShippingAndTerms';
 import ProductImage from './ProductImage';
-import { listProducts } from '../../graphql/queries';
+import { getProductBySlug } from '../../utils/APIWrapper';
 
 
 const ProductPage = props => {
@@ -58,13 +57,9 @@ const ProductPage = props => {
 
     async function loadProduct() {
         let slug = location.pathname.replace('/shop/', '');
-        let filter = {
-            slug: {
-                eq: slug
-            }
-        };
-        const apiData = await API.graphql({ query: listProducts, variables: { filter: filter }});
-        const newProduct = apiData.data.listProducts.items[0];
+        
+        let newProduct = await getProductBySlug(slug);
+
         if (newProduct) {
             setId(newProduct.id);
             setName(newProduct.name);

@@ -13,19 +13,19 @@ function HomepageTiles() {
                 <tr>
                     <td className="homepage-tile-column">
                         <Link to="/shop" state={{ initialCategory: "All" }} >
-                            <img className="homepage-tile-image" src="originals-tile.png" />
+                            <img alt="Original Artwork" className="homepage-tile-image" src="originals-tile.png" />
                             <p className="tile-header">Original Artwork</p>
                         </Link>
 
                     </td>
                     <td className="homepage-tile-column">
                         <Link to="/shop" state={{ initialCategory: "Ornaments" }} >
-                            <img className="homepage-tile-image" src="ornaments-tile.png" />
+                            <img alt="Ornaments" className="homepage-tile-image" src="ornaments-tile.png" />
                             <p className="tile-header">Ornaments</p>
                         </Link>
                     </td>
                     <td className="homepage-tile-column">
-                        <img className="homepage-tile-image" src="prints-tile.png" />
+                        <img alt="Prints" className="homepage-tile-image" src="prints-tile.png" />
                         <p className="tile-header">Prints</p>
                     </td>
                 </tr>

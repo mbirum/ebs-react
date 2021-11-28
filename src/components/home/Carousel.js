@@ -1,8 +1,7 @@
 import './css/Carousel.css';
 import './css/Carousel-700.css';
 import React, { useState, useEffect } from 'react';
-import { API } from 'aws-amplify';
-import { listProducts } from '../../graphql/queries';
+import { getAllProducts } from '../../utils/APIWrapper';
 
 
 const Carousel = props => {
@@ -82,8 +81,7 @@ const Carousel = props => {
             objectPosition: '50% 50%',
             padding: `0 ${props.xPadding}px 9px ${props.xPadding}px`
         };
-        const apiData = await API.graphql({ query: listProducts });
-        var items = apiData.data.listProducts.items;
+        let items = await getAllProducts();
         for (var i = 0; i < items.length; i++) {
             var item = items[i];
             if (item.image !== 'undefined' && item.image !== "") {
