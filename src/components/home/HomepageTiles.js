@@ -7,7 +7,7 @@ function HomepageTiles() {
 
   return (
     <div id="homepageTiles">
-        <h2 id="homepageTilesHeader">By Category</h2>
+        <h2 id="homepageTilesHeader">Shop Categories</h2>
         <table id="homepageTileTable">
             <tbody>
                 <tr>

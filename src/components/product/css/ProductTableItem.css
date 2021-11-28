@@ -5,13 +5,18 @@
     text-align: center;
 }
 
+.product-table-img-wrapper {
+    padding: 35px 8px;
+}
+
 .product-table-image {
     display:table-cell;
-    padding: 25px 25px 25px 25px;
+    /* padding: 25px 25px 25px 25px; */
     width: 100%;
     height: 25vw;
     object-fit: cover;
     object-position: 50% 50%;
+    box-shadow: 0px 0px 6px rgb(190,190,190);
 }
 
 .product-table-out-of-stock::before {
@@ -25,8 +30,8 @@
     vertical-align: middle;
     position:relative;
     float:right;
-    top:22px;
-    left:-29px;
+    top:-5px;
+    left:-10px;
     /* z-index: -9; */
     margin-bottom: -11%;
     font-size:1.1em;

@@ -8,21 +8,25 @@
         
     }
 
+    .product-table-img-wrapper {
+        padding: 40px 10px;
+    }
+
     .product-table-image {
         width: 95%;
         min-width: 70vw;
         height:90vw;
         margin: auto;
-        padding: 10px 10px;
+        /* padding: 10px 10px; */
     }
 
     .product-table-out-of-stock::before {
-        top:3px;
-        left:-31px;
+        top:-7px;
+        left:-23px;
     }
 
     .product-table-item-name {
-        margin-top:2px;
+        margin-top:-20px;
     }
     
     .product-table-item-price {
