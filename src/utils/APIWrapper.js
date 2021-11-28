@@ -55,3 +55,28 @@ export async function getProductBySlug(slug) {
     }
     return {};
 }
+
+
+export async function getProductsByCategory(categories) {
+    try {
+        let filter = {
+            or: []
+        };
+        for (var i = 0; i < categories.length; i++) {
+            filter.or.push({ categories: {contains: categories[i]} });
+        }
+        let apiData = await API.graphql({ query: listProducts, variables: { filter: filter }});
+        if (apiData && apiData.data) {
+            if (apiData.data.listProducts) {
+                let items = apiData.data.listProducts.items;
+                if (items) {
+                    return items;
+                }
+            }
+        }
+    }
+    catch (e) {
+        console.error(e);
+    }
+    return [];
+}

@@ -39,11 +39,11 @@ const ProductImage = props => {
                     );
                 }
             }
-            setAdditionalImages(newAdditionalImages);
         }
+        setAdditionalImages(newAdditionalImages);
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.additionalImages]);
+    }, [props.image, props.additionalImages]);
 
     useEffect(() => {
         setFocusedImageRef(props.image);

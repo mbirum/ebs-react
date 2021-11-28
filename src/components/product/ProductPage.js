@@ -7,12 +7,14 @@ import QuantityPicker from '../utility/QuantityPicker';
 import ShippingAndTerms from './ShippingAndTerms';
 import ProductImage from './ProductImage';
 import { getProductBySlug } from '../../utils/APIWrapper';
+import RelatedProducts from './RelatedProducts';
 
 
 const ProductPage = props => {
     const location = useLocation();
     const [id, setId] = useState((location.state) ? location.state.id : '');
     const [name, setName] = useState((location.state) ? location.state.name : '');
+    const [slug, setSlug] = useState((location.state) ? location.state.slug : '');
     const [image, setImage] = useState((location.state) ? location.state.image : '');
     const [additionalImages, setAdditionalImages] = useState((location.state) ? location.state.additionalImages : '');
     const [price, setPrice] = useState((location.state) ? location.state.price : '');
@@ -21,9 +23,12 @@ const ProductPage = props => {
     const [height, setHeight] = useState((location.state) ? location.state.height : 0);
     const [quantity, setQuantity] = useState((location.state) ? location.state.quantity : 0);
     const [currentCategory, setCurrentCategory] = useState((location.state) ? location.state.currentCategory : '');
+    const [categoryString, setCategoryString] = useState((location.state) ? location.state.categories : '');
 
     const [defaultQuantity, setDefaultQuantity] = useState((quantity >= 1) ? 1: 0);
     const [selectedQuantity, setSelectedQuantity] = useState(defaultQuantity);
+
+
     var productCategory = (currentCategory != null) ? currentCategory : 'All';
     var isOutOfStock = (quantity < 1);
     var stockMessage = (isOutOfStock) ? 'Sold out' : 'Available';
@@ -55,15 +60,15 @@ const ProductPage = props => {
 
     useEffect(registerBuyButtonMousedown);
 
-    async function loadProduct() {
-        let slug = location.pathname.replace('/shop/', '');
+    async function loadProduct(newSlug) {
         
-        let newProduct = await getProductBySlug(slug);
+        let newProduct = await getProductBySlug(newSlug);
 
         if (newProduct) {
             setId(newProduct.id);
             setName(newProduct.name);
             setImage(newProduct.image);
+            setSlug(newProduct.slug);
             setAdditionalImages(newProduct.additionalImages);
             setPrice(newProduct.price);
             setDescription(newProduct.description);
@@ -72,13 +77,15 @@ const ProductPage = props => {
             setQuantity(newProduct.quantity);
             setDefaultQuantity((newProduct.quantity >= 1) ? 1: 0);
             setSelectedQuantity((newProduct.quantity >= 1) ? 1: 0);
+            setCategoryString(newProduct.categories);
             setCurrentCategory('All');
         }
     }
 
     useEffect(() => {
-        if (name === '') {
-            loadProduct();
+        let newSlug = location.pathname.replace('/shop/', '');
+        if (slug === '' || slug !== newSlug) {
+            loadProduct(newSlug);
         }
     });
 
@@ -119,6 +126,9 @@ const ProductPage = props => {
                         </tr>
                     </tbody>
                 </table>
+
+                <RelatedProducts productId={id} categoryString={categoryString} />
+                
             </div>
 
         </div>
@@ -126,3 +136,4 @@ const ProductPage = props => {
 }
 
 export default ProductPage;
+
