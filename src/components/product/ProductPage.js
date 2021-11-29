@@ -14,7 +14,6 @@ const ProductPage = props => {
     const location = useLocation();
     const [id, setId] = useState((location.state) ? location.state.id : '');
     const [name, setName] = useState((location.state) ? location.state.name : '');
-    const [slug, setSlug] = useState((location.state) ? location.state.slug : '');
     const [image, setImage] = useState((location.state) ? location.state.image : '');
     const [additionalImages, setAdditionalImages] = useState((location.state) ? location.state.additionalImages : '');
     const [price, setPrice] = useState((location.state) ? location.state.price : '');
@@ -68,7 +67,6 @@ const ProductPage = props => {
             setId(newProduct.id);
             setName(newProduct.name);
             setImage(newProduct.image);
-            setSlug(newProduct.slug);
             setAdditionalImages(newProduct.additionalImages);
             setPrice(newProduct.price);
             setDescription(newProduct.description);
@@ -84,10 +82,10 @@ const ProductPage = props => {
 
     useEffect(() => {
         let newSlug = location.pathname.replace('/shop/', '');
-        if (slug === '' || slug !== newSlug) {
+        // if (slug === '' || slug !== newSlug) {
             loadProduct(newSlug);
-        }
-    });
+        // }
+    }, [location]);
 
     return (
         <div className="product-page">

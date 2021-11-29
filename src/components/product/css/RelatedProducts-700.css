@@ -1,3 +1,26 @@
 @media screen and (max-width: 700px) {
+    .related-product-table {
+        width:100%;
+    }
     
+    .related-product-column {
+        padding: 0 5px;
+        display: block;
+        width:100% !important;
+    }
+    
+    .related-product-image {
+        width:80%;
+        height:65vw;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+
+    .related-product-name {
+        margin-top:8px;
+    }
+
+    .related-product-price {
+        margin-bottom: 15%;
+    }
 }

@@ -1,9 +1,48 @@
 .related-products-wrapper {
-    margin-top:15%;
+    margin-top:18%;
+    margin-bottom:10%;
 }
 
 .related-products-header {
     font-size: 16px;
     font-weight: 200;
     letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom:50px;
+}
+
+.related-products-separator {
+    margin-bottom: 30px;
+}
+
+.related-product-table {
+    width:100%;
+    text-align: center;
+    margin: auto;
+}
+
+.related-product-column {
+    width:calc(100vw / 5);
+    padding: 0 5%;
+}
+
+.related-product-image {
+    width:100%;
+    height:calc(100vw / 5);
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.related-product-name {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top:8px;
+}
+
+.related-product-price {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top:7px;
+    margin-bottom:25px;
+    color:rgb(80,80,80);
 }
