@@ -113,7 +113,7 @@ const ProductPage = props => {
                                 <span className="product-description-line product-size">{width} x {height} inches</span>
                                 <span className="product-description-line product-description">{description}</span>
                                 <span className={"product-stock " + stockClass}>{stockMessage}</span>
-                                <QuantityPicker id="productPageQuantity" onChange={onQuantityChange} disabled={isOutOfStock} className="product-quantity-picker" defaultValue={defaultQuantity} min={1} max={quantity} />
+                                <QuantityPicker id={id} onChange={onQuantityChange} disabled={isOutOfStock} additionalClasses="product-page-quantity" defaultValue={defaultQuantity} min={1} max={quantity} />
                                 <div className="product-description-line product-buy-section">
                                     <button className="product-buy-button ebs-button" disabled={isOutOfStock} onClick={() => addToCart(id, selectedQuantity)}>Add to cart</button>
                                 </div>

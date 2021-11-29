@@ -55,7 +55,7 @@ const Cart = props => {
                     <td className='cart-item-column cart-text-column'>
                         <h3 className='cart-text-header'>{item.name}</h3>
                         <span className='cart-item-price'>${item.price}</span>
-                        <QuantityPicker id="cartItemQuantity" onChange={onItemQuantityChange} disabled={false} defaultValue={products[i].quantity} min={0} max={item.quantity} />
+                        <QuantityPicker id={item.id} onChange={onItemQuantityChange} disabled={false} defaultValue={products[i].quantity} min={0} max={item.quantity} />
                     </td>
                     
                 </tr>

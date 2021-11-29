@@ -71,7 +71,7 @@
 /* Stock */
 .product-stock {
     display: block;
-    margin-bottom:5px;
+    margin-bottom:-2px;
     font-size: 12px; 
     font-weight: 500;
     opacity: 0.75;
@@ -79,6 +79,7 @@
 
 .out-of-stock {
     color: darkred;
+    text-transform: uppercase;
 }
 
 .in-stock {

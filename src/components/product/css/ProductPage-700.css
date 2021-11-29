@@ -14,13 +14,13 @@
     .product-stock {
         display:block;
         position:relative;
-        top: 0px;
+        top: 7px;
         left: 0px;
         font-size: 12px; 
         font-weight: 500;
         opacity: 0.75;
         margin-bottom:15px;
-        letter-spacing: 0.1em;
+        /* letter-spacing: 0.1em; */
     }
 
     .product-description {

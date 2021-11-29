@@ -4,13 +4,15 @@ import React, { useEffect, useState } from 'react';
 
 const QuantityPicker = props => {
     const [value, setValue] = useState(props.defaultValue);
+    const [additionalClasses, setAdditionalClasses] = useState(props.additionalClasses);
     let min = props.min;
     let max = props.max;
-    let disabledClassName = (props.disabled) ? "quantity-disabled" : "";
+    let disabledClassName = (props.disabled) ? "quantity-disabled " : "";
     let onChange = props.onChange;
 
     function decrementQuantity(e) {
         var picker = e.target.closest('.product-quantity-picker');
+        // alert('huh');
         if (!props.disabled && value > min) {
             let oldValue = value;
             let newValue = oldValue - 1;
@@ -31,10 +33,10 @@ const QuantityPicker = props => {
 
     useEffect(() => {
         setValue(props.defaultValue);
-    }, [props.defaultValue]);
+    }, [props.id, props.additionalClasses, props.defaultValue]);
 
     return (
-        <div id={props.id} className={"product-quantity-picker " + disabledClassName}>
+        <div className={"product-quantity-picker " + disabledClassName + additionalClasses}>
             <div className="quantity-picker-minus" onClick={decrementQuantity}>-</div>
             <div className="quantity-picker-value">{value}</div>
             <div className="quantity-picker-plus" onClick={incrementQuantity}>+</div>
