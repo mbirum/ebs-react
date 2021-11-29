@@ -64,6 +64,19 @@ const Cart = props => {
         
         setItems(cartItems);
         setSubtotal(sum);
+        setIndicator(cartItems.length);
+    }
+
+    function setIndicator(length) {
+        var cartImages = document.getElementsByClassName('cart-image');
+        for (var i = 0; i < cartImages.length; i++) {
+            if (length > 0) {
+                cartImages[i].classList.add('cart-filled');
+            }
+            else {
+                cartImages[i].classList.remove('cart-filled');
+            }
+        }
     }
 
     useEffect(() => {

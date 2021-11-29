@@ -18,7 +18,7 @@ const RelatedProducts = props => {
                 newRelatedProducts.push(
                     <td key={i} className='related-product-column'>
                         <Link to={'/shop/'+product.slug}>
-                            <img alt={product.name} src={product.image} className="related-product-image" />
+                            <img alt={product.name} src={product.image} className="ebs-image-shadow related-product-image" />
                         </Link>
                     </td>
                 )

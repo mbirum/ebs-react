@@ -39,7 +39,10 @@ function App() {
           document.getElementsByClassName("cart-add-error-message")[0].innerHTML = 
             `You can't add more of this item to your cart`;
           setTimeout(() => {
-            document.getElementsByClassName("cart-add-error-message")[0].innerHTML = '';
+            let element = document.getElementsByClassName("cart-add-error-message")[0];
+            if (element) {
+              element.innerHTML = '';
+            }
           }, 10000);
         }
         else {

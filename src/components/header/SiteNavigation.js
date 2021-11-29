@@ -103,9 +103,10 @@ const SiteNavigation = props => {
 
     return (
         <>
-
+            <div id="siteSearch700" className="nav-item search-image">
+                <img id="siteSearchImage700" src="../search.png" alt="Search" />
+            </div>
             <MenuToggle onClick={toggleSiteNavigation} />
-
             <nav id="siteNavigation" className="main-navigation" role="navigation" onClick={onNavigationClick}>
                 <div className="primary-menu">
                     <ul id="primary-menu" className="menu nav-menu">
@@ -126,17 +127,20 @@ const SiteNavigation = props => {
                         <li className="nav-item menu-item-type-post_type menu-item-object-page">
                             <Link to="/shop" className="nav-item-link">About</Link>
                         </li>
-                        <li id="cartLink" className="nav-item menu-item" onClick={toggleCart} >
-                            <img alt="Cart" id="navCartImage" src="../cart.png"/>
-                            <span className="cart-contents">{props.cartSize}</span>
+                        <li id="siteSearch" className="nav-item search-image">
+                            <img id="siteSearchImage" src="../search.png" alt="Search" />
+                        </li>
+                        <li id="cartLink" className="nav-item cart-image" onClick={toggleCart} >
+                            <img alt="Cart" id="navCartImage" src="../bag.png"/>
+                            <span className="cart-contents"><sub>{props.cartSize}</sub></span>
                         </li>
                         
                     </ul>
                 </div>
             </nav>
 
-            <div id="cartLink700" className="nav-item menu-item" onClick={toggleCart} >
-                <img alt="Cart" id="navCartImage700" src="../cart.png"/>
+            <div id="cartLink700" className="nav-item cart-image" onClick={toggleCart} >
+                <img alt="Cart" id="navCartImage700" src="../bag.png"/>
                 <span className="cart-contents">{props.cartSize}</span>
             </div>
         </>

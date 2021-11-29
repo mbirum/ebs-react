@@ -55,7 +55,7 @@ const ProductImage = props => {
                 <tbody>
                     <tr className="product-main-image">
                         <td>
-                            <img alt={props.alt} className="product-page-image" src={focusedImageRef} />
+                            <img alt={props.alt} className="ebs-image-shadow product-page-image" src={focusedImageRef} />
                         </td>
                     </tr>
                     <tr className="product-additional-images">

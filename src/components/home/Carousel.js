@@ -85,7 +85,7 @@ const Carousel = props => {
         for (var i = 0; i < items.length; i++) {
             var item = items[i];
             if (item.image !== 'undefined' && item.image !== "") {
-                imageElements.push(<img alt="Erin Birum Studio" src={item.image} key={i} style={imageStyle}/>);
+                imageElements.push(<img key={i} alt={item.name} src={item.image} style={imageStyle}/>);
             }
         }
 
