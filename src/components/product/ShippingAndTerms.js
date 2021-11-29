@@ -21,7 +21,6 @@ const ShippingAndTerms = props => {
   }
 
   function toggleShippingInfoOn() {
-    getShippingInfoContent().classList.remove('force-hidden-display');
     setTimeout(() => {
       getShippingInfoContent().classList.add('shipping-info-content-active');  
       getExpandableCaret().classList.add('expandable-caret-active');
@@ -30,6 +29,7 @@ const ShippingAndTerms = props => {
 
   function toggleShippingInfoOff() {
     getShippingInfoContent().classList.remove('shipping-info-content-active');
+    getExpandableCaret().classList.remove('expandable-caret-active');
   }
 
   function toggleShippingInfoContent() {
@@ -48,7 +48,7 @@ const ShippingAndTerms = props => {
             <span className="shipping-info-header-text">Shipping &amp; Delivery</span>
             <span className="expandable-caret"></span>
           </div>
-          <div className="shipping-info-content force-hidden-display">
+          <div className="shipping-info-content">
               <span>
                 All items will definitely be delivered please trust me i will not doop you. Trust me.
                 All items will definitely be delivered please trust me i will not doop you. Trust me.

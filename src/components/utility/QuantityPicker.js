@@ -33,6 +33,7 @@ const QuantityPicker = props => {
 
     useEffect(() => {
         setValue(props.defaultValue);
+        setAdditionalClasses(props.additionalClasses);
     }, [props.id, props.additionalClasses, props.defaultValue]);
 
     return (
