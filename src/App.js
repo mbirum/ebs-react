@@ -101,13 +101,21 @@ function App() {
       <Cart items={cartItems} removeFromCart={removeFromCart} updateCartItemQuantity={updateCartItemQuantity}/>
 
       <ScrollListener 
-        elementId='siteHeader'
-        className='sticky-header'
+        pathName='/'
+        yThreshold={500}
+        elements={[
+          {id: 'siteHeader', className: 'sticky-header'},
+          {id: 'root', className: 'sticky-root'}
+        ]}
       />
 
       <ScrollListener 
-        elementId='root'
-        className='sticky-root'
+        pathName='/shop'
+        yThreshold={600}
+        elements={[
+          {id: 'siteHeader', className: 'sticky-header'},
+          {id: 'root', className: 'sticky-root'}
+        ]}
       />
 
       <ScrollToTop>

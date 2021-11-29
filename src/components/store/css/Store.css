@@ -1,4 +1,14 @@
 #store {
-    margin-left:20%;
+    /* margin-left:20%; */
     padding-bottom:10%;
+    position:relative;
+    height:100%;
+}
+
+#storeBanner {
+    padding: 0 0 4% 0;
+    width:100%;
+    height:80vh;
+    object-fit: cover;
+    object-position: 50% 45%;
 }

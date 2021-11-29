@@ -95,29 +95,32 @@ const Store = props => {
 
 
   return (
-    
-    <div id="store">
+    <>
+      <div id="storeBannerWrapper">
+        <img id="storeBanner" src="../../store-banner.png" />
+      </div>
 
-      <StoreFilterButton />
+      <div id="store">
+        <StoreFilterButton />
 
-      <StoreBreadcrumb 
-        inactiveCrumbs={[
-          <span onClick={returnToShop}>shop</span>, 
-        ]}
-        activeCrumb={currentCategory}
-      />
+        <StoreBreadcrumb 
+          inactiveCrumbs={[
+            <span onClick={returnToShop}>shop</span>, 
+          ]}
+          activeCrumb={currentCategory}
+        />
 
-      <StoreSidebar
-        categoryStrings={categoryStrings}
-        onUpdate={setCurrentCategory}
-        currentCategory={currentCategory}
-      />
+        <StoreSidebar
+          categoryStrings={categoryStrings}
+          onUpdate={setCurrentCategory}
+          currentCategory={currentCategory}
+        />
 
-      <ProductTable items={products}/>
+        <ProductTable items={products}/>
 
 
-    </div>
-    
+      </div>
+    </>
   );
 }
 

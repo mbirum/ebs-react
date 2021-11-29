@@ -6,8 +6,9 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     user-select: none;
+    padding-left:19%;
 }
 
 .active-breadcrumb {

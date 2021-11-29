@@ -1,22 +1,25 @@
 import { useEffect } from "react";
 
-var yThreshold = 500;
-
 const ScrollListener = (props) => {
   useEffect(() => {
     const controller = new AbortController();
     window.addEventListener('scroll', () => {
-
-      if (window.scrollY >= yThreshold && window.location.pathname === '/') {
-        document.getElementById(props.elementId).classList.add(props.className);
-      }
-      else if (window.scrollY <= 1) {
-        document.getElementById(props.elementId).classList.remove(props.className);
+      if (window.location.pathname === props.pathName) {
+        if (window.scrollY >= props.yThreshold) {  
+          for (var i = 0; i < props.elements.length; i++) {
+            document.getElementById(props.elements[i].id).classList.add(props.elements[i].className);
+          }
+        }
+        else if (window.scrollY <= 1) {
+          for (var i = 0; i < props.elements.length; i++) {
+            document.getElementById(props.elements[i].id).classList.remove(props.elements[i].className);
+          }
+        }
       }
     }, { signal: controller.signal });
 
     return () => controller.abort();
-  }, [props.className, props.elementId]);
+  }, [props.pathName, props.yThreshold, props.elements]);
 
   return (
     <></>
