@@ -97,7 +97,7 @@ const Store = props => {
   return (
     <>
       <div id="storeBannerWrapper">
-        <img id="storeBanner" src="../../store-banner.png" />
+        <img alt="Store" id="storeBanner" src="../../store-banner.png" />
       </div>
 
       <div id="store">

@@ -100,10 +100,35 @@ const SiteNavigation = props => {
         }
     }
 
+    function getSiteSearchHeader() {
+        return document.getElementById('siteSearchHeader');
+    }
+
+    function isSiteSearchOn() {
+        return getSiteSearchHeader().classList.contains('site-search-enabled');
+    }
+
+    function toggleSiteSearchOn() {
+        getSiteSearchHeader().classList.add('site-search-enabled');
+    }
+
+    function toggleSiteSearchOff() {
+        getSiteSearchHeader().classList.remove('site-search-enabled');
+    }
+
+    function toggleSiteSearch() {
+        if (isSiteSearchOn()) {
+            toggleSiteSearchOff();
+        }
+        else {
+            toggleSiteSearchOn();
+        }
+    }
+
 
     return (
         <>
-            <div id="siteSearch700" className="nav-item search-image">
+            <div id="siteSearch700" onClick={toggleSiteSearch} className="nav-item search-image">
                 <img id="siteSearchImage700" src="../search.png" alt="Search" />
             </div>
             <MenuToggle onClick={toggleSiteNavigation} />
@@ -127,7 +152,7 @@ const SiteNavigation = props => {
                         <li className="nav-item menu-item-type-post_type menu-item-object-page">
                             <Link to="/shop" className="nav-item-link">About</Link>
                         </li>
-                        <li id="siteSearch" className="nav-item search-image">
+                        <li id="siteSearch" onClick={toggleSiteSearch} className="nav-item search-image">
                             <img id="siteSearchImage" src="../search.png" alt="Search" />
                         </li>
                         <li id="cartLink" className="nav-item cart-image" onClick={toggleCart} >

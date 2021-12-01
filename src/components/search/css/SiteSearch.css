@@ -1,0 +1,39 @@
+#siteSearchHeader {
+	position:fixed;
+	background-color: white;
+	color: #000;
+	display: table;
+	left: 0;
+	min-height: 110px;
+	padding: 10px 10px;
+	top: 0;
+	width: 100%;
+	z-index: 0;
+    opacity: 0;
+	border-bottom: 0px !important;
+    transition: opacity .4s;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgb(120,120,120);
+}
+
+.sticky-search-header {
+	min-height: 95px !important;
+}
+
+#siteSearchWrapper {
+    width:100%;
+    display:table-cell;
+    vertical-align: middle;
+}
+
+.site-search-enabled {
+    z-index: 10 !important;
+    opacity:1 !important;
+}
+
+#siteSearchBar {
+    border: 1px solid rgb(230,230,230);
+    padding:10px 10px;
+    width: 45%;
+    border-radius:2px;
+}

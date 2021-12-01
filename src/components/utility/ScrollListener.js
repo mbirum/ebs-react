@@ -11,7 +11,7 @@ const ScrollListener = (props) => {
           }
         }
         else if (window.scrollY <= 1) {
-          for (var i = 0; i < props.elements.length; i++) {
+          for (i = 0; i < props.elements.length; i++) {
             document.getElementById(props.elements[i].id).classList.remove(props.elements[i].className);
           }
         }

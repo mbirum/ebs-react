@@ -7,6 +7,7 @@ import amplifyconfig from './amplify-config.js';
 import Store from './components/store/Store';
 import Homepage from './components/home/Homepage';
 import SiteHeader from './components/header/SiteHeader';
+import SiteSearch from './components/search/SiteSearch';
 import SiteFooter from './components/footer/SiteFooter';
 import ScrollToTop from './components/utility/ScrollToTop';
 import ScrollListener from './components/utility/ScrollListener';
@@ -98,6 +99,8 @@ function App() {
 
       <SiteHeader cartSize={getCartSize()}/>
 
+      <SiteSearch />
+
       <Cart items={cartItems} removeFromCart={removeFromCart} updateCartItemQuantity={updateCartItemQuantity}/>
 
       <ScrollListener 
@@ -105,7 +108,8 @@ function App() {
         yThreshold={500}
         elements={[
           {id: 'siteHeader', className: 'sticky-header'},
-          {id: 'root', className: 'sticky-root'}
+          {id: 'root', className: 'sticky-root'},
+          {id: 'siteSearchHeader', className: 'sticky-search-header'}
         ]}
       />
 
@@ -114,7 +118,8 @@ function App() {
         yThreshold={600}
         elements={[
           {id: 'siteHeader', className: 'sticky-header'},
-          {id: 'root', className: 'sticky-root'}
+          {id: 'root', className: 'sticky-root'},
+          {id: 'siteSearchHeader', className: 'sticky-search-header'}
         ]}
       />
 
