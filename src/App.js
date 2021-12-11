@@ -9,8 +9,8 @@ import Homepage from './components/home/Homepage';
 import SiteHeader from './components/header/SiteHeader';
 import SiteSearch from './components/search/SiteSearch';
 import SiteFooter from './components/footer/SiteFooter';
-import ScrollToTop from './components/utility/ScrollToTop';
-import ScrollListener from './components/utility/ScrollListener';
+import ScrollToTop from './components/utility/scroll/ScrollToTop';
+import ScrollListener from './components/utility/scroll/ScrollListener';
 import ProductPage from './components/product/ProductPage';
 import Cart from './components/cart/Cart';
 import CheckoutPage from './components/checkout/CheckoutPage';
@@ -19,6 +19,7 @@ import { getProductByID } from './utils/APIWrapper';
 Amplify.configure(amplifyconfig);
 
 function App() {
+  const [lastStoreScroll, setLastStoreScroll] = useState(null);
   const [cartItems, setCartItems] = useState([]);
 
   async function getItemQuantity(id) {
@@ -94,6 +95,7 @@ function App() {
     return size;
   }
 
+
   return (
     <BrowserRouter>
 
@@ -125,9 +127,9 @@ function App() {
 
       <ScrollToTop>
         <Routes>
-          <Route exact path='/' element={<Homepage/>} />
+          <Route exact path='/' element={<Homepage />} />
           <Route path='/shop' element={<Store />} />
-          <Route path='/shop/:slug' element={<ProductPage addToCart={addToCart}/>} />
+          <Route path='/shop/:slug' element={<ProductPage addToCart={addToCart} />} />
           <Route path='/checkout' element={<CheckoutPage items={cartItems} />} />
         </Routes>
       </ScrollToTop>

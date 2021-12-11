@@ -1,3 +1,9 @@
 @media screen and (max-width: 700px) {
-    
+    #siteSearchHeader {
+        min-height: 75px;
+    }
+
+    .sticky-search-header {
+        min-height: 75px !important;
+    }
 }
