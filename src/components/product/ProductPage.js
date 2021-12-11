@@ -27,8 +27,7 @@ const ProductPage = props => {
     const [defaultQuantity, setDefaultQuantity] = useState((quantity >= 1) ? 1: 0);
     const [selectedQuantity, setSelectedQuantity] = useState(defaultQuantity);
 
-
-    var productCategory = (currentCategory != null) ? currentCategory : 'All';
+    const [productCategory, setProductCategory] = useState((currentCategory != null) ? currentCategory : 'All');
     var isOutOfStock = (quantity < 1);
     var stockMessage = (isOutOfStock) ? 'Sold out' : 'Available';
     var stockClass = (isOutOfStock) ? 'out-of-stock' : 'in-stock';

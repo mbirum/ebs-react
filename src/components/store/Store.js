@@ -17,6 +17,7 @@ const Store = props => {
   const [categoryStrings, setCategoryStrings] = useState([]);
   const [currentCategory, setCurrentCategory] = useState('All');
 
+
   function getCategoryStrings(items) {
     var categoryStrings = [];
     for (var i = 0; i < items.length; i++) {
@@ -38,6 +39,7 @@ const Store = props => {
       if (product.categories != null && product.categories.length > 0) {
         if (product.categories.includes(category)) {
           product.currentCategory = category;
+          // alert(product.currentCategory);
           productsByCategory.push(product);
         }
       }
@@ -53,12 +55,15 @@ const Store = props => {
 
   function adjustScrollTop() {
     var siteHeader = document.getElementById('siteHeader');
-    if (siteHeader.classList.contains('sticky-header')) {
-      window.scrollTo(0, 480);
+
+    var scrollTopValue = 570;
+    if (window.innerWidth <= 700) {
+      scrollTopValue = 500;
     }
-    else {
-      window.scrollTo(0, 570);
+    else if (siteHeader.classList.contains('sticky-header')) {
+        scrollTopValue = 480;
     }
+    window.scrollTo(0, scrollTopValue);
   }
 
   useEffect(() => {
@@ -69,16 +74,13 @@ const Store = props => {
       var newProductSet = filterProductsByCategory(allProducts, currentCategory);
       setProducts(newProductSet);
     }
-
-    adjustScrollTop();
+    setTimeout(adjustScrollTop, 350);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCategory]);
 
   useEffect(() => {
     setCurrentCategory(initialCategory);
-
-    adjustScrollTop();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialCategory]);

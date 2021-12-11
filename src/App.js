@@ -19,7 +19,6 @@ import { getProductByID } from './utils/APIWrapper';
 Amplify.configure(amplifyconfig);
 
 function App() {
-  const [lastStoreScroll, setLastStoreScroll] = useState(null);
   const [cartItems, setCartItems] = useState([]);
 
   async function getItemQuantity(id) {
