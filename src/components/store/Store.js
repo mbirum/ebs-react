@@ -17,10 +17,6 @@ const Store = props => {
   const [categoryStrings, setCategoryStrings] = useState([]);
   const [currentCategory, setCurrentCategory] = useState('All');
 
-  window.onpopstate = e => {
-    alert('back it up');
- }
-
   function getCategoryStrings(items) {
     var categoryStrings = [];
     for (var i = 0; i < items.length; i++) {
@@ -55,6 +51,16 @@ const Store = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  function adjustScrollTop() {
+    var siteHeader = document.getElementById('siteHeader');
+    if (siteHeader.classList.contains('sticky-header')) {
+      window.scrollTo(0, 480);
+    }
+    else {
+      window.scrollTo(0, 570);
+    }
+  }
+
   useEffect(() => {
     if (currentCategory === 'All') {
       setProducts(allProducts);
@@ -64,20 +70,15 @@ const Store = props => {
       setProducts(newProductSet);
     }
 
-    var siteHeader = document.getElementById('siteHeader');
-    if (siteHeader.classList.contains('sticky-header')) {
-      window.scrollTo(0, 480);
-    }
-    else {
-      window.scrollTo(0, 570);
-    }
-    
-    
+    adjustScrollTop();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCategory]);
 
   useEffect(() => {
     setCurrentCategory(initialCategory);
+
+    adjustScrollTop();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialCategory]);
