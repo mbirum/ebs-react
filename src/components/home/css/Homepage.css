@@ -1,7 +1,7 @@
 #homepage {
 	overflow-x: hidden !important;
 	position: relative;
-	scroll-behavior: smooth;
+	/* scroll-behavior: smooth; */
 }
 
 #homepage-image {

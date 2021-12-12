@@ -7,6 +7,7 @@ import StoreBreadcrumb from './StoreBreadcrumb';
 import StoreSidebar from './StoreSidebar';
 import StoreFilterButton from './StoreFilterButton';
 import { getAllProducts } from '../../utils/APIWrapper';
+import SmoothScroller from '../utility/scroll/SmoothScroller';
 
 const Store = props => {
   const location = useLocation();
@@ -39,7 +40,6 @@ const Store = props => {
       if (product.categories != null && product.categories.length > 0) {
         if (product.categories.includes(category)) {
           product.currentCategory = category;
-          // alert(product.currentCategory);
           productsByCategory.push(product);
         }
       }
@@ -63,7 +63,8 @@ const Store = props => {
     else if (siteHeader.classList.contains('sticky-header')) {
         scrollTopValue = 480;
     }
-    window.scrollTo(0, scrollTopValue);
+    // window.scrollTo(0, scrollTopValue);
+    new SmoothScroller().scrollbasic(scrollTopValue);
   }
 
   useEffect(() => {
