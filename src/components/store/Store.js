@@ -7,7 +7,6 @@ import StoreBreadcrumb from './StoreBreadcrumb';
 import StoreSidebar from './StoreSidebar';
 import StoreFilterButton from './StoreFilterButton';
 import { getAllProducts } from '../../utils/APIWrapper';
-import SmoothScroller from '../utility/scroll/SmoothScroller';
 
 const Store = props => {
   const location = useLocation();
@@ -56,15 +55,14 @@ const Store = props => {
   function adjustScrollTop() {
     var siteHeader = document.getElementById('siteHeader');
 
-    var scrollTopValue = 570;
+    var scrollTopValue = 590;
     if (window.innerWidth <= 700) {
-      scrollTopValue = 500;
+      scrollTopValue = 510;
     }
     else if (siteHeader.classList.contains('sticky-header')) {
-        scrollTopValue = 480;
+        scrollTopValue = 470;
     }
-    // window.scrollTo(0, scrollTopValue);
-    new SmoothScroller().scrollbasic(scrollTopValue);
+    window.scrollTo(0, scrollTopValue);
   }
 
   useEffect(() => {
@@ -75,7 +73,8 @@ const Store = props => {
       var newProductSet = filterProductsByCategory(allProducts, currentCategory);
       setProducts(newProductSet);
     }
-    setTimeout(adjustScrollTop, 350);
+
+    window.scrollTo(0, 0);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCategory]);

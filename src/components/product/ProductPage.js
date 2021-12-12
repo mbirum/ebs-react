@@ -86,6 +86,11 @@ const ProductPage = props => {
         // }
     }, [location]);
 
+    useEffect(() => {
+        document.getElementById('siteHeader').classList.remove('sticky-header');
+        document.getElementById('root').classList.remove('sticky-root');
+    });
+
     return (
         <div className="product-page">
             <StoreBreadcrumb
