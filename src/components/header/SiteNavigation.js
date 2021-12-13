@@ -125,6 +125,34 @@ const SiteNavigation = props => {
         }
     }
 
+    function getShopSubMenu() {
+        return document.getElementById('shopNavSubMenu');
+    }
+
+    function isShopSubMenuActive() {
+        return getShopSubMenu().classList.contains('sub-menu-active');
+    }
+
+    function toggleShopSubMenuOn() {
+        getShopSubMenu().classList.add('sub-menu-active');
+        document.getElementById('shopNavDropdownCaret').classList.add('sub-menu-caret-active');
+    }
+
+    function toggleShopSubMenuOff() {
+        getShopSubMenu().classList.remove('sub-menu-active');
+        document.getElementById('shopNavDropdownCaret').classList.remove('sub-menu-caret-active');
+        
+    }
+
+    function toggleSiteNavSubMenu(e) {
+        e.stopPropagation();
+        if (isShopSubMenuActive()) {
+            toggleShopSubMenuOff();
+        }
+        else {
+            toggleShopSubMenuOn();
+        }
+    }
 
     return (
         <>
@@ -135,9 +163,11 @@ const SiteNavigation = props => {
             <nav id="siteNavigation" className="main-navigation" role="navigation" onClick={onNavigationClick}>
                 <div className="primary-menu">
                     <ul id="primary-menu" className="menu nav-menu">
+                        
                         <li id="shopNavItem" className="nav-item nav-item-has-children">
                             <Link to="/shop" state={{ initialCategory: "All" }} className="nav-item-link">Shop</Link>
-                            <ul className="sub-menu">
+                            <div id="shopNavDropdown" onClick={toggleSiteNavSubMenu}><div id="shopNavDropdownCaret">&#8963;</div></div>
+                            <ul id="shopNavSubMenu" className="sub-menu">
                                 <Link to="/shop" state={{ initialCategory: "All" }}><li className="nav-sub-item">All Products</li></Link>
                                 <Link to="/shop" state={{ initialCategory: "Prints" }}><li className="nav-sub-item">Prints</li></Link>
                                 <Link to="/shop" state={{ initialCategory: "Ornaments" }}><li className="nav-sub-item">Ornaments</li></Link>
