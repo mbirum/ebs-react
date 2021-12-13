@@ -26,6 +26,22 @@ const StoreSidebar = props => {
     clickCategoryItem(e.target);
     var category = e.target.innerHTML;
     props.onUpdate(category);
+
+
+    var siteHeader = document.getElementById('siteHeader');
+
+    var scrollTopValue = 620;
+    if (window.innerWidth <= 700) {
+      scrollTopValue = 450;
+    }
+    else if (siteHeader.classList.contains('sticky-header')) {
+        scrollTopValue = 590;
+        // alert('595');
+    }
+
+    setTimeout(() => {
+      window.scroll(0, scrollTopValue);
+    }, 5);
   }
 
   function clickCategoryItem(target) {

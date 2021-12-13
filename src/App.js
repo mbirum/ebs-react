@@ -116,7 +116,7 @@ function App() {
 
       <ScrollListener 
         pathName='/shop'
-        yThreshold={600}
+        yThreshold={800}
         elements={[
           {id: 'siteHeader', className: 'sticky-header'},
           {id: 'root', className: 'sticky-root'},
