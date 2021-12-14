@@ -47,6 +47,11 @@ const CheckoutInfo = props => {
         }
     }
 
+    function continueToPayment() {
+        // props.save(formData);
+        props.proceed();
+    }
+
     return (
         <div id="checkoutInfo">
             <form>
@@ -100,7 +105,7 @@ const CheckoutInfo = props => {
             </form>
 
             <div id="continueButtonWrapper">
-                <div id="continueToPaymentButton" className="ebs-button">Continue To Payment</div>
+                <div id="continueToPaymentButton" onClick={continueToPayment} className="ebs-button">Continue To Payment</div>
             </div>
             
         </div>

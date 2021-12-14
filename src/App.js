@@ -14,6 +14,8 @@ import ScrollListener from './components/utility/scroll/ScrollListener';
 import ProductPage from './components/product/ProductPage';
 import Cart from './components/cart/Cart';
 import CheckoutPage from './components/checkout/CheckoutPage';
+import CheckoutInfo from './components/checkout/CheckoutInfo';
+import CheckoutPay from './components/checkout/CheckoutPay';
 import { getProductByID } from './utils/APIWrapper';
 
 Amplify.configure(amplifyconfig);
